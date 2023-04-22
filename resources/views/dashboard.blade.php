@@ -1,4 +1,4 @@
-@extends('layouts.backoffice')
+@extends('layouts.back')
 
 @section('content')
 <div class="">

@@ -13,10 +13,11 @@ return new class extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('cafe_id')->constrained();
-            $table->string('name', 500)->default('');
+            $table->foreignId('company_id')->constrained();
+            $table->string('name', 500);
             $table->string('image', 500)->nullable();
-            $table->text('description');
+            $table->text('description')->nullable();
+            $table->unsignedInteger('sorting')->default(1);
             $table->timestamps();
         });
     }

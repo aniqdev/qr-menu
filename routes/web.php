@@ -27,8 +27,13 @@ Route::middleware('auth')->group(function () {
     // Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     // Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    Route::get('/categories', [\App\Http\Controllers\CategoryController::class, 'index'])->name('categories');
-    Route::get('/dishes', [\App\Http\Controllers\DishController::class, 'index'])->name('dishes');
+    Route::resource('categories', \App\Http\Controllers\CategoryController::class);
+
+    Route::resource('items', \App\Http\Controllers\ItemController::class);
+    Route::post('/items/update-sorting', [\App\Http\Controllers\ItemController::class, 'updateSorting']);
+
+    // Route::get('/categories', [\App\Http\Controllers\CategoryController::class, 'index'])->name('categories');
+    Route::get('/items', [\App\Http\Controllers\ItemController::class, 'index'])->name('items');
 });
 
 

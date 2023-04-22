@@ -17,10 +17,10 @@ class CategoryFactory extends Factory
     public function definition(): array
     {
         return [
-            'cafe_id' => 1,
+            'company_id' => 1,
             'name' => fake()->company,
             'description' => fake()->text,
-            'image' => fake()->imageUrl(640, 480, 'food', true),
+            'image' => \App\Services\SeedService::getRandomHotDogImageUrl(),
         ];
     }
 }

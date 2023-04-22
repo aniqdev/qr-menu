@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreCategoryRequest extends FormRequest
+class UpdateItemRequest extends FormRequest
 {
     /**
      * Get the validation rules that apply to the request.
@@ -15,7 +15,10 @@ class StoreCategoryRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:500',
-            'description' => 'nullable|string',
+            'description' => 'nullable|string|max:500',
+            'price' => 'nullable|numeric',
+            'old_price' => 'nullable|numeric',
+            'category_id' => 'required|integer',
             'image' => 'file|mimes:jpg,png',
         ];
     }

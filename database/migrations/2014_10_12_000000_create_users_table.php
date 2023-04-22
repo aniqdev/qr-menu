@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('cafe_id')->constrained();
+            $table->foreignId('company_id')->constrained();
             $table->enum('role', ['superadmin', 'admin', 'redactor'])->default('admin');
             $table->string('name');
             $table->string('email')->unique();

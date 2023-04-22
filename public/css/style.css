@@ -1,0 +1,39 @@
+body{
+	overflow-x: hidden;
+	background: #f7f3ff;
+}
+
+img{
+	max-width: 100%;
+}
+
+.list-group-item.ui-placeholder{
+	background: lightblue;
+	list-style-type: circle;
+}
+.list-group-item.ui-placeholder::after{
+	content: "\a0";
+}
+
+.sortable-handle{
+	cursor: all-scroll;
+}
+
+.shadow-block{
+	background: #fff;
+	padding: 15px;
+	border-radius: 10px;
+	box-shadow: 0 0 .5rem rgba(0,0,0,.075);
+}
+
+.bottom-pagination-wrapper .pagination{
+	margin: 0;
+}
+
+.marked-form{
+	border-top: 3px solid #f5bd57;
+	padding-top: 15px;
+}
+.marked-form.saved{
+	border-top: 3px solid #98c998;
+}

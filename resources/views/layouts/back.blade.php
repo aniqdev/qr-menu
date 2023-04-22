@@ -9,13 +9,24 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/css/bootstrap-icons.css">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     {{-- <link rel="stylesheet" href="/css/bootstrap-grey.css"> --}}
+    <link rel="stylesheet" href="/css/toastr.min.css"/>
+    <link rel="stylesheet" href="/css/jquery-ui.min.css"/>
 
+    <link rel="stylesheet" href="/css/style.css?v={{ filemtime(public_path('css/style.css')) }}">
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery-ui.min.js"></script>
+    <script src="/js/jquery.ui.touch-punch.min.js"></script>
+    <script>
+        var log = console.log
+    </script>
+    <script src="/js/toastr.min.js"></script>{{-- https://github.com/CodeSeven/toastr --}}
 </head>
 <body>
-    <div id="app">
+    <div id="app_root">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -73,7 +84,7 @@
         <main class="container py-4">
             <div class="row">
                 <div class="col-md-2">
-                    @include('backoffice.sidebar')
+                    @include('back.sidebar')
                 </div>
                 <div class="col-md-10">
                     @yield('content')
@@ -84,5 +95,8 @@
 
     
     <script src="/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    {{-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script> --}}
+    <script src="/js/main.js?v={{ filemtime(public_path('js/main.js')) }}"></script>
 </body>
 </html>

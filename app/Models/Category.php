@@ -10,14 +10,14 @@ class Category extends Model
     use HasFactory;
 
     protected $fillable = [
-        'cafe_id',
+        'company_id',
         'name',
         'image',
         'description',
     ];
 
-    public function dishes()
+    public function items()
     {
-        return $this->hasMany(\App\Models\Dish::class);
+        return $this->hasMany(\App\Models\Item::class)->orderBy('sorting');
     }
 }

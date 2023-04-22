@@ -13,10 +13,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\Cafe::factory(1)->create();
+        \App\Models\Company::factory(1)->create();
 
         \App\Models\User::firstOrCreate(['id' => 1], [
-            'cafe_id' => 1,
+            'company_id' => 1,
             'role' => 'superadmin',
             'name' => 'admin',
             'email' => 'admin@admin.com',
@@ -27,6 +27,6 @@ class DatabaseSeeder extends Seeder
 
         \App\Models\Category::factory(15)->create();
 
-        \App\Models\Dish::factory(150)->create();
+        \App\Models\Item::factory(150)->create();
     }
 }
