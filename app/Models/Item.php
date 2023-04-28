@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Traits\HasImage;
 
 class Item extends Model
 {
-    use HasFactory;
+    use HasFactory, HasImage;
 
     protected $fillable = [
         'company_id',
@@ -18,4 +19,9 @@ class Item extends Model
         'image',
         'description',
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

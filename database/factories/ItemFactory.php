@@ -16,13 +16,15 @@ class ItemFactory extends Factory
      */
     public function definition(): array
     {
+        $category = \App\Models\Category::inRandomOrder()->first();
+
         return [
             'company_id' => 1,
-            'category_id' => rand(1, 15),
+            'category_id' => $category->id,
             'name' => fake()->company,
             'description' => fake()->text,
-            'price' => fake()->randomFloat(2, 50, 5000),
-            'old_price' => fake()->randomFloat(2, 50, 5000),
+            'price' => fake()->numberBetween(50, 2000),
+            'old_price' => fake()->numberBetween(100, 10000),
             'image' => \App\Services\SeedService::getRandomHotDogImageUrl(),
         ];
     }

@@ -1,0 +1,38 @@
+1+1
+User:first()
+User::first()
+User::first()
+  
+  Category::first()
+User::first();
+  
+  Category::first();
+dd(User::first());
+  
+  Category::first();
+dump(User::first());
+  
+  Category::first();
+dump(User::first());
+  
+  dump(Category::first());
+dump(User::first());
+  
+  dump(Category::first());
+
+exit;
+dump(User::first());
+  
+dump(Category::first());
+
+exit;
+dump(User::first());
+  
+dump(Category::first());
+
+exit;
+dump(User::first());
+  
+dump(Category::first());
+
+exit;

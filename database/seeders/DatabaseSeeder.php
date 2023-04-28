@@ -13,10 +13,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\Company::factory(1)->create();
+        $company = \App\Models\Company::create([
+            'id' => 1,
+            'name' => fake()->state,
+        ]);
 
         \App\Models\User::firstOrCreate(['id' => 1], [
-            'company_id' => 1,
+            'company_id' => $company->id,
             'role' => 'superadmin',
             'name' => 'admin',
             'email' => 'admin@admin.com',

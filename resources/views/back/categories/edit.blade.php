@@ -24,15 +24,15 @@
 			@if($category->items->count())
 			    <hr>
 			    <h4>Dishes</h4>
-			    <ul class="list-group sortable" data-type="items">
+			    <ul class="list-group sortable" data-route="{{ route('items.update-sorting') }}">
 			    @foreach($category->items as $item)
 				  <li class="list-group-item sortable-item d-flex" data-id="{{ $item->id }}">
-				  	<div class="col">
+				  	<div class="col js-no-reload">
 				  		<span class="btn btn-outline-secondary sortable-handle me-2"><i class="bi bi-arrows-move"></i></span>
-				  		<span class="text-truncate">{{ $item->name }}</span>
+				  		<a href="{{ route('items.edit', $item) }}" class="text-truncate">{{ $item->name }}</a>
 				  	</div>
 				  	<div class="col-auto me-3">{{ $item->price }}</div>
-				  	<div class="col-auto">
+				  	<div class="col-auto js-no-reload">
 				  		<a href="{{ route('items.edit', $item) }}" class="btn btn-outline-info">
 				  			<i class="bi bi-pencil"></i>
 				  		</a>

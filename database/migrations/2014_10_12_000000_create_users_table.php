@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id();
+            $table->id()->from(rand(1000, 2000));
             $table->foreignId('company_id')->constrained();
             $table->enum('role', ['superadmin', 'admin', 'redactor'])->default('admin');
             $table->string('name');

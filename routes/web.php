@@ -22,18 +22,18 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::middleware('auth')->group(function () {
-    // Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    // Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    // Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+Route::middleware('auth')->prefix('admin')->group(function ()
+{
+    Route::get('menu', [\App\Http\Controllers\MenuController::class, 'backMenu'])->name('back.menu');
 
     Route::resource('categories', \App\Http\Controllers\CategoryController::class);
+    Route::post('/categories/update-sorting', [\App\Http\Controllers\CategoryController::class, 'updateSorting'])->name('categories.update-sorting');
 
     Route::resource('items', \App\Http\Controllers\ItemController::class);
-    Route::post('/items/update-sorting', [\App\Http\Controllers\ItemController::class, 'updateSorting']);
+    Route::post('/items/update-sorting', [\App\Http\Controllers\ItemController::class, 'updateSorting'])->name('items.update-sorting');
 
-    // Route::get('/categories', [\App\Http\Controllers\CategoryController::class, 'index'])->name('categories');
-    Route::get('/items', [\App\Http\Controllers\ItemController::class, 'index'])->name('items');
+    Route::get('templates', [\App\Http\Controllers\TemplateController::class, 'templates'])->name('templates');
 });
 
 
+Route::get('menu', [\App\Http\Controllers\MenuController::class, 'frontMenu'])->name('front.menu');

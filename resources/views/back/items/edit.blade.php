@@ -7,7 +7,10 @@
 		@csrf
 		@method('PUT')
 		<div class="col-md-4">
-			<img class="img-thumbnail" src="{{ $item->image ?? '/images/img-placeholder.png' }}" alt="">
+			<label>
+				<img class="img-thumbnail" src="{{ $item->image ?? '/images/img-placeholder.png' }}" alt="">
+				<input type="file" name="image" class="d-none image-input">
+			</label>
 			<hr>
 			<button type="submit" class="btn btn-primary">Save</button>
 		</div>
@@ -38,7 +41,7 @@
 
 			<br>
 			<label for="description" class="form-label">Description</label>
-			<textarea name="description" class="form-control" id="description" rows="3" placeholder="Vines grow in one of four ways: hooked, clinging, twining or tendril."></textarea>
+			<textarea name="description" class="form-control" id="description" rows="3" placeholder="Vines grow in one of four ways: hooked, clinging, twining or tendril.">{{ $item->description }}</textarea>
 		</div>
 	</form>
 </div>
