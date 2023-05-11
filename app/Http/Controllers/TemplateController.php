@@ -10,7 +10,7 @@ class TemplateController extends Controller
     public function templates(Request $request)
     {
 
-        return view('back.templates', [
+        return view('admin.templates', [
             'templates' => TemplateService::templates(),
         ]);
     }

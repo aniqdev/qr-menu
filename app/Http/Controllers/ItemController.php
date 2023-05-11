@@ -30,9 +30,9 @@ class ItemController extends Controller
 	 */
 	public function index()
 	{
-		$items = \App\Models\Item::where('company_id', auth()->user()->company_id)->paginate(6);
+		$items = \App\Models\Item::where('company_id', auth()->user()->company_id)->paginate(16);
 
-		return view('back.items.index', [
+		return view('admin.items.index', [
 			'items' => $items,
 		]);
 	}
@@ -44,7 +44,7 @@ class ItemController extends Controller
 	{
 		$categories = Category::where('company_id', auth()->user()->company_id)->orderBy('sorting')->get(['id', 'name']);
 
-		return view('back.items.create', [
+		return view('admin.items.create', [
 			'categories' => $categories,
 		]);
 	}
@@ -86,7 +86,7 @@ class ItemController extends Controller
 
 		$categories = Category::where('company_id', auth()->user()->company_id)->orderBy('sorting')->get(['id', 'name']);
 
-		return view('back.items.edit', [
+		return view('admin.items.edit', [
 			'item' => $item,
 			'categories' => $categories,
 		]);

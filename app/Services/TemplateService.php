@@ -16,9 +16,9 @@ class TemplateService
         unset($templates[0]);
         unset($templates[1]);
 
-        foreach ($templates as &$template) {
-        	$template = str_replace('.blade.php', '', $template);
-        }
+        // foreach ($templates as &$template) {
+            
+        // }
 
         return array_values($templates);
 	}

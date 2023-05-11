@@ -32,6 +32,7 @@
 				<div class="col-12 col-sm-6">
 					<label for="item_category" class="form-label">Category</label>
 					<select name="category_id" class="form-select" id="item_category">
+						<option value="">Hidden</option>
 						@foreach($categories as $category)
 							<option value="{{ $category->id }}" {{ $category->id !== $item->category_id ?: 'selected' }}>{{ $category->name }}</option>
 						@endforeach

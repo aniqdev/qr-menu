@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('companies', function (Blueprint $table) {
-            $table->id()->from(rand(1000, 2000));
-            $table->string('name', 500);
-            $table->string('slug', 500)->unique();
-            $table->string('menu_template')->default('default');
+        Schema::create('orders', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('company_id')->constrained();
+            $table->decimal('price', 8, 2);
+            $table->text('description')->nullable();
+            $table->integer('status')->default(0);
             $table->timestamps();
         });
     }
@@ -25,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('companies');
+        Schema::dropIfExists('orders');
     }
 };

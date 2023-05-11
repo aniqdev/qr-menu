@@ -8,7 +8,7 @@
 		@method('PUT')
 		<div class="col-md-4">
 			<label>
-				<img class="img-thumbnail" src="{{ $category->image ?? '/images/img-placeholder.png' }}" alt="">
+				<img class="img-thumbnail" src="{{ $category->image_medium }}" alt="">
 				<input type="file" name="image" class="d-none image-input">
 			</label>
 			<hr>

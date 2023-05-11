@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('items', function (Blueprint $table) {
             $table->id()->from(rand(1000, 2000));
             $table->foreignId('company_id')->constrained();
-            $table->foreignId('category_id')->constrained();
+            $table->foreignId('category_id')->nullable()->constrained()->onDelete('set null');
             $table->string('name', 500)->default('');
             $table->decimal('price', 8, 2)->nullable();
             $table->decimal('old_price', 8, 2)->nullable();

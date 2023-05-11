@@ -32,7 +32,7 @@ class CategoryController extends Controller
 	{
 		$categories = Category::where('company_id', auth()->user()->company_id)->orderBy('sorting')->get();
 
-		return view('back.categories.index', [
+		return view('admin.categories.index', [
 			'categories' => $categories,
 		]);
 	}
@@ -42,7 +42,7 @@ class CategoryController extends Controller
 	 */
 	public function create()
 	{
-		return view('back.categories.create');
+		return view('admin.categories.create');
 	}
 
 	/**
@@ -80,7 +80,7 @@ class CategoryController extends Controller
 	{
 		abort_if_lost($category->company_id);
 
-		return view('back.categories.edit', [
+		return view('admin.categories.edit', [
 			'category' => $category,
 		]);
 	}

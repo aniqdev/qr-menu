@@ -14,11 +14,12 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id()->from(rand(1000, 2000));
             $table->foreignId('company_id')->constrained();
-            $table->enum('role', ['superadmin', 'admin', 'redactor'])->default('admin');
+            $table->enum('role', ['superadmin', 'admin', 'editor'])->default('admin');
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('lang')->default('en');
             $table->rememberToken();
             $table->timestamps();
         });

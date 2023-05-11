@@ -18,7 +18,7 @@ class StoreItemRequest extends FormRequest
             'description' => 'nullable|string|max:500',
             'price' => 'nullable|numeric',
             'old_price' => 'nullable|numeric',
-            'category_id' => 'required|integer',
+            'category_id' => 'nullable|integer',
             'image' => 'file|mimes:jpg,png',
         ];
     }

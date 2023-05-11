@@ -34,7 +34,7 @@ a{
 	box-shadow: 0 0 .5rem rgba(0,0,0,.075);
 }
 
-.bottom-pagination-wrapper .pagination{
+.pagination-wrapper .pagination{
 	margin: 0;
 }
 
@@ -107,4 +107,13 @@ a{
 	100% {
 	  transform: rotate(360deg);
 	}
+}
+
+.form-control-color,
+.form-control-color.is-valid{
+	width: 100%;
+}
+
+#menuSettingsModalForm button[type="submit"]{
+	display: none;
 }

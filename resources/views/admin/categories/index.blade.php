@@ -7,6 +7,7 @@
             <a href="{{ route('categories.create') }}" class="btn btn-outline-primary">Create <i class="bi bi-plus-square"></i></a>
         </div>
     </div>
+    <hr>
     <div class="sortable" data-route="{{ route('categories.update-sorting') }}">
         @foreach($categories as $category)
             <div class="row justify-content-between sortable-item py-2" data-id="{{ $category->id }}">
@@ -15,7 +16,7 @@
                 </div>
                 <div class="col-auto js-no-reload">
                     <a href="{{ route('categories.edit', $category) }}">
-                        <img src="{{ $category->image }}" alt="" style="max-width:50px; max-height:40px;">
+                        <img src="{{ $category->image_small }}" alt="" style="max-width:50px; max-height:40px;">
                     </a>
                 </div>
                 <div class="col js-no-reload">

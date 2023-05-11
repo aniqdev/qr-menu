@@ -14,13 +14,13 @@
 
     <link rel="stylesheet" href="/css/style.css?v={{ filemtime(public_path('css/style.css')) }}">
 
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/jquery-ui.min.js"></script>
-    <script src="/js/jquery.ui.touch-punch.min.js"></script>
-    <script>
-        var log = console.log
-    </script>
-    <script src="/js/toastr.min.js"></script>{{-- https://github.com/CodeSeven/toastr --}}
+    {{-- <script src="/js/jquery.min.js"></script> --}}
+    {{-- <script src="/js/jquery-ui.min.js"></script> --}}
+    {{-- <script src="/js/jquery.ui.touch-punch.min.js"></script> --}}
+    {{-- <script>var log = console.log</script> --}}
+
+    {{-- https://github.com/CodeSeven/toastr --}}
+    {{-- <script src="/js/toastr.min.js"></script> --}}
 </head>
 <body class="ajax-loader">
     <div id="app_root">

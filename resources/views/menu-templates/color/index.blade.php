@@ -2,6 +2,10 @@
 
 @section('content')
 <style>
+.category-list{
+	list-style: none;
+    padding: 0;
+}
 .category-item{
 	background-size: cover;
 	background-position: center;
@@ -12,7 +16,7 @@
 }
 .item-list{
 	padding: 15px;
-    background: #fff9;
+    background: #ffffffa6;
 }
 .item-item{
 	background-size: cover;
@@ -32,7 +36,7 @@
 }
 </style>
 <div class="shadow-block">
-	<ul>
+	<ul class="category-list">
 		@foreach($categories as $category)
 		<li class="category-item mb-4" 
 			style="background-image: url('{{ $category->image }}');"

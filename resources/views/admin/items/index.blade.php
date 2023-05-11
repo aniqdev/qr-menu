@@ -3,13 +3,14 @@
 @section('content')
 <div class="shadow-block">
     <div class="row js-no-reload">
-        <div class="col-sm-8">
+        <div class="col-sm-8 pagination-wrapper">
             {{ $items->links() }}
         </div>
         <div class="col-sm-4 text-end">
             <a href="{{ route('items.create') }}" class="btn btn-outline-primary">Create <i class="bi bi-plus-square"></i></a>
         </div>
     </div>
+    <hr>
     <table class="table table-striped">
         @foreach($items as $item)
             <tr>
@@ -40,7 +41,7 @@
             </tr>
         @endforeach
     </table>
-    <div class="js-no-reload">
+    <div class="js-no-reload pagination-wrapper">
         {{ $items->links() }}
     </div>
 </div>

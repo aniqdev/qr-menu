@@ -36,6 +36,7 @@ function init_app() {
 	init_sortable()
 	init_mark_form()
 	init_image_inputs()
+	init_admin_menu_page()
 }
 
 $(function () {	init_app() })
@@ -55,6 +56,7 @@ function ajax_fail_callback(object, data) {
 			toastr.error(errors[error_name].join(',\r\n'), error_name)
 		}
 	}else if(object.responseJSON && object.responseJSON.message){
+		object.responseJSON.message === 'Unauthenticated.' && (location.href = '/login')
 		toastr.error(object.responseJSON.message)
 	}
 }
@@ -64,7 +66,9 @@ function ajax_fail_callback(object, data) {
 
 
 function init_tooltips() {
-	$('[data-bs-toggle="tooltip"]').tooltip();
+	$('[data-bs-toggle="tooltip"]').each(function() {
+		$(this).data('bsTitle') && $(this).tooltip()
+	})
 }
 
 function init_sidebar_highlighting() {

@@ -2,7 +2,6 @@
 
 @section('content')
 <div class="shadow-block">
-    <h2>Dashboard</h2>
-    <hr>
+	company settings
 </div>
 @endsection

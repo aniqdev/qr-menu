@@ -16,8 +16,13 @@ class CompanyFactory extends Factory
      */
     public function definition(): array
     {
+        $companyName = fake()->state;
+
+        $companySlug = str($companyName)->slug();
+
         return [
-            'name' => fake()->state,
+            'name' => $companyName,
+            'slug' => $companySlug,
         ];
     }
 }

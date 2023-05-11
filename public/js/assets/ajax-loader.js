@@ -1,4 +1,4 @@
-log('file: ajax-loader.js')
+// log('file: ajax-loader.js')
 
 $( document ).ajaxStart(function() {
     if (document.body.classList.contains('ajax-loader')) {

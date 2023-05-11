@@ -13,9 +13,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        $companyName = fake()->state;
+
+        $companySlug = str($companyName)->slug();
+
         $company = \App\Models\Company::create([
             'id' => 1,
-            'name' => fake()->state,
+            'name' => $companyName,
+            'slug' => $companySlug,
         ]);
 
         \App\Models\User::firstOrCreate(['id' => 1], [

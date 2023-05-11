@@ -1,4 +1,4 @@
-log('file: sortable.js')
+// log('file: sortable.js')
 
 function init_sortable() {
 	$( ".sortable" ).sortable({

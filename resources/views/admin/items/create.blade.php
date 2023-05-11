@@ -28,6 +28,7 @@
 				<div class="col-6">
 					<label for="item_category" class="form-label">Category</label>
 					<select name="category_id" class="form-select" id="item_category">
+						<option value="">Hidden</option>
 						@foreach($categories as $category)
 							<option value="{{ $category->id }}">{{ $category->name }}</option>
 						@endforeach

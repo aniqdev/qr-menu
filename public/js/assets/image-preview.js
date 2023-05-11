@@ -1,4 +1,4 @@
-log('file: image-preview.js')
+// log('file: image-preview.js')
 
 function init_image_inputs() {
 	$('.image-input').each(function() {

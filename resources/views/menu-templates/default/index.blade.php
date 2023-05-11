@@ -26,7 +26,13 @@
 				<li class="d-flex justify-content-between item-item">
 					<div class="cols">{{ $item->name }}</div>
 					<div class="cols flex-grow-1 dotted"></div>
-					<div class="cols">{{ $item->price }}</div>
+					<div class="cols">{{
+						number_format($item->price, 
+							$setting('price_precision'), 
+							$setting('decimal_separator', '.'),
+							$setting('thousands_separator', ' '))
+						 . $setting('currency_symbol') 
+					}}</div>
 				</li>
 				@endforeach
 			</ul>

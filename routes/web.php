@@ -24,7 +24,7 @@ Route::get('/dashboard', function () {
 
 Route::middleware('auth')->prefix('admin')->group(function ()
 {
-    Route::get('menu', [\App\Http\Controllers\MenuController::class, 'backMenu'])->name('back.menu');
+    Route::get('menu', [\App\Http\Controllers\MenuController::class, 'adminMenu'])->name('admin.menu');
 
     Route::resource('categories', \App\Http\Controllers\CategoryController::class);
     Route::post('/categories/update-sorting', [\App\Http\Controllers\CategoryController::class, 'updateSorting'])->name('categories.update-sorting');
@@ -33,6 +33,16 @@ Route::middleware('auth')->prefix('admin')->group(function ()
     Route::post('/items/update-sorting', [\App\Http\Controllers\ItemController::class, 'updateSorting'])->name('items.update-sorting');
 
     Route::get('templates', [\App\Http\Controllers\TemplateController::class, 'templates'])->name('templates');
+
+    Route::get('settings', [\App\Http\Controllers\CompanyController::class, 'settings'])->name('settings');
+
+    Route::get('profile', [\App\Http\Controllers\ProfileController::class, 'edit'])->name('profile');
+
+    Route::get('json-form-test', [\App\Http\Controllers\MenuController::class, 'jsonFormTest'])->name('json-form-test');
+
+    Route::get('/menu/template-settings-modal', [\App\Http\Controllers\MenuController::class, 'settingsModal']);
+
+    Route::post('menu/template-settings-save', [\App\Http\Controllers\MenuController::class, 'saveTemplateSettings']);
 });
 
 
