@@ -14,16 +14,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', [\App\Http\Controllers\HomeController::class, 'qrsaas']);
+
+Route::get('/notification', function () {
+ 
+    $user = \App\Models\User::find(1);
+    return (new \App\Notifications\InvoicePaid)->toMail($user);
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::group([
+    'middleware' => 'auth',
+    'prefix' => 'admin',
+], function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
 
-Route::middleware('auth')->prefix('admin')->group(function ()
-{
     Route::get('menu', [\App\Http\Controllers\MenuController::class, 'adminMenu'])->name('admin.menu');
 
     Route::resource('categories', \App\Http\Controllers\CategoryController::class);
@@ -37,6 +43,7 @@ Route::middleware('auth')->prefix('admin')->group(function ()
     Route::get('settings', [\App\Http\Controllers\CompanyController::class, 'settings'])->name('settings');
 
     Route::get('profile', [\App\Http\Controllers\ProfileController::class, 'edit'])->name('profile');
+    Route::put('profile', [\App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
 
     Route::get('json-form-test', [\App\Http\Controllers\MenuController::class, 'jsonFormTest'])->name('json-form-test');
 

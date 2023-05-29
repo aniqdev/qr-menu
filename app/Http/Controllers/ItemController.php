@@ -30,6 +30,7 @@ class ItemController extends Controller
 	 */
 	public function index()
 	{
+		// dd(\Illuminate\Support\Facades\Route::getCurrentRoute()->middleware());
 		$items = \App\Models\Item::where('company_id', auth()->user()->company_id)->paginate(16);
 
 		return view('admin.items.index', [
@@ -60,12 +61,12 @@ class ItemController extends Controller
 
 		$item = Item::create($data);
 
+		$item->update(['image' => $item->setImage($request)]);
+
 		return [
-			'request' => $request->all(),
 			'item' => $item,
 			'redirect' => route('items.edit', $item),
-			'message' => 'Success',
-			// 'user' => auth()->user(),
+			'message' => __('admin.success'),
 		];
 	}
 

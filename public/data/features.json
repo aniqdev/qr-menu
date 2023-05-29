@@ -1,0 +1,158 @@
+[
+    {
+        "title": {
+            "key": "product1_title",
+            "value": "Create a Digital Menu"
+        },
+        "subtitle": {
+            "key": "product1_subtitle",
+            "value": "Create your menu directly on our platform. Update anytime. Easy And Simple"
+        },
+        "features": [
+            {
+                "key": "product1_feature1",
+                "value": "Real-time changes"
+            },
+            {
+                "key": "product1_feature2",
+                "value": "Organize into categories"
+            },
+            {
+                "key": "product1_feature3",
+                "value": "Extras and items variants"
+            }
+        ],
+        "button_name": "Experience it",
+        "image": "http:\/\/menu-maker.loc\/impactfront\/img\/menubuilder.jpg"
+    },
+    {
+        "title": {
+            "key": "product2_title",
+            "value": "Create QR"
+        },
+        "subtitle": {
+            "key": "product2_subtitle",
+            "value": "8 different designs. Unlimited color options. Choose QR and Flayer style."
+        },
+        "features": [
+            {
+                "key": "product2_feature1",
+                "value": "Beautiful QR Styles"
+            },
+            {
+                "key": "product2_feature2",
+                "value": "Pick QR color"
+            },
+            {
+                "key": "product2_feature3",
+                "value": "Print templates for download"
+            }
+        ],
+        "button_name": "Design it",
+        "image": "http:\/\/menu-maker.loc\/impactfront\/img\/qr_image_builder.jpg"
+    },
+    {
+        "title": {
+            "key": "product3_title",
+            "value": "Go Digital"
+        },
+        "subtitle": {
+            "key": "product3_subtitle",
+            "value": "Now your visitors will use their mobile phone camera to access your menu."
+        },
+        "features": [
+            {
+                "key": "product3_feature1",
+                "value": "No mobile app required"
+            },
+            {
+                "key": "product3_feature2",
+                "value": "Super-fast online menu - PWA"
+            },
+            {
+                "key": "product3_feature3",
+                "value": "View analytics"
+            }
+        ],
+        "button_name": "Go Mobile",
+        "image": "http:\/\/menu-maker.loc\/impactfront\/img\/mobile_pwa.jpg"
+    },
+    {
+        "title": {
+            "key": "product4_title",
+            "value": "Accept local orders"
+        },
+        "subtitle": {
+            "key": "product4_subtitle",
+            "value": "Your customers can order direclty from their phone"
+        },
+        "features": [
+            {
+                "key": "product4_feature1",
+                "value": "Real-time sound notifications"
+            },
+            {
+                "key": "product4_feature2",
+                "value": "Continues orders"
+            },
+            {
+                "key": "product4_feature3",
+                "value": "Unlimited options, variants, and extras"
+            }
+        ],
+        "button_name": "Try it",
+        "image": "http:\/\/menu-maker.loc\/impactfront\/img\/localorders.jpg"
+    },
+    {
+        "title": {
+            "key": "product5_title",
+            "value": "Accept payments"
+        },
+        "subtitle": {
+            "key": "product5_subtitle",
+            "value": "Your customers can pay order directly via card"
+        },
+        "features": [
+            {
+                "key": "product5_feature1",
+                "value": "Accept any Credit and Debit card"
+            },
+            {
+                "key": "product5_feature2",
+                "value": "Get paid immediately via Stripe Connect"
+            },
+            {
+                "key": "product5_feature3",
+                "value": "Secure online payments"
+            }
+        ],
+        "button_name": "Accept contactless payments",
+        "image": "http:\/\/menu-maker.loc\/impactfront\/img\/payments.jpg"
+    },
+    {
+        "title": {
+            "key": "product6_title",
+            "value": "Customer Log"
+        },
+        "subtitle": {
+            "key": "product6_subtitle",
+            "value": "Lot of countries, have legal requirement to keep log of their customers, for Covid tracking reasons"
+        },
+        "features": [
+            {
+                "key": "product6_feature1",
+                "value": "Customers can register them selfs"
+            },
+            {
+                "key": "product6_feature2",
+                "value": "Manage the visits on your own"
+            },
+            {
+                "key": "product6_feature3",
+                "value": "Powerful export \/ report functionality"
+            }
+        ],
+        "button_name": "Keep it safe",
+        "image": "http:\/\/menu-maker.loc\/impactfront\/img\/customerlog.jpg"
+    }
+]

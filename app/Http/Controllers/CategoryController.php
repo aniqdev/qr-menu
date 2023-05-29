@@ -56,6 +56,8 @@ class CategoryController extends Controller
 
 		$category = Category::create($data);
 
+		$category->update(['image' => $category->setImage($request)]);
+
 		return [
 			'request' => $request->all(),
 			'category' => $category,

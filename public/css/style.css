@@ -2,6 +2,10 @@
 /*	--bs-link-color: #4ba5a1;*/
 }
 
+html,body,#app{
+	height: 100%;
+}
+
 body{
 	overflow-x: hidden;
 	background: #f7f3ff;

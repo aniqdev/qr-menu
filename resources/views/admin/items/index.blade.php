@@ -25,15 +25,22 @@
                 <td>
                     <div>{{ $item->description }}</div>
                 </td>
-                <td>{{ $item->price }}</td>
+                <td>
+                    <form class="input-group" onsubmit="submit_form(this, event)" action="{{ route('items.update', $item) }}">
+                        <input class="form-control pe-0" type="number" name="price" value="{{ $item->price }}" title="{{ __('item.price') }}">
+                        <input class="form-control pe-0" type="number" name="old_price" value="{{ $item->old_price }}" title="{{ __('item.old_price') }}">
+                        @csrf @method('PUT')
+                        <button class="input-group-text" title="{{ __('admin.save') }}"><i class="bi bi-cloud-arrow-up"></i></button>
+                    </form>
+                </td>
                 <td class="text-end" style="min-width: 107px;">
-                    <a href="{{ route('items.edit', $item) }}" class="btn btn-outline-info">
+                    <a href="{{ route('items.edit', $item) }}" class="btn btn-outline-info" title="{{ __('admin.edit') }}">
                         <i class="bi bi-pencil"></i>
                     </a>
                     <form action="{{ route('items.destroy', $item) }}" class="d-inline" 
                             onsubmit="if(!confirm('Delete item?')) return false; submit_form(this, event) ">
                             @method('delete') @csrf
-                        <button type="submit" class="btn btn-outline-danger" title="delete item">
+                        <button type="submit" class="btn btn-outline-danger" title="{{ __('admin.delete') }}">
                             <i class="bi bi-x-lg"></i>
                         </button>
                     </form>

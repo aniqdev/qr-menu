@@ -6,9 +6,10 @@ function submit_form(form, event) {
 	var formData = new FormData(form)
 
 	ajax_post_data(form.action, formData, function(data){
-		data.message && toastr.success(data.message)
-		data.redirect && go_to_page(data.redirect)
-		form.classList.add('saved')
+		data.message && toastr.success(data.message);
+		data.redirect && go_to_page(data.redirect);
+		form.classList.add('saved');
+		data.reload && (location.href = location.href);
 	}).fail(ajax_fail_callback)
 
 	// $.ajax({

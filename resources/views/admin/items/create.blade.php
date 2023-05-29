@@ -6,7 +6,10 @@
 	<form class="row marked-form saved" onsubmit="submit_form(this, event)" action="{{ route('items.store') }}">
 		@csrf
 		<div class="col-md-4">
-			<img class="img-thumbnail" src="/images/img-placeholder.png" alt="">
+			<label>
+				<img class="img-thumbnail" src="/images/img-placeholder.png" alt="">
+				<input type="file" name="image" class="d-none image-input" accept=".jpg, .jpeg, .png, .webp">
+			</label>
 			<hr>
 			<button type="submit" class="btn btn-primary">Save</button>
 		</div>

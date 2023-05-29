@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="shadow-block">
-	company settings
+	<h2>{{ __('admin_settings.company_settings') }}</h2>
+	<hr>
 </div>
 @endsection

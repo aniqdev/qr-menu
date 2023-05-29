@@ -14,12 +14,12 @@ class UpdateItemRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|string|max:500',
+            'name' => 'nullable|string|min:3|max:500',
             'description' => 'nullable|string|max:500',
             'price' => 'nullable|numeric',
             'old_price' => 'nullable|numeric',
             'category_id' => 'nullable|integer',
-            'image' => 'file|mimes:jpg,png',
+            'image' => 'nullable|file|mimes:jpg,png',
         ];
     }
 }

@@ -37,6 +37,11 @@ trait HasImage
 	public function setImage($request)
 	{
         if ($file = $request->file('image')) {
+
+        	if (!$this->id || !$this->name) {
+        		throw new Exception("Item id is required");
+        	}
+
             $companyId = auth()->user()->company_id;
 
             $filename = str($this->name)->slug();

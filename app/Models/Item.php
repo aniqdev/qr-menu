@@ -20,6 +20,10 @@ class Item extends Model
         'description',
     ];
 
+    protected $casts = [
+        // 'price' => 'float',
+    ];
+
     public function category()
     {
         return $this->belongsTo(Category::class);

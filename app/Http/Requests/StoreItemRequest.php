@@ -19,7 +19,7 @@ class StoreItemRequest extends FormRequest
             'price' => 'nullable|numeric',
             'old_price' => 'nullable|numeric',
             'category_id' => 'nullable|integer',
-            'image' => 'file|mimes:jpg,png',
+            'image' => 'nullable|file|mimes:jpg,png',
         ];
     }
 }

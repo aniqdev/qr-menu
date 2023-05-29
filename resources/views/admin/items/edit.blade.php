@@ -4,12 +4,11 @@
 <div class="shadow-block">
 	<h2>Edit - {{ $item->name }}</h2>
 	<form class="row marked-form saved" onsubmit="submit_form(this, event)" action="{{ route('items.update', $item) }}">
-		@csrf
-		@method('PUT')
+		@csrf @method('PUT')
 		<div class="col-md-4">
 			<label>
 				<img class="img-thumbnail" src="{{ $item->image ?? '/images/img-placeholder.png' }}" alt="">
-				<input type="file" name="image" class="d-none image-input">
+				<input type="file" name="image" class="d-none image-input" accept=".jpg, .jpeg, .png, .webp">
 			</label>
 			<hr>
 			<button type="submit" class="btn btn-primary">Save</button>

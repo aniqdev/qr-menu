@@ -33,6 +33,8 @@ class MenuController extends Controller
             'menu_template' => $request->template,
         ])->first()->settings ?? null;
 
+        TemplateService::setSettings($settings);
+
         return view('menu-templates.' . $choosenTemplate . '.index', [
             'categories' => $categories,
             'settings' => $settings,

@@ -9,7 +9,7 @@
 		<div class="col-md-4">
 			<label>
 				<img class="img-thumbnail" src="{{ $category->image_medium }}" alt="">
-				<input type="file" name="image" class="d-none image-input">
+				<input type="file" name="image" class="d-none image-input" accept=".jpg, .jpeg, .png, .webp">
 			</label>
 			<hr>
 			<button type="submit" class="btn btn-primary">Save</button>
@@ -17,10 +17,9 @@
 		<div class="col-md-8">
 			<label for="item_title" class="form-label">Name</label>
 			<input type="text" name="name" value="{{ $category->name }}" class="form-control" id="item_title" placeholder="Vine">
-
+			<br>
 			<label for="description" class="form-label">Description</label>
 			<textarea name="description" class="form-control" id="description" rows="3" placeholder="Vines grow in one of four ways: hooked, clinging, twining or tendril.">{{ $category->description }}</textarea>
-
 			@if($category->items->count())
 			    <hr>
 			    <h4>Dishes</h4>

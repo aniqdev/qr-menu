@@ -28,10 +28,10 @@
 					<div class="cols flex-grow-1 dotted"></div>
 					<div class="cols">{{
 						number_format($item->price, 
-							$setting('price_precision'), 
-							$setting('decimal_separator', '.'),
-							$setting('thousands_separator', ' '))
-						 . $setting('currency_symbol') 
+							options('price_precision'), 
+							options('decimal_separator', '.'),
+							options('thousands_separator', ' '))
+						 . options('currency_symbol') 
 					}}</div>
 				</li>
 				@endforeach

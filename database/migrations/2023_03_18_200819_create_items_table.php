@@ -16,8 +16,8 @@ return new class extends Migration
             $table->foreignId('company_id')->constrained();
             $table->foreignId('category_id')->nullable()->constrained()->onDelete('set null');
             $table->string('name', 500)->default('');
-            $table->decimal('price', 8, 2)->nullable();
-            $table->decimal('old_price', 8, 2)->nullable();
+            $table->float('price', 8, 2)->nullable();
+            $table->float('old_price', 8, 2)->nullable();
             $table->string('image', 500)->nullable();
             $table->text('description')->nullable();
             $table->unsignedInteger('sorting')->default(1);
