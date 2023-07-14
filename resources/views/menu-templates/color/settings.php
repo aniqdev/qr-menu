@@ -15,6 +15,73 @@ return [
         //   ]
         // ],
         [
+            'id' => 'currency_symbol',
+            'name' => 'Currency',
+            'type' => 'field',
+            'field' => [
+                'type' => 'select',
+                'width' => 6,
+                'options' => [
+                    '' => 'Disable',
+                    '$' => '$ USD',
+                    '£' => '£ PLN',
+                    '€' => '€ EUR',
+                    '₴' => '₴ UAH',
+                ],
+            ],
+        ],
+        [
+            'id' => 'price_precision',
+            'name' => 'price precision',
+            'type' => 'field',
+            'field' => [
+                'type' => 'select',
+                'width' => 6,
+                'options' => [0, 1, 2],
+            ],
+        ],
+        [
+            'id' => 'decimal_separator',
+            'name' => 'decimal separator',
+            'type' => 'field',
+            'field' => [
+                'type' => 'select',
+                'width' => 6,
+                'options' => [
+                    '.' => 'Dot .',
+                    ',' => 'Coma ,',
+                ],
+            ],
+        ],
+        [
+            'id' => 'thousands_separator',
+            'name' => 'thousands separator',
+            'type' => 'field',
+            'field' => [
+                'type' => 'select',
+                'width' => 6,
+                'options' => [
+                    ',' => 'Coma ,',
+                    ' ' => 'Space',
+                    "'" => "Semicolon '",
+                ],
+            ],
+        ],
+
+
+        [
+            'id' => 'card_body_bg_opacity',
+            'name' => 'Card body bg opacity',
+            'type' => 'field',
+            'field' => [
+                'type' => 'range',
+                'required' => true,
+                'default_value' => '0.5',
+                'width' => 12,
+            ],
+        ],
+
+        [
             'id' => 'name',
             'name' => 'What is your name?',
             'type' => 'field',

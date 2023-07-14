@@ -41,17 +41,19 @@
 		<li class="category-item mb-4" 
 			style="background-image: url('{{ $category->image }}');"
 			>
-			<div class="category-name px-3" 
-				{{-- style="background-image: url('{{ $category->image }}');" --}}
-				><b>{{ $category->name }}</b></div>
-			<ul class="item-list">
+			<div class="category-name px-3"><b>{{ $category->name }}</b></div>
+			<ul class="item-list" style="background-color: rgb(255 255 255 / {{ tpl_options('card_body_bg_opacity', 65) }}%);">
 				@foreach($category->items as $item)
-				<li class="d-flex justify-content-between item-item"
-				 	{{-- style="background-image: url('{{ $item->image }}');" --}}
-				 >
+				<li class="d-flex justify-content-between item-item">
 					<div class="cols">{{ $item->name }}</div>
 					<div class="cols flex-grow-1 dotted"></div>
-					<div class="cols">{{ $item->price }}</div>
+					<div class="cols">{{
+						number_format($item->price, 
+							tpl_options('price_precision'), 
+							tpl_options('decimal_separator', '.'),
+							tpl_options('thousands_separator', ' '))
+						 . tpl_options('currency_symbol') 
+					}}</div>
 				</li>
 				@endforeach
 			</ul>

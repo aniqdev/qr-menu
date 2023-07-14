@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
+use App\Http\Requests\ProfileUpdatePasswordRequest;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use App\Services\TemplateService;
 
 class ProfileController extends Controller
 {
@@ -16,8 +18,10 @@ class ProfileController extends Controller
      */
     public function edit(Request $request): View
     {
-        return view('profile.edit', [
+        return view('admin.profile.edit', [
             'user' => $request->user(),
+            'company' => auth()->user()->company,
+            'templates' => TemplateService::templates(),
         ]);
     }
 
@@ -26,6 +30,10 @@ class ProfileController extends Controller
      */
     public function update(ProfileUpdateRequest $request)
     {
+        if ($request->has('password')) {
+            // code...
+        }
+
         $request->user()->fill($request->validated());
 
         if ($request->user()->isDirty('email')) {
@@ -39,6 +47,18 @@ class ProfileController extends Controller
         return [
             'message' => 'Success',
             'reload' => $reload,
+        ];
+    }
+
+    public function updatePassword(ProfileUpdatePasswordRequest $request)
+    {
+        $request->user()->update([
+            'password' => bcrypt($request->password),
+        ]);
+
+        return [
+            'message' => 'Success',
+            'form_reset' => true,
         ];
     }
 

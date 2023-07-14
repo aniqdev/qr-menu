@@ -21,7 +21,7 @@ class TemplateService
         return array_values($templates);
 	}
 
-    public static function setSettings($settings)
+    public static function initSettings($settings)
     {
         self::$settings = $settings;
     }
@@ -29,5 +29,17 @@ class TemplateService
     public static function getSettig($settingKey, $default)
     {
         return data_get(self::$settings, $settingKey, $default);
+    }
+
+    public static function templateExists($templateName)
+    {
+        return file_exists(resource_path('views/menu-templates/' . $templateName));
+    }
+
+    public static function isTemplate($templateName)
+    {
+        if (self::templateExists($templateName)) {
+            return $templateName;
+        }
     }
 }

@@ -2,12 +2,12 @@
 
 use App\Services\TelegramBot;
 
-function abort_if_lost($companyId)
+function abort_if_no_access($companyId)
 {
 	return abort_if(auth()->user()->company_id != $companyId, 403);
 }
 
-function options($settingKey, $default = null)
+function tpl_options($settingKey, $default = null)
 {
 	return \App\Services\TemplateService::getSettig($settingKey, $default);
 }

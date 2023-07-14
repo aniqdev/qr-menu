@@ -19,8 +19,31 @@ use GeoIp2\Database\Reader;
 use App\Models\User;
 use App\Notifications\InvoicePaid;
 
+include 'faker-tested.php';
+
 Artisan::command('testt', function () {
 
+    $strings = file(__DIR__.'/faker-test.php');
+
+    $result = '';
+
+    foreach ($strings as $key => $string) {
+        $result .= $string;
+        if (str_contains($string, 'fake()->')) {
+            // dump($string);
+            $methodName = preg_replace('/.+->(\w+)\(.+/', '$1', $string);
+            // dump($methodName);
+            $result .= 'echo(\'--------- '.trim($methodName).' ----------------------------------------- \');'.PHP_EOL;
+            $result .= 'echo PHP_EOL;'.PHP_EOL;
+            $result .= 'dump($res);'.PHP_EOL;
+            $result .= 'echo PHP_EOL;'.PHP_EOL;
+        }
+        // if ($key > 10) break;
+    }
+
+    file_put_contents(__DIR__.'/faker-tested.php', $result);
+
+    return;
     $user = User::find(1);
 
     $user->notify(new InvoicePaid);

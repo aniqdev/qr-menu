@@ -83,7 +83,7 @@ class ItemController extends Controller
 	 */
 	public function edit(Item $item)
 	{
-        abort_if_lost($item->company_id);
+        abort_if_no_access($item->company_id);
 
 		$categories = Category::where('company_id', auth()->user()->company_id)->orderBy('sorting')->get(['id', 'name']);
 
@@ -98,7 +98,7 @@ class ItemController extends Controller
 	 */
 	public function update(UpdateItemRequest $request, Item $item)
 	{
-        abort_if_lost($item->company_id);
+        abort_if_no_access($item->company_id);
 
 		$data = $request->validated();
 
@@ -117,7 +117,7 @@ class ItemController extends Controller
 	 */
 	public function destroy(Item $item)
 	{
-        abort_if_lost($item->company_id);
+        abort_if_no_access($item->company_id);
 
         // удалять изображения
 

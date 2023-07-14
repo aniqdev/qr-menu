@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Category;
+use App\Models\{Category, Company, CompanyTemplate};
 use App\Services\TemplateService;
-use App\Models\CompanyTemplate;
 
 class MenuController extends Controller
 {
@@ -19,29 +18,7 @@ class MenuController extends Controller
             'categories' => $categories,
             'templates' => TemplateService::templates(),
             'choosenTemplate' => $choosenTemplate,
-        ]);
-    }
-
-    public function frontMenu(Request $request)
-    {
-        $categories = Category::with('items')->where('company_id', auth()->user()->company_id)->orderBy('sorting')->get();
-
-        $choosenTemplate = $request->template ?? auth()->user()->company->menu_template ?? 'default';
-
-        $settings = CompanyTemplate::where([
-            'company_id' => auth()->user()->company_id,
-            'menu_template' => $request->template,
-        ])->first()->settings ?? null;
-
-        TemplateService::setSettings($settings);
-
-        return view('menu-templates.' . $choosenTemplate . '.index', [
-            'categories' => $categories,
-            'settings' => $settings,
-            'setting' => function ($key, $default = null) use ($settings)
-            {
-                return data_get($settings, $key, $default);
-            }
+            'company' => auth()->user()->company,
         ]);
     }
 

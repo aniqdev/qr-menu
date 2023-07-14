@@ -2,8 +2,7 @@
 
 $('body').on('click', '.js-no-reload a', function(e) {
 	e.preventDefault();
-	var url = this.href
-	go_to_page(url)
+	go_to_page(this.href)
 })
 
 function go_to_page(url, pushState = true) {
@@ -72,8 +71,8 @@ function init_tooltips() {
 }
 
 function init_sidebar_highlighting() {
-	$(`#sidebar_nav a`).removeClass('active')
-	$(`#sidebar_nav a[href="${location.origin+location.pathname}"]`).addClass('active')
+	$(`.js-sidebar-nav a`).removeClass('active')
+	$(`.js-sidebar-nav a[href="${location.origin+location.pathname}"]`).addClass('active')
 }
 
 

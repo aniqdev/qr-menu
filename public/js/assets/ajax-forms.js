@@ -10,6 +10,7 @@ function submit_form(form, event) {
 		data.redirect && go_to_page(data.redirect);
 		form.classList.add('saved');
 		data.reload && (location.href = location.href);
+		data.form_reset && form.reset()
 	}).fail(ajax_fail_callback)
 
 	// $.ajax({

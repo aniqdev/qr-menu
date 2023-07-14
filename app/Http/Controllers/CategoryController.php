@@ -80,7 +80,7 @@ class CategoryController extends Controller
 	 */
 	public function edit(Category $category)
 	{
-		abort_if_lost($category->company_id);
+		abort_if_no_access($category->company_id);
 
 		return view('admin.categories.edit', [
 			'category' => $category,
@@ -92,7 +92,7 @@ class CategoryController extends Controller
 	 */
 	public function update(UpdateCategoryRequest $request, Category $category)
 	{
-		abort_if_lost($category->company_id);
+		abort_if_no_access($category->company_id);
 
 		$data = $request->validated();
 
@@ -110,7 +110,7 @@ class CategoryController extends Controller
 	 */
 	public function destroy(Category $category)
 	{
-		abort_if_lost($category->company_id);
+		abort_if_no_access($category->company_id);
 
 		// удалять изображения
 

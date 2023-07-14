@@ -19,6 +19,10 @@ a{
 	text-decoration: none;
 }
 
+.w-100{
+	width: 100%;
+}
+
 .sortable .ui-placeholder{
 	background: lightblue;
 	list-style-type: circle;
