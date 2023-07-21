@@ -1,6 +1,7 @@
 
 
 $('body').on('click', '.js-no-reload a', function(e) {
+	if (e.ctrlKey) return true // if pressed Control
 	e.preventDefault();
 	go_to_page(this.href)
 })
@@ -46,11 +47,14 @@ window.addEventListener("popstate", (event) => {
 });
 
 function ajax_fail_callback(object, data) {
-	log(object)
-	log(data)
-	log(object.responseJSON)
+	// log('11',object)
+	// log('22',data)
+	// log('33',object.responseJSON)
 	if (object.responseJSON && object.responseJSON.errors) {
 		var errors = object.responseJSON.errors
+		for (var error_name in errors) {
+			$(`input[name="${error_name}"]`).addClass('is-invalid')
+		}
 		for (var error_name in errors) {
 			toastr.error(errors[error_name].join(',\r\n'), error_name)
 		}
@@ -61,7 +65,9 @@ function ajax_fail_callback(object, data) {
 }
 
 
-
+$(document).on('input', '.is-invalid', function(){
+	$(this).removeClass('is-invalid')
+})
 
 
 function init_tooltips() {
@@ -69,6 +75,7 @@ function init_tooltips() {
 		$(this).data('bsTitle') && $(this).tooltip()
 	})
 }
+
 
 function init_sidebar_highlighting() {
 	$(`.js-sidebar-nav a`).removeClass('active')

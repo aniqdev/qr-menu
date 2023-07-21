@@ -13,7 +13,7 @@ class CompanyController extends Controller
 {
     public function edit()
     {
-        return view('admin.company.edit', [
+        return view('admin.company.settings', [
             'user' => auth()->user(),
             'company' => auth()->user()->company,
             'templates' => TemplateService::templates(),
@@ -75,5 +75,10 @@ class CompanyController extends Controller
                 return data_get($settings, $key, $default);
             }
         ]);
+    }
+
+    public function view()
+    {
+        return view('front.cafe-page');
     }
 }

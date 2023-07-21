@@ -1,14 +1,29 @@
 @extends('layouts.back')
 
 @section('content')
+<style>
+#item_image_label.dragged-over{
+	outline: 1px solid mediumaquamarine;
+    box-shadow: 0 0 10px mediumaquamarine;
+}
+#item_image_label .image-input{
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+</style>
 <div class="shadow-block">
 	<h2>Add new dish</h2>
 	<form class="row marked-form saved" onsubmit="submit_form(this, event)" action="{{ route('items.store') }}">
 		@csrf
 		<div class="col-md-4">
-			<label>
+			<label for="item_image" class="position-relative" id="item_image_label">
 				<img class="img-thumbnail" src="/images/img-placeholder.png" alt="">
-				<input type="file" name="image" class="d-none image-input" accept=".jpg, .jpeg, .png, .webp">
+				<input type="file" name="image" class="image-input" id="item_image">
 			</label>
 			<hr>
 			<button type="submit" class="btn btn-primary">Save</button>
@@ -45,4 +60,13 @@
 		</div>
 	</form>
 </div>
+<script>
+// only to show where is the drop-zone:
+$('#item_image_label').on('dragenter', function() {
+  this.classList.add('dragged-over');
+})
+ .on('dragend drop dragexit dragleave', function() {
+  this.classList.remove('dragged-over');
+});
+</script>
 @endsection

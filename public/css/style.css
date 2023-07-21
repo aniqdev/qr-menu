@@ -23,10 +23,16 @@ a{
 	width: 100%;
 }
 
+.form-label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
 .sortable .ui-placeholder{
 	background: lightblue;
 	list-style-type: circle;
 }
+
 .sortable .ui-placeholder::after{
 	content: "\a0";
 }
