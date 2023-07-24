@@ -26,20 +26,20 @@
 
 <div class="shadow-block" id="admin_menu_page">
 	<div class="row mb-2">
-		<div class="col-sm-3">
+		<div class="col-sm-3 mb-3">
 			<select class="form-select" id="templates_select" onchange="go_to_page(this.value)">
 				@foreach($templates as $template)
 					<option {{ $template === $choosenTemplate ? 'selected' : '' }} value="?template={{ $template }}">{{ $template }}</option>
 				@endforeach
 			</select>
 		</div>
-		<div class="col-sm-6">
+		<div class="col-8 col-sm-6 mb-3">
 			<button type="button" class="btn btn-outline-secondary" onclick="admin_menu_open_settings('{{ $choosenTemplate }}')">
 				<i class="bi bi-gear"></i>
 			</button>
 			<button class="btn btn-primary">Set this template</button>
 		</div>
-		<div class="col-sm-3 text-end">
+		<div class="col-4 col-sm-3 text-end mb-3">
 			<button class="btn btn-secondary set-view" onclick="admin_menu_set_view('desktop', this)">
 				<i class="bi bi-pc-display-horizontal"></i>
 			</button>

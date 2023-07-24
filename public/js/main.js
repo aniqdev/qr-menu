@@ -1,6 +1,6 @@
 
 
-$('body').on('click', '.js-no-reload a', function(e) {
+$('body').on('click', '.js-no-reload a, .js-no-reload-link', function(e) {
 	if (e.ctrlKey) return true // if pressed Control
 	e.preventDefault();
 	go_to_page(this.href)
@@ -32,6 +32,7 @@ function go_to_page(url, pushState = true) {
 
 function init_app() {
 	init_sidebar_highlighting()
+	init_top_menu_highlighting()
 	init_tooltips()
 	init_sortable()
 	init_mark_form()
@@ -80,6 +81,11 @@ function init_tooltips() {
 function init_sidebar_highlighting() {
 	$(`.js-sidebar-nav a`).removeClass('active')
 	$(`.js-sidebar-nav a[href="${location.origin+location.pathname}"]`).addClass('active')
+}
+
+function init_top_menu_highlighting() {
+	$(`.js-top-nav a`).removeClass('active')
+	$(`.js-top-nav a[href="${location.origin+location.pathname}"]`).addClass('active')
 }
 
 

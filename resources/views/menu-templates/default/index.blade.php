@@ -15,13 +15,20 @@
     width: 100%;
     top: 50%;
 }
+.category-list{
+    list-style: none;
+    padding: 0;
+}
+.item-list{
+	
+}
 </style>
 <div class="shadow-block">
-	<ul>
+	<ul class="category-list">
 		@foreach($categories as $category)
 		<li>
 			<div><b>{{ $category->name }}</b></div>
-			<ul>
+			<ul class="item-list">
 				@foreach($category->items as $item)
 				<li class="d-flex justify-content-between item-item">
 					<div class="cols">{{ $item->name }}</div>
