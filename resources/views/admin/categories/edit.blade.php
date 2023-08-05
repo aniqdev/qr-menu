@@ -7,10 +7,7 @@
 		@csrf
 		@method('PUT')
 		<div class="col-md-4">
-			<label>
-				<img class="img-thumbnail" src="{{ $category->image_medium }}" alt="">
-				<input type="file" name="image" class="d-none image-input" accept=".jpg, .jpeg, .png, .webp">
-			</label>
+			@include('admin.blocks.image-input', ['model' => $category])
 			<hr>
 			<button type="submit" class="btn btn-primary">Save</button>
 		</div>

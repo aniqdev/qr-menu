@@ -27,7 +27,10 @@ class CompanyController extends Controller
         $request->validate([
             'name' => 'required|string|min:3|max:255',
             'slug' => ['required','string','min:3','max:255', Rule::unique('companies')->ignore($company->id)],
+            'image' => 'nullable|file|mimes:jpg,png',
+            'company_type' => 'required|string|min:3|max:255',
             'menu_template' => 'required|string|min:3|max:255',
+            'link_target' => 'required|string|in:menu,link_page',
         ]);
 
         $reload = false;
@@ -42,7 +45,10 @@ class CompanyController extends Controller
         $company->update([
             'name' => $request->name,
             'slug' => $slug,
+            'image' => $company->setImage($request),
             'menu_template' => $request->menu_template,
+            'link_target' => $request->link_target,
+            'company_type' => $request->company_type,
         ]);
 
         return [
@@ -53,32 +59,35 @@ class CompanyController extends Controller
 
     public function menu(Request $request, $company_slug)
     {
-        $company = Company::where('slug', $company_slug)->first();
+        $company = Company::where('slug', $company_slug)->firstOrFail();
 
         $categories = Category::with('items')->where('company_id', $company->id)->orderBy('sorting')->get();
 
-        $choosenTemplate = $request->template ?? auth()->user()->company->menu_template ?? 'default';
+        $choosenTemplate = $request->template ?? $company->menu_template ?? 'default';
 
         $settings = CompanyTemplate::where([
             'company_id' => $company->id,
-            'menu_template' => $request->template,
-        ])->first()->settings ?? null;
+            'menu_template' => $choosenTemplate,
+        ])->first()->settings ?? []; // settings casts to array
 
         // for using helper tpl_options($settingKey, $default = null)
-        TemplateService::initSettings($settings);
+        TemplateService::initSettings($choosenTemplate, $settings);
 
         return view('menu-templates.' . $choosenTemplate . '.index', [
             'categories' => $categories,
-            'settings' => $settings,
-            'setting' => function ($key, $default = null) use ($settings)
-            {
-                return data_get($settings, $key, $default);
-            }
         ]);
     }
 
-    public function view()
+    public function linksPage($company_slug)
     {
-        return view('front.cafe-page');
+        $company = Company::where('slug', $company_slug)->firstOrFail();
+
+        // $cafeLink = route('cafe.links-page', $company->slug);
+
+        // $menuLink = route('cafe.menu', $company->slug);
+
+        return view('front.links-page', [
+            'company' => $company,
+        ]);
     }
 }

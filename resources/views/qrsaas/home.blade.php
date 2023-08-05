@@ -25,7 +25,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('argonfront') }}/img/apple-icon.png">
     <link rel="icon" type="image/png" href="{{ asset('argonfront') }}/img/favicon.png">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta property="og:image" content="/default/logo_qrzebra_white.png">
+    <meta property="og:image" content="{{ logo_src() }}">
     <title>{{ config('global.site_name','QRTiger') }}</title>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -82,7 +82,7 @@
         <div class="preloader bg-soft flex-column justify-content-center align-items-center">
             <div class="loader-element">
                 <span class="loader-animated-dot"></span>
-                <img src="/default/logo_qrzebra_white.png" height="40" alt="logo">
+                <img src="{{ logo_src() }}" height="40" alt="logo">
             </div>
         </div>
 

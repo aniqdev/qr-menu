@@ -6,10 +6,7 @@
 	<form class="row marked-form saved" onsubmit="submit_form(this, event)" action="{{ route('items.update', $item) }}">
 		@csrf @method('PUT')
 		<div class="col-md-4">
-			<label>
-				<img class="img-thumbnail" src="{{ $item->image ?? '/images/img-placeholder.png' }}" alt="">
-				<input type="file" name="image" class="d-none image-input" accept=".jpg, .jpeg, .png, .webp">
-			</label>
+			@include('admin.blocks.image-input', ['model' => $item])
 			<hr>
 			<button type="submit" class="btn btn-primary">Save</button>
 		</div>

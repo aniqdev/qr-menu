@@ -56,8 +56,6 @@
                 </a>
                 <ul class="list-unstyled small text-muted">
                    <li class="mb-2">Designed and built with all the love in the world by the <a href="/docs/5.2/about/team/">Bootstrap team</a> with the help of <a href="https://github.com/twbs/bootstrap/graphs/contributors">our contributors</a>. </li>
-                   <li class="mb-2">Code licensed <a href="https://github.com/twbs/bootstrap/blob/main/LICENSE" target="_blank" rel="license noopener">MIT</a>, docs <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="license noopener">CC BY 3.0</a>. </li>
-                   <li class="mb-2">Currently v5.2.3.</li>
                 </ul>
              </div>
              <div class="col-6 col-lg-2 offset-lg-1 mb-3">
@@ -65,18 +63,6 @@
                 <ul class="list-unstyled">
                    <li class="mb-2">
                       <a href="/">Home</a>
-                   </li>
-                   <li class="mb-2">
-                      <a href="/docs/5.2/">Docs</a>
-                   </li>
-                   <li class="mb-2">
-                      <a href="/docs/5.2/examples/">Examples</a>
-                   </li>
-                   <li class="mb-2">
-                      <a href="https://icons.getbootstrap.com/">Icons</a>
-                   </li>
-                   <li class="mb-2">
-                      <a href="https://themes.getbootstrap.com/">Themes</a>
                    </li>
                 </ul>
              </div>
@@ -86,12 +72,6 @@
                    <li class="mb-2">
                       <a href="/docs/5.2/getting-started/">Getting started</a>
                    </li>
-                   <li class="mb-2">
-                      <a href="/docs/5.2/examples/starter-template/">Starter template</a>
-                   </li>
-                   <li class="mb-2">
-                      <a href="/docs/5.2/getting-started/webpack/">Webpack</a>
-                   </li>
                 </ul>
              </div>
              <div class="col-6 col-lg-2 mb-3">
@@ -100,12 +80,6 @@
                    <li class="mb-2">
                       <a href="https://github.com/twbs/bootstrap">Bootstrap 5</a>
                    </li>
-                   <li class="mb-2">
-                      <a href="https://github.com/twbs/bootstrap/tree/v4-dev">Bootstrap 4</a>
-                   </li>
-                   <li class="mb-2">
-                      <a href="https://github.com/twbs/icons">Icons</a>
-                   </li>
                 </ul>
              </div>
              <div class="col-6 col-lg-2 mb-3">
@@ -113,12 +87,6 @@
                 <ul class="list-unstyled">
                    <li class="mb-2">
                       <a href="https://github.com/twbs/bootstrap/issues">Issues</a>
-                   </li>
-                   <li class="mb-2">
-                      <a href="https://github.com/twbs/bootstrap/discussions">Discussions</a>
-                   </li>
-                   <li class="mb-2">
-                      <a href="https://github.com/sponsors/twbs">Corporate sponsors</a>
                    </li>
                 </ul>
              </div>

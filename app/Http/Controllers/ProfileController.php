@@ -30,10 +30,6 @@ class ProfileController extends Controller
      */
     public function update(ProfileUpdateRequest $request)
     {
-        if ($request->has('password')) {
-            // code...
-        }
-
         $request->user()->fill($request->validated());
 
         if ($request->user()->isDirty('email')) {
@@ -48,6 +44,13 @@ class ProfileController extends Controller
             'message' => 'Success',
             'reload' => $reload,
         ];
+    }
+
+    public function changeLang(Request $request, $lang)
+    {
+        $request->user()->update(['lang' => $lang]);
+
+        return redirect()->back();
     }
 
     public function updatePassword(ProfileUpdatePasswordRequest $request)

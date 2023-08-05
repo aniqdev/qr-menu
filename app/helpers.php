@@ -2,6 +2,11 @@
 
 use App\Services\TelegramBot;
 
+function logo_src()
+{
+	return '/svg/qr-menu-logo.svg';
+}
+
 function abort_if_no_access($companyId)
 {
 	return abort_if(auth()->user()->company_id != $companyId, 403);

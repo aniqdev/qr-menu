@@ -27,6 +27,7 @@ return [
                     '£' => '£ PLN',
                     '€' => '€ EUR',
                     '₴' => '₴ UAH',
+                    'грн.' => 'грн.',
                 ],
             ],
         ],
@@ -47,6 +48,7 @@ return [
             'field' => [
                 'type' => 'select',
                 'width' => 6,
+                'default_value' => ',',
                 'options' => [
                     '.' => 'Dot .',
                     ',' => 'Coma ,',
@@ -60,6 +62,7 @@ return [
             'field' => [
                 'type' => 'select',
                 'width' => 6,
+                'default_value' => ' ',
                 'options' => [
                     ',' => 'Coma ,',
                     ' ' => 'Space',
@@ -76,7 +79,7 @@ return [
             'field' => [
                 'type' => 'range',
                 'required' => true,
-                'default_value' => '0.5',
+                'default_value' => '65',
                 'width' => 12,
             ],
         ],

@@ -25,21 +25,23 @@
 </style>
 
 <div class="shadow-block" id="admin_menu_page">
-	<div class="row mb-2">
-		<div class="col-sm-3 mb-3">
+	<div class="row mb-2_">
+		<div class="col-sm-3 mb-3 mb-sm-0">
 			<select class="form-select" id="templates_select" onchange="go_to_page(this.value)">
 				@foreach($templates as $template)
-					<option {{ $template === $choosenTemplate ? 'selected' : '' }} value="?template={{ $template }}">{{ $template }}</option>
+				<option {{ $template === $choosenTemplate ? 'selected' : '' }} value="?template={{ $template }}">
+					{{ ucfirst(str_replace('_', '.', $template)) }}
+				</option>
 				@endforeach
 			</select>
 		</div>
-		<div class="col-8 col-sm-6 mb-3">
+		<div class="col-8 col-sm-6">
 			<button type="button" class="btn btn-outline-secondary" onclick="admin_menu_open_settings('{{ $choosenTemplate }}')">
 				<i class="bi bi-gear"></i>
 			</button>
 			<button class="btn btn-primary">Set this template</button>
 		</div>
-		<div class="col-4 col-sm-3 text-end mb-3">
+		<div class="col-4 col-sm-3 text-end">
 			<button class="btn btn-secondary set-view" onclick="admin_menu_set_view('desktop', this)">
 				<i class="bi bi-pc-display-horizontal"></i>
 			</button>
@@ -48,31 +50,7 @@
 			</button>
 		</div>
 	</div>
-{{-- 	<div class="row">
-		<div class="col-sm-6 templates js-no-reload">
-			@foreach($templates as $template)
-				<div class="btn-group">
-					<a href="{{ route('admin.menu') }}?template={{ $template }}" class="btn btn-{{ $template === $choosenTemplate ? 'secondary' : 'light' }}">{{ $template }}</a>
-					<button type="button" class="btn btn-outline-secondary" onclick="admin_menu_open_settings('{{ $template }}')">
-						<i class="bi bi-gear"></i>
-					</button>
-				</div>
-			@endforeach
-		</div>
 
-		<div class="col-sm-2">
-			<div class="btn btn-primary">Set this template</div>
-		</div>
-
-		<div class="col-sm-4 text-end">
-			<button class="btn btn-secondary set-view" onclick="admin_menu_set_view('desktop', this)">
-				<i class="bi bi-pc-display-horizontal"></i>
-			</button>
-			<button class="btn btn-light set-view" onclick="admin_menu_set_view('mobile', this)">
-				<i class="bi bi-phone"></i>
-			</button>
-		</div>
-	</div> --}}
 	<hr>
 	<iframe src="{{ route('restaurant.menu', $company->slug) }}?template={{ request('template', $choosenTemplate) }}" frameborder="0" id="menu_iframe"></iframe>
 </div>

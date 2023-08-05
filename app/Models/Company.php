@@ -4,15 +4,18 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Traits\HasImage;
 
 class Company extends Model
 {
-    use HasFactory;
+    use HasFactory, HasImage;
 
     protected $fillable = [
         'name',
         'slug',
-        'menu_template',
         'image',
+        'company_type',
+        'menu_template',
+        'link_target',
     ];
 }

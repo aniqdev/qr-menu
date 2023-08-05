@@ -19,7 +19,7 @@
         @foreach($categories as $category)
             <div class="row justify-content-between sortable-item py-2 category-item" data-id="{{ $category->id }}">
 
-                <div class="col-4 d-flex position-relative">
+                <div class="col-4 col-lg-3 d-flex position-relative">
                     
                     {{-- sorting --}}
                     <div class="col_ position-absolute">
@@ -37,7 +37,7 @@
 
                 </div>
 
-                <div class="col-8">
+                <div class="col-8 col-lg-9">
 
                     {{-- name --}}
                     <div class="d-flex align-items-center">

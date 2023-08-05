@@ -15,7 +15,10 @@ return new class extends Migration
             $table->id()->from(rand(1000, 2000));
             $table->string('name', 500);
             $table->string('slug', 500)->unique();
+            $table->string('image', 500)->nullable();
+            $table->string('company_type')->default('cafe');
             $table->string('menu_template')->default('default');
+            $table->string('link_target')->default('menu'); // menu | links_page
             $table->timestamps();
         });
     }

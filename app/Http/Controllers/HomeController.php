@@ -3,9 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\{Company, User};
 
 class HomeController extends Controller
 {
+    public function dashboard()
+    {
+        $companies = Company::paginate(20);
+
+        $users = User::paginate(20);
+
+        return view('admin.dashboard', [
+            'companies' => $companies,
+            'users' => $users
+        ]);
+    }
+
     public function qrsaas()
     {
         $availableLanguages = [

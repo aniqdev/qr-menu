@@ -26,6 +26,9 @@ function go_to_page(url, pushState = true) {
 
 		yield_content_current.innerHTML = yield_content_loaded_html
 
+		// fix conflict with offCanvas
+		document.body.style.overflow = 'auto'
+
 		init_app()
 	}).fail(ajax_fail_callback)
 }

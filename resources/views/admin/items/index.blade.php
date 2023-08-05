@@ -27,7 +27,8 @@
             <div class="row item-item">
                 <div class="col-4 col-sm-3 col-md-2 js-no-reload">
                     <a href="{{ route('items.edit', $item) }}" class="d-block">
-                        <img src="{{ $item->image }}" alt="" style="max-width:100%; max-height:100px;">
+                        <img src="{{ $item->image }}" alt="{{ $item->name }}" 
+                        class="d-block m-auto" style="max-width:100%; max-height:100px;">
                     </a>
                 </div>
                 <div class="col-8 col-sm-9 col-md-10">

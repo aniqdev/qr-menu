@@ -1,15 +1,15 @@
 <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg headroom py-lg-3 px-lg-6 navbar-light navbar-theme-primary">
     <div class="container">
         <a class="navbar-brand @@logo_classes" href="/">
-            <img class="navbar-brand-dark common" src="/default/logo_qrzebra_white.png" height="35" alt="Logo">
-            <img class="navbar-brand-light common" src="/default/logo_qrzebra_white.png" height="35" alt="Logo">
+            <img class="navbar-brand-dark common" src="{{ logo_src() }}" height="35" alt="Logo">
+            <img class="navbar-brand-light common" src="{{ logo_src() }}" height="35" alt="Logo">
         </a>
         <div class="navbar-collapse collapse" id="navbar_global">
             <div class="navbar-collapse-header">
                 <div class="row">
                     <div class="col-6 collapse-brand">
                         <a href="/">
-                            <img src="/default/logo_qrzebra_white.png" height="35" alt="Logo">
+                            <img src="{{ logo_src() }}" height="35" alt="Logo">
                         </a>
                     </div>
                     <div class="col-6 collapse-close">
@@ -77,7 +77,7 @@
                 @endguest
             </a>
             @guest()
-            <a href="{{ route('register') }}" class="btn btn-md btn-secondary animate-up-2"><i class="fas fa-paper-plane mr-2"></i>{{ __('qrlanding.register')}}</a>
+            <a href="{{ route('register') }}" class="btn btn-md btn-primary animate-up-2"><i class="fas fa-paper-plane mr-2"></i>{{ __('qrlanding.register')}}</a>
             @endguest
         </div>
         <div class="d-flex d-lg-none align-items-center">

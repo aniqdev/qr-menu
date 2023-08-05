@@ -45,6 +45,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function isSuperAdmin()
+    {
+        return $this->role === 'superadmin';
+    }
+
     public function hasRole($value='')
     {
         return false;

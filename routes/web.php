@@ -22,13 +22,14 @@ Route::get('/notification', function () {
     return (new \App\Notifications\InvoicePaid)->toMail($user);
 });
 
+Route::get('profile', [\App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
+
 Route::group([
     'middleware' => 'auth',
     'prefix' => 'admin',
 ], function () {
-    Route::get('dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+
+    Route::get('dashboard', [\App\Http\Controllers\HomeController::class, 'dashboard'])->name('dashboard');
 
     Route::get('menu', [\App\Http\Controllers\MenuController::class, 'adminMenu'])->name('admin.menu');
 
@@ -47,6 +48,7 @@ Route::group([
 
     Route::put('profile', [\App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
     Route::put('profile/update-password', [\App\Http\Controllers\ProfileController::class, 'updatePassword'])->name('profile.update-password');
+    Route::get('profile/change-lang/{lang}', [\App\Http\Controllers\ProfileController::class, 'changeLang'])->name('profile.change-lang')->whereIn('lang', ['uk', 'en', 'ru']);
 
     Route::get('json-form-test', [\App\Http\Controllers\MenuController::class, 'jsonFormTest'])->name('json-form-test');
 
@@ -63,6 +65,6 @@ Route::get('restaurant/{company_slug}/menu', [\App\Http\Controllers\CompanyContr
 Route::get('cafe/{company_slug}/menu', [\App\Http\Controllers\CompanyController::class, 'menu'])->name('cafe.menu');
 Route::get('bar/{company_slug}/menu', [\App\Http\Controllers\CompanyController::class, 'menu'])->name('bar.menu');
 
-Route::get('restaurant/{company_slug}', [\App\Http\Controllers\CompanyController::class, 'view'])->name('restaurant.view');
-Route::get('cafe/{company_slug}', [\App\Http\Controllers\CompanyController::class, 'view'])->name('cafe.view');
-Route::get('bar/{company_slug}', [\App\Http\Controllers\CompanyController::class, 'view'])->name('bar.view');
+Route::get('restaurant/{company_slug}', [\App\Http\Controllers\CompanyController::class, 'linksPage'])->name('restaurant.links-page');
+Route::get('cafe/{company_slug}', [\App\Http\Controllers\CompanyController::class, 'linksPage'])->name('cafe.links-page');
+Route::get('bar/{company_slug}', [\App\Http\Controllers\CompanyController::class, 'linksPage'])->name('bar.links-page');
