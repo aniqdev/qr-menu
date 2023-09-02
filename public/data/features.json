@@ -23,7 +23,7 @@
             }
         ],
         "button_name": "Experience it",
-        "image": "\/\/menu-maker.loc\/impactfront\/img\/menubuilder.jpg"
+        "image": "/impactfront/img/menubuilder.jpg"
     },
     {
         "title": {
@@ -49,7 +49,7 @@
             }
         ],
         "button_name": "Design it",
-        "image": "\/\/menu-maker.loc\/impactfront\/img\/qr_image_builder.jpg"
+        "image": "/impactfront/img/qr_image_builder.jpg"
     },
     {
         "title": {
@@ -75,7 +75,7 @@
             }
         ],
         "button_name": "Go Mobile",
-        "image": "\/\/menu-maker.loc\/impactfront\/img\/mobile_pwa.jpg"
+        "image": "/impactfront/img/mobile_pwa.jpg"
     },
     {
         "title": {
@@ -101,7 +101,7 @@
             }
         ],
         "button_name": "Try it",
-        "image": "\/\/menu-maker.loc\/impactfront\/img\/localorders.jpg"
+        "image": "/impactfront/img/localorders.jpg"
     },
     {
         "title": {
@@ -127,7 +127,7 @@
             }
         ],
         "button_name": "Accept contactless payments",
-        "image": "\/\/menu-maker.loc\/impactfront\/img\/payments.jpg"
+        "image": "/impactfront/img/payments.jpg"
     },
     {
         "title": {
@@ -149,10 +149,10 @@
             },
             {
                 "key": "product6_feature3",
-                "value": "Powerful export \/ report functionality"
+                "value": "Powerful export / report functionality"
             }
         ],
         "button_name": "Keep it safe",
-        "image": "\/\/menu-maker.loc\/impactfront\/img\/customerlog.jpg"
+        "image": "/impactfront/img/customerlog.jpg"
     }
 ]
