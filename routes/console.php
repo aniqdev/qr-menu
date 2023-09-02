@@ -19,7 +19,7 @@ use GeoIp2\Database\Reader;
 use App\Models\User;
 use App\Notifications\InvoicePaid;
 
-include 'faker-tested.php';
+// include 'console/faker-tested.php';
 
 Artisan::command('testt', function () {
 
