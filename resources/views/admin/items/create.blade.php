@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="shadow-block">
-	<h2>Add new dish</h2>
+	<h2>{{ _t('admin_item.add_new') }}</h2>
 	<form class="row marked-form saved" onsubmit="submit_form(this, event)" action="{{ route('items.store') }}">
 		@csrf
 		<div class="col-md-4">
@@ -13,23 +13,23 @@
 		</div>
 		<div class="col-md-8">
 
-			<label for="item_title" class="form-label">Name</label>
+			<label for="item_title" class="form-label">{{ _t('admin_item.name') }}</label>
 			<input type="text" name="name" class="form-control" id="item_title" placeholder="Vine">
 
 			<br>
 			<div class="row">
-				<div class="col-3">
-					<label for="item_price" class="form-label">Price</label>
-					<input type="text" name="price" class="form-control" id="item_price" placeholder="Vine">
-				</div>
-				<div class="col-3">
-					<label for="item_old_price" class="form-label">Old price</label>
-					<input type="text" name="old_price" class="form-control" id="item_old_price" placeholder="Vine">
-				</div>
 				<div class="col-6">
-					<label for="item_category" class="form-label">Category</label>
+					<label for="item_price" class="form-label">{{ _t('admin_item.price') }}</label>
+					<input type="text" name="price" class="form-control" id="item_price" placeholder="100">
+				</div>
+				{{-- <div class="col-3">
+					<label for="item_old_price" class="form-label">{{ _t('admin_item.old_price') }}</label>
+					<input type="text" name="old_price" class="form-control" id="item_old_price" placeholder="Vine">
+				</div> --}}
+				<div class="col-6">
+					<label for="item_category" class="form-label">{{ _t('admin_item.category') }}</label>
 					<select name="category_id" class="form-select" id="item_category">
-						<option value="">Hidden</option>
+						<option value="">{{ _t('admin_item.hidden_category') }}</option>
 						@foreach($categories as $category)
 							<option value="{{ $category->id }}">{{ $category->name }}</option>
 						@endforeach
@@ -38,7 +38,7 @@
 			</div>
 
 			<br>
-			<label for="description" class="form-label">Description</label>
+			<label for="description" class="form-label">{{ _t('admin_item.description') }}</label>
 			<textarea name="description" class="form-control" id="description" rows="3" placeholder="Vines grow in one of four ways: hooked, clinging, twining or tendril."></textarea>
 		</div>
 	</form>
@@ -46,10 +46,10 @@
 <script>
 // only to show where is the drop-zone:
 $('#item_image_label').on('dragenter', function() {
-  this.classList.add('dragged-over');
+	this.classList.add('dragged-over');
 })
  .on('dragend drop dragexit dragleave', function() {
-  this.classList.remove('dragged-over');
+	this.classList.remove('dragged-over');
 });
 </script>
 @endsection

@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="/css/bootstrap-icons.css">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
 
-    <link rel="stylesheet" href="/css/style.css?v={{ filemtime(public_path('css/style.css')) }}">
+    {{-- <link rel="stylesheet" href="/css/style.css?v={{ filemtime(public_path('css/style.css')) }}"> --}}
 
     {{-- <script src="/js/jquery.min.js"></script> --}}
     {{-- <script src="/js/jquery-ui.min.js"></script> --}}
@@ -21,6 +21,20 @@
 
     {{-- https://github.com/CodeSeven/toastr --}}
     {{-- <script src="/js/toastr.min.js"></script> --}}
+    <style>
+        body{
+            overflow-x: hidden;
+            background: #f7f3ff;
+        }
+
+        img{
+            max-width: 100%;
+        }
+
+        a{
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body class="ajax-loader">
     <div id="app_root">

@@ -11,8 +11,8 @@
 </style>
 <div class="shadow-block">
     <h2 class="d-flex">
-        {{ __('admin_categories.categories') }}
-        <a href="{{ route('categories.create') }}" class="ms-auto btn btn-outline-primary">{{ __('admin_categories.create') }} <i class="bi bi-plus-square"></i></a>
+        {{ _t('admin_categories.categories') }}
+        <a href="{{ route('categories.create') }}" class="ms-auto btn btn-outline-primary">{{ _t('admin_categories.create') }} <i class="bi bi-plus-square"></i></a>
     </h2>
     <hr>
     <div class="sortable" data-route="{{ route('categories.update-sorting') }}">

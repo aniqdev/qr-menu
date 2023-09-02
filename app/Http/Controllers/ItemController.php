@@ -66,7 +66,7 @@ class ItemController extends Controller
 		return [
 			'item' => $item,
 			'redirect' => route('items.edit', $item),
-			'message' => __('admin.success'),
+			'message' => _t('admin.success'),
 		];
 	}
 

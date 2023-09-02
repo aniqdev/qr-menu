@@ -23,7 +23,7 @@
             }
         ],
         "button_name": "Experience it",
-        "image": "http:\/\/menu-maker.loc\/impactfront\/img\/menubuilder.jpg"
+        "image": "\/\/menu-maker.loc\/impactfront\/img\/menubuilder.jpg"
     },
     {
         "title": {
@@ -49,7 +49,7 @@
             }
         ],
         "button_name": "Design it",
-        "image": "http:\/\/menu-maker.loc\/impactfront\/img\/qr_image_builder.jpg"
+        "image": "\/\/menu-maker.loc\/impactfront\/img\/qr_image_builder.jpg"
     },
     {
         "title": {
@@ -75,7 +75,7 @@
             }
         ],
         "button_name": "Go Mobile",
-        "image": "http:\/\/menu-maker.loc\/impactfront\/img\/mobile_pwa.jpg"
+        "image": "\/\/menu-maker.loc\/impactfront\/img\/mobile_pwa.jpg"
     },
     {
         "title": {
@@ -101,7 +101,7 @@
             }
         ],
         "button_name": "Try it",
-        "image": "http:\/\/menu-maker.loc\/impactfront\/img\/localorders.jpg"
+        "image": "\/\/menu-maker.loc\/impactfront\/img\/localorders.jpg"
     },
     {
         "title": {
@@ -127,7 +127,7 @@
             }
         ],
         "button_name": "Accept contactless payments",
-        "image": "http:\/\/menu-maker.loc\/impactfront\/img\/payments.jpg"
+        "image": "\/\/menu-maker.loc\/impactfront\/img\/payments.jpg"
     },
     {
         "title": {
@@ -153,6 +153,6 @@
             }
         ],
         "button_name": "Keep it safe",
-        "image": "http:\/\/menu-maker.loc\/impactfront\/img\/customerlog.jpg"
+        "image": "\/\/menu-maker.loc\/impactfront\/img\/customerlog.jpg"
     }
 ]

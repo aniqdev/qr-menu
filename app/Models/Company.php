@@ -18,4 +18,19 @@ class Company extends Model
         'menu_template',
         'link_target',
     ];
+
+    public function items()
+    {
+        return $this->hasMany(\App\Models\Item::class)->orderBy('sorting');
+    }
+
+    public function cafeLink()
+    {
+        return route($this->company_type . '.links-page', $this->slug);
+    }
+
+    public function menuLink()
+    {
+        return route($this->company_type . '.menu', $this->slug);
+    }
 }

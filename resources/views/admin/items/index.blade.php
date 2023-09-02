@@ -11,9 +11,9 @@
 </style>
 <div class="shadow-block">
     <h2 class="d-flex">
-        {{ __('admin_categories.categories') }}
+        {{ _t('admin_categories.categories') }}
         <a href="{{ route('items.create') }}" class="ms-auto btn btn-outline-primary">
-            {{ __('Create') }} <i class="bi bi-plus-square"></i>
+            {{ _t('Create') }} <i class="bi bi-plus-square"></i>
         </a>
     </h2>
     <div class="row js-no-reload">
@@ -42,17 +42,17 @@
                         </div>
 
                         {{-- prices --}}
-                        <div class="order-2 col-lg-4">
+                        <div class="order-2 col-lg-3">
                             <form class="input-group" onsubmit="submit_form(this, event)" action="{{ route('items.update', $item) }}">
-                                <input class="form-control pe-0" type="number" name="price" value="{{ $item->price }}" title="{{ __('item.price') }}">
-                                <input class="form-control pe-0" type="number" name="old_price" value="{{ $item->old_price }}" title="{{ __('item.old_price') }}">
+                                <input class="form-control pe-0" type="number" name="price" value="{{ $item->price }}" title="{{ _t('item.price') }}">
+                                {{-- <input class="form-control pe-0" type="number" name="old_price" value="{{ $item->old_price }}" title="{{ _t('item.old_price') }}"> --}}
                                 @csrf @method('PUT')
-                                <button class="input-group-text" title="{{ __('admin.save') }}"><i class="bi bi-cloud-arrow-up"></i></button>
+                                <button class="input-group-text" title="{{ _t('admin.save') }}"><i class="bi bi-cloud-arrow-up"></i></button>
                             </form>
                         </div>
 
                         {{-- description --}}
-                        <div class="order-1 col-lg-8 d-flex align-items-center" style="height: 38px;">
+                        <div class="order-1 col-lg-9 d-flex align-items-center" style="height: 38px;">
                             <div class="text-truncate overflow-hidden" title="{{ $item->description }}">{{ $item->description }}</div>
                         </div>
 

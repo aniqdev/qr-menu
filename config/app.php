@@ -6,6 +6,8 @@ return [
 
     'telegram_bot_token' => env('TELEGRAM_BOT_TOKEN'),
 
+    'translations_excel_url' => env('TRANSLATIONS_EXCEL_URL'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -193,7 +195,6 @@ return [
          */
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 

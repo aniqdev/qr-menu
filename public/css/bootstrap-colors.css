@@ -1,0 +1,17 @@
+.list-group {
+    --bs-list-group-active-bg: #5a88af;
+    --bs-list-group-active-border-color: #6b93b5;
+}
+.btn-primary {
+    --bs-btn-bg: #5a88af;
+    --bs-btn-border-color: #6b93b5;
+    --bs-btn-active-bg: #5a88af;
+    --bs-btn-active-border-color: #6b93b5;
+}
+.pagination {
+    --bs-pagination-active-bg: #5a88af;
+    --bs-pagination-active-border-color: #6b93b5;
+}
+.nav-pills {
+    --bs-nav-pills-link-active-bg: #5a88af;
+}

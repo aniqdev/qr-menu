@@ -1,9 +1,24 @@
 <?php
 
+
 use App\Services\TelegramBot;
+
+
+function _t($translationKey)
+{
+	$translation = \App\Services\TranslationsService::getTranslation($translationKey) ?? __($translationKey);
+
+	if ($translation === $translationKey) {
+		$keySplitted = explode('.', $translationKey);
+		$translation = ucfirst(str_replace('_', ' ', end($keySplitted)));
+	}
+
+	return $translation;
+}
 
 function logo_src()
 {
+	return '/svg/qr-menu-logo-2.svg';
 	return '/svg/qr-menu-logo.svg';
 }
 

@@ -14,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/test', function ()
+{
+    dd($_REQUEST);
+});
+
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'qrsaas']);
 
 Route::get('/notification', function () {

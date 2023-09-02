@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="/css/toastr.min.css"/>
     <link rel="stylesheet" href="/css/jquery-ui.min.css"/>
 
+    <link rel="stylesheet" href="/css/bootstrap-colors.css?v={{ filemtime(public_path('css/bootstrap-colors.css')) }}">
     <link rel="stylesheet" href="/css/style.css?v={{ filemtime(public_path('css/style.css')) }}">
 
     <script src="/js/jquery.min.js"></script>
@@ -43,8 +44,8 @@
         </main>
     </div>
 
-    <footer class="bd-footer py-2 py-md-4 mt-3 bg-white">
-       <div class="container py-2 py-md-4 px-2 px-md-3">
+    <footer class="bd-footer mt-3 bg-white">
+       <div class="container pt-2 pt-md-4 px-2 px-md-3">
           <div class="row">
              <div class="col-lg-3 mb-3">
                 <a class="d-inline-flex align-items-center mb-2 link-dark text-decoration-none" href="/" aria-label="Bootstrap">

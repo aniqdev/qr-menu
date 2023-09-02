@@ -41,8 +41,8 @@
 			</button>
 			<button class="btn btn-primary">Set this template</button>
 		</div>
-		<div class="col-4 col-sm-3 text-end">
-			<button class="btn btn-secondary set-view" onclick="admin_menu_set_view('desktop', this)">
+		<div class="col-4 col-sm-3 text-end d-none d-md-block">
+			<button class="btn btn-primary set-view" onclick="admin_menu_set_view('desktop', this)">
 				<i class="bi bi-pc-display-horizontal"></i>
 			</button>
 			<button class="btn btn-light set-view" onclick="admin_menu_set_view('mobile', this)">

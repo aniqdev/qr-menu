@@ -150,7 +150,7 @@
 
     window.onload = function () {
 
-        var ifUser = {!! json_encode(  auth()->user()&&auth()->user() && auth()->user()->hasRole('admin') ? true : false) !!};
+        var ifUser = {!! json_encode( auth()->user() && auth()->user()->hasRole('superadmin') ? true : false) !!};
 
         if(ifUser){
             initializeCKEditor();
@@ -238,7 +238,7 @@
                     },
                     success:function(response){
                         if(response){
-                            var msg = {!! json_encode(__('qrlanding.success')) !!}
+                            var msg = {!! json_encode(_t('qrlanding.success')) !!}
 
                             js.notify(msg, "success");
                         }

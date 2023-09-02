@@ -18,3 +18,7 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
+
+Route::get('/translations/update-from-excel', [\App\Http\Controllers\TranslationsController::class, 'updateFromExcel'])->middleware('throttle:10,1')->name('translations.update');
+
+

@@ -4,7 +4,7 @@ style="margin-top:60px;">
         <a class="navbar-brand" href="{{ url('/') }}">
             Menu Dashboard
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ _t('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -20,13 +20,13 @@ style="margin-top:60px;">
                 @guest
                     @if (Route::has('login'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            <a class="nav-link" href="{{ route('login') }}">{{ _t('Login') }}</a>
                         </li>
                     @endif
 
                     @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            <a class="nav-link" href="{{ route('register') }}">{{ _t('Register') }}</a>
                         </li>
                     @endif
                 @else
@@ -37,7 +37,7 @@ style="margin-top:60px;">
 
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('logout') }}">
-                                {{ __('Logout') }}
+                                {{ _t('Logout') }}
                             </a>
                         </div>
                     </li>

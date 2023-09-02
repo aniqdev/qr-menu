@@ -50,9 +50,10 @@ class User extends Authenticatable
         return $this->role === 'superadmin';
     }
 
-    public function hasRole($value='')
+    public function hasRole($role = '')
     {
-        return false;
+        return false; // turn off ck editor on the landing page
+        return $this->role === $role;
     }
 
     public function company()

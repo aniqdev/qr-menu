@@ -11,14 +11,8 @@ class QrCodeController extends Controller
     {
         $company = auth()->user()->company;
 
-        $cafeLink = route('cafe.links-page', $company->slug);
-
-        $menuLink = route('cafe.menu', $company->slug);
-
         return view('admin.qr-code', [
             'company' => $company,
-            'cafe_link' => $cafeLink,
-            'menu_link' => $menuLink,
         ]);
     }
 

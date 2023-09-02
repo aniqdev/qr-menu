@@ -21,16 +21,16 @@
             </div>
             <ul class="navbar-nav navbar-nav-hover justify-content-center">
                 <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
-                    <a data-scroll href="#product" class="nav-link">{{ __('qrlanding.product') }}</a>
+                    <a data-scroll href="#product" class="nav-link">{{ _t('qrlanding.product') }}</a>
                 </li>
                 <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
-                    <a data-scroll href="#pricing" class="nav-link" >{{ __('qrlanding.pricing') }}</a>
+                    <a data-scroll href="#pricing" class="nav-link" >{{ _t('qrlanding.pricing') }}</a>
                 </li>
                 <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
-                    <a data-scroll href="#testimonials" class="nav-link">{{ __('qrlanding.testimonials') }}</a>
+                    <a data-scroll href="#testimonials" class="nav-link">{{ _t('qrlanding.testimonials') }}</a>
                 </li>
                 <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
-                    <a data-scroll href="#demo" class="nav-link">{{ __('qrlanding.demo') }}</a>
+                    <a data-scroll href="#demo" class="nav-link">{{ _t('qrlanding.demo') }}</a>
                 </li>
                 @if(count($availableLanguages)>1)
                 <li class="nav-item dropdown">
@@ -51,17 +51,17 @@
                 @endif
                 @if(!empty(config('global.facebook')))
                 <li class="nav-item">
-                    <a class="nav-link nav-link-icon" href="{{ config('global.facebook') }}" target="_blank" data-toggle="tooltip" title="{{ __('Like us on Facebook') }}">
+                    <a class="nav-link nav-link-icon" href="{{ config('global.facebook') }}" target="_blank" data-toggle="tooltip" title="{{ _t('Like us on Facebook') }}">
                         <i class="fab fa-facebook-square mr-2"></i>
-                        <span class="nav-link-inner--text d-lg-none">{{ __('Facebook') }}</span>
+                        <span class="nav-link-inner--text d-lg-none">{{ _t('Facebook') }}</span>
                     </a>
                 </li>
                 @endif
                 @if(!empty(config('global.instagram')))
                 <li class="nav-item">
-                    <a class="nav-link nav-link-icon" href="{{ config('global.instagram') }}" target="_blank" data-toggle="tooltip" title="{{ __('Follow us on Instagram') }}">
+                    <a class="nav-link nav-link-icon" href="{{ config('global.instagram') }}" target="_blank" data-toggle="tooltip" title="{{ _t('Follow us on Instagram') }}">
                         <i class="fab fa-instagram mr-2"></i>
-                        <span class="nav-link-inner--text d-lg-none">{{ __('Instagram') }}</span>
+                        <span class="nav-link-inner--text d-lg-none">{{ _t('Instagram') }}</span>
                     </a>
                 </li>
                 @endif
@@ -70,14 +70,14 @@
         <div class=" @@cta_button_classes">
             <a data-scroll href="/login" class="btn btn-md btn-docs btn-white animate-up-2 mr-3"><i class="fas fa-th-large mr-2"></i>
                 @auth()
-                {{ __('qrlanding.dashboard')}}
+                {{ _t('qrlanding.dashboard')}}
                 @endauth
                 @guest()
-                {{ __('qrlanding.login')}}
+                {{ _t('qrlanding.login')}}
                 @endguest
             </a>
             @guest()
-            <a href="{{ route('register') }}" class="btn btn-md btn-primary animate-up-2"><i class="fas fa-paper-plane mr-2"></i>{{ __('qrlanding.register')}}</a>
+            <a href="{{ route('register') }}" class="btn btn-md btn-primary animate-up-2"><i class="fas fa-paper-plane mr-2"></i>{{ _t('qrlanding.register')}}</a>
             @endguest
         </div>
         <div class="d-flex d-lg-none align-items-center">

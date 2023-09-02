@@ -74,6 +74,7 @@ class CompanyController extends Controller
         TemplateService::initSettings($choosenTemplate, $settings);
 
         return view('menu-templates.' . $choosenTemplate . '.index', [
+            'company' => $company,
             'categories' => $categories,
         ]);
     }

@@ -4,7 +4,7 @@
 <div class="shadow-block">
 	<div class="text-center">
 		<a href="#" class="img-thumbnail text-center d-inline-block" style="max-width: 300px;">
-			<img src="https://t4.ftcdn.net/jpg/02/25/38/01/360_F_225380163_LBCg0JqQh5Y5YJUEKs6iqssIMMeFsrp3.jpg"
+			<img src="{{ $company->image }}"
 				style="max-width: 100%;">
 		</a>
 		<div class="row align-items-center justify-content-center">

@@ -16,13 +16,13 @@
 </style>
 
 <div class="shadow-block">
-	<h2>{{ __('admin_qr.qr_code') }}</h2>
+	<h2>{{ _t('admin_qr.qr_code') }}</h2>
 	<hr>
 	<div class="row">
 		<div class="col-lg-3"></div>
 		<div class="col-lg-6 text-center">
 			<div class="alert alert-info" role="alert">
-	          <h3>{{ __('admin_qr.cafe_link') }}</h3> <a href="{{ $cafe_link }}" target="_blank" class="alert-link">{{ $cafe_link }}</a>
+	          <h3>{{ _t('admin_qr.cafe_link') }}</h3> <a href="{{ $company->cafeLink() }}" target="_blank" class="alert-link">{{ $company->cafeLink() }}</a>
 	        </div>
 	        <div class="img-thumbnail mb-4 position-relative">
 		        <img src="/images/loading-icon-with-text.jpg" alt="">
@@ -30,7 +30,7 @@
 			</div>
 			<div class="row mb-4">
 				<div class="col-12">
-					<a href="{{ route('admin.cafe-qr-code-image') }}" download="{{ $company->slug }}-cafe.png" class="btn btn-outline-secondary w-100">{{ __('admin_qr.download_png') }}</a>
+					<a href="{{ route('admin.cafe-qr-code-image') }}" download="{{ $company->slug }}-cafe.png" class="btn btn-outline-secondary w-100">{{ _t('admin_qr.download_png') }}</a>
 				</div>
 			</div>
 		</div>

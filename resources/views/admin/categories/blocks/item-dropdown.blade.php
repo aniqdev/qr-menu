@@ -5,7 +5,7 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-          <a href="{{ route('categories.edit', $category) }}" class="btn text-info" title="{{ __('admin.edit') }}">
+          <a href="{{ route('categories.edit', $category) }}" class="btn text-info" title="{{ _t('admin.edit') }}">
             <i class="bi bi-pencil"></i> Edit
         </a>
       </li>
@@ -13,7 +13,7 @@
           <form action="{{ route('categories.destroy', $category) }}" class="d-inline" 
                 onsubmit="if(!confirm('Delete category?')) return false; submit_form(this, event) ">
                 @method('delete') @csrf
-            <button type="submit" class="btn text-danger" title="{{ __('admin.delete') }}">
+            <button type="submit" class="btn text-danger" title="{{ _t('admin.delete') }}">
                 <i class="bi bi-x-lg"></i> Delete
             </button>
         </form>

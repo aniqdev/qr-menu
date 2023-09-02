@@ -6,7 +6,7 @@
             <div class="d-flex mb-3 text-primary">
                 <span class="h5 mb-0"> {{ config('settings.cashier_currency') }}</span>
                 <span class="price display-2 mb-0 text-primary" data-annual="0" data-monthly="0">{{ $plan['price'] }}</span>
-            <span class="h6 font-weight-normal align-self-end">/{{  $plan['period']==1? __('qrlanding.month') :  __('qrlanding.year') }}</span>
+            <span class="h6 font-weight-normal align-self-end">/{{  $plan['period']==1? _t('qrlanding.month') :  _t('qrlanding.year') }}</span>
             </div>
         <h4 class="mb-3 text-black">{{  __($plan['name']) }}</h4>
             <p class="font-weight-normal mb-0">{{ __($plan['description']) }}</p>
@@ -21,7 +21,7 @@
         <div class="card-footer px-4 pb-4">
             <!-- Button -->
             <a href="{{ route('register') }}" class="btn btn-block btn-outline-gray animate-up-2">
-                {{ __('qrlanding.join_now') . " "}}<span class="icon icon-xs ml-3"><i class="fas fa-arrow-right"></i></span>
+                {{ _t('qrlanding.join_now') . " "}}<span class="icon icon-xs ml-3"><i class="fas fa-arrow-right"></i></span>
             </a>
         </div>
     </div>

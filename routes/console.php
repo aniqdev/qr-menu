@@ -23,6 +23,64 @@ include 'faker-tested.php';
 
 Artisan::command('testt', function () {
 
+
+    $dir = scandir(lang_path('en'));
+
+    for ($i=2; $i < count($dir); $i++) { 
+        // dump($dir[$i]);
+        if ($dir[$i] === 'validation.php') {
+            continue;
+        }
+        $file = include lang_path('en/' . $dir[$i]);
+        // dump($file);
+        foreach ($file as $key => $string) {
+            echo str_replace('.php', '', $dir[$i]) . '|' .
+             $key . '|' .
+              (is_array($string) ?
+                implode('.', $string) :
+                $string);
+            echo PHP_EOL;
+        }
+        
+    }
+
+    dd($dir);
+
+
+    return;
+
+    $translationKey = 'admin_sidebar.categories';
+
+    $res = \App\Services\TranslationsService::getTranslation($translationKey);
+
+    dd($res);
+
+    $res = _t('admin_sidebar.categories');
+
+    dd($res);
+
+    return;
+        $excelUrl = config('app.translations_excel_url');
+
+        // dd($excelUrl);
+
+        $json = file_get_contents($excelUrl);
+
+        dd(json_decode($json));
+
+    return;
+    $url = 'https://www.youtube.com/watch?v=ymKqxXasS_M';
+
+    $url = 'https://www.youtube.com/watch?v=iaCNqiciwno';
+
+    $url = 'https://youtu.be/G4zNRKD7kWE';
+
+    preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $url, $match);
+            $id = $match[1];
+
+            dd($id);
+
+    return;
     $strings = file(__DIR__.'/faker-test.php');
 
     $result = '';

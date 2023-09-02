@@ -1,13 +1,13 @@
 
 function admin_menu_set_view(view, button){
-	$('.set-view').removeClass('btn-secondary').addClass('btn-light')
+	$('.set-view').removeClass('btn-primary').addClass('btn-light')
 	if(view === 'mobile'){
 		$('#menu_iframe').addClass('mobile')
-		$(button).removeClass('btn-light').addClass('btn-secondary')
+		$(button).removeClass('btn-light').addClass('btn-primary')
 	}
 	if(view === 'desktop'){
 		$('#menu_iframe').removeClass('mobile')
-		$(button).removeClass('btn-light').addClass('btn-secondary')
+		$(button).removeClass('btn-light').addClass('btn-primary')
 	}
 }
 

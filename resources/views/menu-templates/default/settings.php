@@ -111,12 +111,12 @@ return [
             ],
         ],
         [
-            'id' => 'switchon',
-            'name' => 'Switch that is on by default',
+            'id' => 'space_after_price',
+            'name' => 'Space after price',
             'type' => 'field',
             'field' => [
                 'type' => 'switch',
-                'default_value' => 'true',
+                'default_value' => 'false',
             ],
         ],
         [

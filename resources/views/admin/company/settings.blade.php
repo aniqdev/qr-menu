@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="shadow-block">
-	<h2>{{ __('admin_settings.company_settings') }}</h2>
+	<h2>{{ _t('admin_settings.company_settings') }}</h2>
 	<nav>
 	    <div class="nav nav-tabs_ nav-pills mb-3" id="nav-tab" role="tablist">
 	        <button class="nav-link active" id="nav-general-tab" data-bs-toggle="tab" data-bs-target="#nav-general" type="button" role="tab" aria-controls="nav-general" aria-selected="true">General settings</button>

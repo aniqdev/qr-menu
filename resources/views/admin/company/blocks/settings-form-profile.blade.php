@@ -6,15 +6,15 @@
 			@csrf
 			@method('PUT')
 			<div class="col-12 mb-3">
-				<label for="item_price" class="form-label">{{ __('admin_profile.name') }}</label>
-				<input type="text" name="name" value="{{ $user->name }}" class="form-control" id="item_price" placeholder="">
+				<label for="profile_name" class="form-label">{{ _t('admin_profile.name') }}</label>
+				<input type="text" name="name" value="{{ $user->name }}" class="form-control" id="profile_name" placeholder="">
 			</div>
 			<div class="col-12 mb-3">
-				<label for="item_old_price" class="form-label">{{ __('admin_profile.email') }}</label>
-				<input type="text" name="email" value="{{ $user->email }}" class="form-control" id="item_old_price" placeholder="">
+				<label for="profile_email" class="form-label">{{ _t('admin_profile.email') }}</label>
+				<input type="text" name="email" value="{{ $user->email }}" class="form-control" id="profile_email" placeholder="">
 			</div>
 			<div class="col-12 mb-3">
-				<label for="item_category" class="form-label">{{ __('admin_profile.lang') }}</label>
+				<label for="item_category" class="form-label">{{ _t('admin_profile.lang') }}</label>
 				<select name="lang" class="form-select" id="item_category">
 					<option value="en" {{ $user->lang !== 'en' ?: 'selected' }} style="background-image:url('/images/flags/en.png');">
 						English
@@ -29,7 +29,7 @@
 			</div>
 			{{-- <hr class=""> --}}
 			<div class="col mb-3">
-				<button type="submit" class="btn btn-primary">{{ __('admin.save') }}</button>
+				<button type="submit" class="btn btn-primary">{{ _t('admin.save') }}</button>
 			</div>
 		</form>
 	</div>
@@ -39,16 +39,16 @@
 			@csrf
 			@method('PUT')
 				<div class="col-12 mb-3">
-					<label for="password" class="form-label">{{ __('admin_profile.password') }}</label>
+					<label for="password" class="form-label">{{ _t('admin_profile.password') }}</label>
 					<input type="password" name="password" class="form-control" id="password" placeholder="">
 				</div>
 				<div class="col-12 mb-3">
-					<label for="password_confirmation" class="form-label">{{ __('admin_profile.password_confirmation') }}</label>
+					<label for="password_confirmation" class="form-label">{{ _t('admin_profile.password_confirmation') }}</label>
 					<input type="password" name="password_confirmation" class="form-control" id="password_confirmation" placeholder="">
 				</div>
 				{{-- <hr class=""> --}}
 				<div class="col mb-3">
-					<button type="submit" class="btn btn-primary">{{ __('admin_profile.update_password') }}</button>
+					<button type="submit" class="btn btn-primary">{{ _t('admin_profile.update_password') }}</button>
 				</div>
 		</form>
 	</div>
