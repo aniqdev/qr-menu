@@ -11,7 +11,7 @@
 </style>
 <div class="shadow-block">
     <h2 class="d-flex">
-        {{ _t('admin_categories.categories') }}
+        {{ _t('admin_items.items') }}
         <a href="{{ route('items.create') }}" class="ms-auto btn btn-outline-primary">
             {{ _t('Create') }} <i class="bi bi-plus-square"></i>
         </a>
@@ -37,7 +37,16 @@
 
                         {{-- name --}}
                         <div class=" d-flex align-items-center item-name mb-lg-2">
-                            <a href="{{ route('items.edit', $item) }}" class="text-truncate  js-no-reload-link">{{ $item->name }}</a>
+                            <a href="{{ route('items.edit', $item) }}" class="text-truncate  js-no-reload-link">
+                                {{ $item->name }}
+                            </a>
+                            <span class="ms-2">
+                                @if($item->is_active)
+                                    <i class="bi bi-eye-fill" style="color: #5a88af;"></i>
+                                @else
+                                    <i class="bi bi-eye-slash"></i>
+                                @endif
+                            </span>
                             @include('admin.items.blocks.item-dropdown')
                         </div>
 

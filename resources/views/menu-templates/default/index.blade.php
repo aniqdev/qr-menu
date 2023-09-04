@@ -40,15 +40,15 @@
 		<li>
 			<div><b>{{ $category->name }}</b></div>
 			<ul class="item-list">
-				@foreach($category->items as $item)
+				@foreach($category->itemsActive as $item)
 				<li class="d-flex justify-content-between item-item">
 					<div class="cols">{{ $item->name }}</div>
 					<div class="cols flex-grow-1 dotted"></div>
 					<div class="cols">{{
 						number_format($item->price, 
 							tpl_options('price_precision'), 
-							tpl_options('decimal_separator', '.'),
-							tpl_options('thousands_separator', ' ')).
+							tpl_options('decimal_separator'),
+							tpl_options('thousands_separator')).
 						(tpl_options('space_after_price') ? ' ' : '').
 						tpl_options('currency_symbol') 
 					}}</div>

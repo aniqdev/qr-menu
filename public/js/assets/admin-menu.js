@@ -30,7 +30,6 @@ function template_settings_submit(valid, settings) {
 }
 
 function admin_menu_open_settings(template) {
-	log(template)
 	window.jsonForm.choosenTemplate = template
 	$.get('/admin/menu/template-settings-modal', {
 		template: template,

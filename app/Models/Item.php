@@ -18,6 +18,7 @@ class Item extends Model
         'old_price',
         'image',
         'description',
+        'is_active',
     ];
 
     protected $casts = [

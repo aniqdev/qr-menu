@@ -30,7 +30,10 @@
 					</select>
 				</div>
 				<div class="col-4_ mb-3">
-					<label for="company_type" class="form-label">{{ _t('admin_company.company_type') }}</label>
+					<label for="company_type" class="form-label">
+						{{ _t('admin_company.company_type') }}
+						<i class="bi bi-question-circle-fill" title="{{ _t('admin_settings.company_settings_company_type') }}" data-bs-toggle="tooltip"></i>
+					</label>
 					<select name="company_type" class="form-select" id="company_type">
 						<option value="cafe" {{ $company->company_type !== 'cafe' ?: 'selected' }}>Cafe</option>
 						<option value="bar" {{ $company->company_type !== 'bar' ?: 'selected' }}>Bar</option>
@@ -38,10 +41,13 @@
 					</select>
 				</div>
 				<div class="col-4_ mb-3">
-					<label for="link_target" class="form-label">{{ _t('admin_company.link_target') }}</label>
+					<label for="link_target" class="form-label">
+						{{ _t('admin_company.link_target') }}
+						<i class="bi bi-question-circle-fill" title="{{ _t('admin_settings.company_settings_links_page') }}" data-bs-toggle="tooltip"></i>
+					</label>
 					<select name="link_target" class="form-select" id="link_target">
 						<option value="menu" {{ $company->link_target !== 'menu' ?: 'selected' }}>Menu</option>
-						<option value="links_page" {{ $company->link_target !== 'links_page' ?: 'selected' }}>Links page</option>
+						<option value="links_page" {{ $company->link_target !== 'links_page' ?: 'selected' }} disabled>Links page</option>
 					</select>
 				</div>
 			</div>

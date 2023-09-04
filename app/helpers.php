@@ -6,14 +6,12 @@ use App\Services\TelegramBot;
 
 function _t($translationKey)
 {
-	$translation = \App\Services\TranslationsService::getTranslation($translationKey) ?? __($translationKey);
+	return \App\Services\TranslationsService::translate($translationKey);
+}
 
-	if ($translation === $translationKey) {
-		$keySplitted = explode('.', $translationKey);
-		$translation = ucfirst(str_replace('_', ' ', end($keySplitted)));
-	}
-
-	return $translation;
+function get_img_placeholder_src()
+{
+	return '/images/img-placeholder.png';
 }
 
 function logo_src()

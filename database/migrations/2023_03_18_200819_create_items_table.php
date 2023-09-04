@@ -20,6 +20,7 @@ return new class extends Migration
             $table->float('old_price', 8, 2)->nullable();
             $table->string('image', 500)->nullable();
             $table->text('description')->nullable();
+            $table->boolean('is_active')->default(true);
             $table->unsignedInteger('sorting')->default(1);
             $table->timestamps();
         });

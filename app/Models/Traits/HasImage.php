@@ -45,6 +45,11 @@ trait HasImage
 
 	public function setImage($request)
 	{
+		if ($request->remove_image) {
+			$this->image = null;
+			// here delete image files
+		}
+
 		if ($file = $request->file('image')) {
 
 			if (!$this->id || !$this->name) {

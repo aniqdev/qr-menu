@@ -102,6 +102,8 @@ class ItemController extends Controller
 
 		$data = $request->validated();
 
+		$data['is_active'] = $request->has('is_active');
+
 		$data['image'] = $item->setImage($request);
 
 		$item->update($data);

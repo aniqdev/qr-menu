@@ -13,9 +13,21 @@ class TranslationsService
 {
     private static $translationsCache = null;
 
-    public static function getTranslation($translationKey)
+    public static function translate($translationKey)
     {
-        if (!self::$translationsCache) {
+        $translation = self::getTranslation($translationKey) ?? __($translationKey);
+
+        if ($translation === $translationKey) {
+            $keySplitted = explode('.', $translationKey);
+            $translation = ucfirst(str_replace('_', ' ', end($keySplitted)));
+        }
+
+        return $translation;
+    }
+
+    private static function getTranslation($translationKey)
+    {
+        if (is_null(self::$translationsCache)) {
             self::$translationsCache = self::fillTranslationsCahe();
         }
 

@@ -89,6 +89,7 @@ return [
             'type' => 'field',
             'field' => [
                 'type' => 'select',
+                'default_value' => ',',
                 'width' => 6,
                 'options' => [
                     '.' => 'Dot .',
@@ -102,6 +103,7 @@ return [
             'type' => 'field',
             'field' => [
                 'type' => 'select',
+                'default_value' => ' ',
                 'width' => 6,
                 'options' => [
                     ',' => 'Coma ,',

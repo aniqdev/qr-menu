@@ -21,4 +21,9 @@ class Category extends Model
     {
         return $this->hasMany(\App\Models\Item::class)->orderBy('sorting');
     }
+
+    public function itemsActive()
+    {
+        return $this->hasMany(\App\Models\Item::class)->where('is_active', true)->orderBy('sorting');
+    }
 }

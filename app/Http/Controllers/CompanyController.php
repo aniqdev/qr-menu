@@ -57,11 +57,11 @@ class CompanyController extends Controller
         ];
     }
 
-    public function menu(Request $request, $company_slug)
+    public function menu($company_slug)
     {
         $company = Company::where('slug', $company_slug)->firstOrFail();
 
-        $categories = Category::with('items')->where('company_id', $company->id)->orderBy('sorting')->get();
+        $categories = Category::with('itemsActive')->where('company_id', $company->id)->orderBy('sorting')->get();
 
         $choosenTemplate = $request->template ?? $company->menu_template ?? 'default';
 
@@ -86,6 +86,10 @@ class CompanyController extends Controller
         // $cafeLink = route('cafe.links-page', $company->slug);
 
         // $menuLink = route('cafe.menu', $company->slug);
+
+        if ($company->link_target === 'menu') {
+            return $this->menu($company_slug);
+        }
 
         return view('front.links-page', [
             'company' => $company,

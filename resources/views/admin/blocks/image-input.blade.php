@@ -1,19 +1,37 @@
 <style>
 #item_image_label.dragged-over{
 	outline: 1px solid mediumaquamarine;
-    box-shadow: 0 0 10px mediumaquamarine;
+		box-shadow: 0 0 10px mediumaquamarine;
 }
 #item_image_label .image-input{
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+.item-image-remove-button{
+	position: absolute;
+	right: 0;
+	background: #ffffffa3;
+    outline: 3px solid #ffffffa3;
+    z-index: 2;
 }
 </style>
 <label for="item_image" class="position-relative" id="item_image_label">
-	<img class="img-thumbnail" src="{{ $model->image ?? '/images/img-placeholder.png' }}" alt="">
+
+	<button type="button" class="btn btn-outline-danger item-image-remove-button"
+		data-imgplaceholder="{{ get_img_placeholder_src() }}"
+		onclick="
+			$('input[name=remove_image]').val(1)
+			$('.js-img-preview').attr('src', this.dataset.imgplaceholder)
+			$(this).closest('.marked-form').removeClass('saved')
+		" 
+	><i class="bi bi-trash"></i></button>
+
+	<img class="img-thumbnail js-img-preview" src="{{ $model->image ?? get_img_placeholder_src() }}" alt="">
 	<input type="file" name="image" class="image-input" id="item_image" accept=".jpg, .jpeg, .png, .webp">
+	<input type="hidden" name="remove_image">
 </label>

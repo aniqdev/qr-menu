@@ -31,7 +31,7 @@ body,
 			<div class="category-name pt-4">
 				<h2 class="h2 m-0">{{ $category->name }}</h2>
 			</div>
-			@foreach($category->items as $item)
+			@foreach($category->itemsActive as $item)
 				<div class="col-sm-12 col-md-4 col-lg-3">
 					<a class="d-block border-md-0 text-body text-decoration-none py-4 pb-sm-6 
                     border-sm-bottom border-light">
