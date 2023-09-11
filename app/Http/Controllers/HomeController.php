@@ -3,10 +3,29 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Process;
 use App\Models\{Company, User};
 
 class HomeController extends Controller
 {
+    public function runCommand(Request $request)
+    {
+        abort_if(!auth()->user()->isSuperAdmin(), 401);
+
+        $result = Process::run($request->command);
+// debug(mb_detect_encoding($result->errorOutput(), 'auto'));
+        $output = $request->output . PHP_EOL . $request->command . ' -> ' . $result->output();
+
+        return [
+            // 'message' => 'Success',
+            'request' => $request->all(),
+            'jquery' => [
+                ['element' => '.output-textarea', 'method' => 'text', 'args' => [trim($output)]],
+                ['element' => '.command-input', 'method' => 'val', 'args' => ['']],
+            ]
+        ];
+    }
+
     public function dashboard()
     {
         $companies = Company::paginate(20);

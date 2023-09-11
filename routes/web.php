@@ -35,6 +35,7 @@ Route::group([
 ], function () {
 
     Route::get('dashboard', [\App\Http\Controllers\HomeController::class, 'dashboard'])->name('dashboard');
+    Route::post('run-command', [\App\Http\Controllers\HomeController::class, 'runCommand'])->name('run-command');
 
     Route::get('menu', [\App\Http\Controllers\MenuController::class, 'adminMenu'])->name('admin.menu');
 
@@ -43,6 +44,7 @@ Route::group([
 
     Route::resource('items', \App\Http\Controllers\ItemController::class);
     Route::post('items/update-sorting', [\App\Http\Controllers\ItemController::class, 'updateSorting'])->name('items.update-sorting');
+    Route::get('modals/items/create', [\App\Http\Controllers\ItemController::class, 'loadCreateModal'])->name('items.load-create-modal');
 
     Route::get('templates', [\App\Http\Controllers\TemplateController::class, 'templates'])->name('admin.templates');
 

@@ -10,10 +10,16 @@
 }
 </style>
 <div class="shadow-block">
+    @include('admin.blocks.breadcrumbs', [
+        'breadcrumbs' => [
+            ['id' => 'breadcrumb_categories', 'href' => route('categories.index'), 'label' => _t('breadcrumbs.categories'), 'title' => _t('breadcrumbs.categories')],
+            ['id' => 'breadcrumb_items', 'href' => route('items.index'), 'label' => _t('breadcrumbs.items'), 'title' => _t('breadcrumbs.items')],
+        ]
+    ])
     <h2 class="d-flex">
         {{ _t('admin_items.items') }}
         <a href="{{ route('items.create') }}" class="ms-auto btn btn-outline-primary">
-            {{ _t('Create') }} <i class="bi bi-plus-square"></i>
+            {{ _t('items.create') }} <i class="bi bi-plus-square"></i>
         </a>
     </h2>
     <div class="row js-no-reload">

@@ -18,6 +18,6 @@ function ajax_post(url, data, callback) {
 	return send_ajax('post', url, data, callback, {contentType: "application/json; charset=utf-8"})
 }
 
-function ajax_post_data(url, data, callback) {
+function ajax_post_formdata(url, data, callback) {
 	return send_ajax('post', url, data, callback)
 }

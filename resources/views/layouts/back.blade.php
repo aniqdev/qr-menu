@@ -95,6 +95,24 @@
        </div>
     </footer>
 
+   <!-- Universal modal -->
+   <div class="modal fade" id="universalModal" tabindex="-1" aria-labelledby="universalModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+         <div class="modal-content" id="universal_modal_content">
+            <div class="modal-header">
+               <h1 class="modal-title fs-5" id="universalModalLabel">...</h1>
+               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+               ...
+            </div>
+            <div class="modal-footer">
+               ...
+            </div>
+         </div>
+      </div>
+   </div>
+
     <div class="axaj-loader-wrap" id="ajax_loader">
         <div class="lds-ring">
             <div></div>

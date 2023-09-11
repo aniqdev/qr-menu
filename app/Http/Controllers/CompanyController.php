@@ -63,7 +63,7 @@ class CompanyController extends Controller
 
         $categories = Category::with('itemsActive')->where('company_id', $company->id)->orderBy('sorting')->get();
 
-        $choosenTemplate = $request->template ?? $company->menu_template ?? 'default';
+        $choosenTemplate = request('template') ?? $company->menu_template ?? 'default';
 
         $settings = CompanyTemplate::where([
             'company_id' => $company->id,

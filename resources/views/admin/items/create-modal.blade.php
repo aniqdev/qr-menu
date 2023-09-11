@@ -1,15 +1,13 @@
-@extends('layouts.back')
-
-@section('content')
-
-<div class="shadow-block">
-	<h2>{{ _t('admin_item.add_new') }}</h2>
-	<form class="row marked-form saved" onsubmit="submit_form(this, event)" action="{{ route('items.store') }}">
+<div class="modal-header">
+	<h1 class="modal-title fs-5" id="universalModalLabel">{{ _t('admin_item.add_new') }}</h1>
+	<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body">
+	<form class="row marked-form saved" onsubmit="submit_form(this, event)" action="{{ route('items.store') }}" id="modal_create_item_form">
 		@csrf
+		<input type="hidden" name="go_to_category_edit" value="{{ $selectedCategory }}">
 		<div class="col-md-4">
 			@include('admin.blocks.image-input')
-			<hr>
-			<button type="submit" class="btn btn-primary">Save</button>
 		</div>
 		<div class="col-md-8">
 
@@ -31,7 +29,7 @@
 					<select name="category_id" class="form-select" id="item_category">
 						<option value="">{{ _t('admin_item.hidden_category') }}</option>
 						@foreach($categories as $category)
-							<option value="{{ $category->id }}">{{ $category->name }}</option>
+							<option value="{{ $category->id }}" {{ $category->id != $selectedCategory ?: 'selected' }}>{{ $category->name }}</option>
 						@endforeach
 					</select>
 				</div>
@@ -43,13 +41,7 @@
 		</div>
 	</form>
 </div>
-<script>
-// only to show where is the drop-zone:
-// $('#item_image_label').on('dragenter', function() {
-// 	this.classList.add('dragged-over');
-// })
-//  .on('dragend drop dragexit dragleave', function() {
-// 	this.classList.remove('dragged-over');
-// });
-</script>
-@endsection
+<div class="modal-footer">
+	{{-- <button type="button" class="btn btn-secondary" data-bs-dismiss="universalModal">Close</button> --}}
+	<button type="button" class="btn btn-primary" onclick="$('#modal_create_item_form').submit()">Save changes</button>
+</div>

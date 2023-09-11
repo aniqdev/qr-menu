@@ -10,6 +10,11 @@
 }
 </style>
 <div class="shadow-block">
+    @include('admin.blocks.breadcrumbs', [
+        'breadcrumbs' => [
+            ['id' => 'breadcrumb_categories', 'href' => route('categories.index'), 'label' => _t('breadcrumbs.categories'), 'title' => _t('breadcrumbs.categories')],
+        ]
+    ])
     <h2 class="d-flex">
         {{ _t('admin_categories.categories') }}
         <a href="{{ route('categories.create') }}" class="ms-auto btn btn-outline-primary">{{ _t('admin_categories.create') }} <i class="bi bi-plus-square"></i></a>
@@ -19,16 +24,16 @@
         @foreach($categories as $category)
             <div class="row justify-content-between sortable-item py-2 category-item" data-id="{{ $category->id }}">
 
-                <div class="col-4 col-lg-3 d-flex position-relative">
+                <div class="col-4 col-lg-3 d-flex">
                     
-                    {{-- sorting --}}
-                    <div class="col_ position-absolute">
-                        <span class="btn btn-outline-secondary sortable-handle me-2"
-                            style="background-color: #ffffffb5;"><i class="bi bi-arrows-move"></i></span>
-                    </div>
 
                     {{-- image --}}
-                    <div class="col_">
+                    <div class="position-relative" style="margin-left: -13px; margin-right: -13px;">
+                        {{-- sorting --}}
+                        <div class="col_ position-absolute">
+                            <span class="btn btn-outline-secondary sortable-handle me-2"
+                                style="background-color: #ffffffb5;"><i class="bi bi-arrows-move"></i></span>
+                        </div>
                         <a href="{{ route('categories.edit', $category) }}" class="js-no-reload-link">
                             <img src="{{ $category->image_small }}" alt=""
                                 style="max-width:100%; max-height:100px;">
@@ -42,7 +47,7 @@
                     {{-- name --}}
                     <div class="d-flex align-items-center">
                         <a href="{{ route('categories.edit', $category) }}" class="js-no-reload-link text-truncate">
-                            <span class="text-truncate">{{ $category->name }}</span>
+                            {{ $category->name }}
                         </a>
                         @include('admin.categories.blocks.item-dropdown')
                     </div>

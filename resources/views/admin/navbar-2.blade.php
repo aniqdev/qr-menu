@@ -44,13 +44,13 @@
                         </a>
                     </li>
                     <li class="nav-item d-lg-none">
-                        <a class="nav-link js-no-reload-link" href="{{ route('admin.menu') }}">{{ _t('admin_sidebar.templates') }}</a>
-                    </li>
-                    <li class="nav-item d-lg-none">
                         <a class="nav-link js-no-reload-link" href="{{ route('categories.index') }}">{{ _t('admin_sidebar.categories') }}</a>
                     </li>
                     <li class="nav-item d-lg-none border-bottom">
                         <a class="nav-link js-no-reload-link" href="{{ route('items.index') }}">{{ _t('admin_sidebar.dishes') }}</a>
+                    </li>
+                    <li class="nav-item d-lg-none">
+                        <a class="nav-link js-no-reload-link" href="{{ route('admin.menu') }}">{{ _t('admin_sidebar.templates') }}</a>
                     </li>
                     <li class="nav-item d-lg-none">
                         <a class="nav-link js-no-reload-link" href="{{ route('admin.qr-code') }}">{{ _t('admin_sidebar.qr_code') }}</a>

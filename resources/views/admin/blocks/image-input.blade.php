@@ -20,15 +20,11 @@
     z-index: 2;
 }
 </style>
-<label for="item_image" class="position-relative" id="item_image_label">
+<label for="item_image" class="position-relative image-input-wrapper" id="item_image_label">
 
 	<button type="button" class="btn btn-outline-danger item-image-remove-button"
 		data-imgplaceholder="{{ get_img_placeholder_src() }}"
-		onclick="
-			$('input[name=remove_image]').val(1)
-			$('.js-img-preview').attr('src', this.dataset.imgplaceholder)
-			$(this).closest('.marked-form').removeClass('saved')
-		" 
+		onclick="window.remove_image(this)" 
 	><i class="bi bi-trash"></i></button>
 
 	<img class="img-thumbnail js-img-preview" src="{{ $model->image ?? get_img_placeholder_src() }}" alt="">

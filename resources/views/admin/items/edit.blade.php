@@ -2,6 +2,14 @@
 
 @section('content')
 <div class="shadow-block">
+	@include('admin.blocks.breadcrumbs', [
+		'breadcrumbs' => [
+			['id' => 'breadcrumb_categories', 'href' => route('categories.index'), 'label' => _t('breadcrumbs.categories'), 'title' => _t('breadcrumbs.categories')],
+			['id' => 'breadcrumb_category', 'href' => route('categories.edit', $item->category), 'label' => $item->category->name, 'title' => 'Edit category - ' . $item->category->name],
+			['id' => 'breadcrumb_items', 'href' => route('items.index'), 'label' => _t('breadcrumbs.items'), 'title' => _t('breadcrumbs.items')],
+			['id' => 'breadcrumb_item', 'href' => route('items.edit', $item), 'label' => $item->name, 'title' => 'Edit item - ' . $item->name],
+		]
+	])
 	<h2>{{ _t('admin_item.edit') }} - {{ $item->name }}</h2>
 	<form class="row marked-form saved" onsubmit="submit_form(this, event)" action="{{ route('items.update', $item) }}">
 		@csrf @method('PUT')

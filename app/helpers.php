@@ -9,6 +9,11 @@ function _t($translationKey)
 	return \App\Services\TranslationsService::translate($translationKey);
 }
 
+function get_admin_home_href()
+{
+	return '/';
+}
+
 function get_img_placeholder_src()
 {
 	return '/images/img-placeholder.png';

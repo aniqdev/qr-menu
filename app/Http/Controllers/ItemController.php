@@ -10,6 +10,18 @@ use Illuminate\Http\Request;
 
 class ItemController extends Controller
 {
+	public function loadCreateModal(Request $request)
+	{
+		$categories = Category::where('company_id', auth()->user()->company_id)->orderBy('sorting')->get(['id', 'name']);
+
+		return [
+			'modal_content' => view('admin.items.create-modal', [
+				'categories' => $categories,
+				'selectedCategory' => $request->category,
+			])->render(),
+		];
+	}
+
 	public function updateSorting(Request $request)
 	{
 		foreach ($request->ids as $key => $itemId) {
@@ -65,8 +77,15 @@ class ItemController extends Controller
 
 		return [
 			'item' => $item,
-			'redirect' => route('items.edit', $item),
+			'redirect' => $request->go_to_category_edit ? route('categories.edit', $item->category_id) : route('items.edit', $item),
 			'message' => _t('admin.success'),
+			'jquery' => [
+				[
+					'element' => '#universalModal',
+					'method' => 'modal',
+					'args' => ['hide']
+				]
+			] 
 		];
 	}
 

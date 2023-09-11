@@ -29,6 +29,10 @@ a{
 	width: 100%;
 }
 
+.mw-100{
+	max-width: 100%;
+}
+
 .form-label {
     margin-bottom: 0.5rem;
     font-weight: bold;

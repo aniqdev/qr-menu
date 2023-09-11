@@ -12,7 +12,11 @@
                 <h6>{{ _t('qrlanding.helpful_links')     }}</h6>
                 <ul class="links-vertical">
                     @foreach ($pages as $page)
-                    <li><a target="_blank" href="/blog/{{ $page->slug }}">{{ $page->title }}</a></li>
+                    <li><a target="_blank" href="{{ $page->slug }}">
+                        {!! $page->icon !!}
+                        <span class="px-1"></span>
+                        {{ $page->title }}
+                    </a></li>
                     @endforeach
                 </ul>
             </div>

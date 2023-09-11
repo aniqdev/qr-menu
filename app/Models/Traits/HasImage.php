@@ -36,7 +36,7 @@ trait HasImage
 
 	public function getImageAttribute()
 	{
-		if (!$this->attributes['image']) {
+		if (empty($this->attributes['image'])) {
 			return '/images/img-placeholder.png';
 		}
 

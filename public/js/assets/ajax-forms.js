@@ -4,13 +4,16 @@ function submit_form(form, event) {
 	event.preventDefault();
 
 	var formData = new FormData(form)
-
-	ajax_post_data(form.action, formData, function(data){
+log(form.action)
+console.dir(form)
+// return false
+	ajax_post_formdata(form.action, formData, function(data){
 		data.message && toastr.success(data.message);
 		data.redirect && go_to_page(data.redirect);
 		form.classList.add('saved');
 		data.reload && (location.href = location.href);
 		data.form_reset && form.reset()
+		data.jquery && data.jquery.forEach(jq => $(jq.element)[jq.method](...jq.args))
 	}).fail(ajax_fail_callback)
 
 	// $.ajax({
