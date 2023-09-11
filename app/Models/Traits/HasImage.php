@@ -67,7 +67,7 @@ trait HasImage
 			if ($saveOriginal = false) {
 				$filepath = $file->storeAs("companies/{$companyId}/{$dirname}/{$this->id}/", "original@{$filename}.{$extension}", 'public');
 			}else{
-				@mkdir(storage_path("app/public/companies/{$companyId}/{$dirname}/{$this->id}/"));
+				mkdir(storage_path("app/public/companies/{$companyId}/{$dirname}/{$this->id}/"), 0775, true);
 				$filepath = "companies/{$companyId}/{$dirname}/{$this->id}/original@{$filename}.{$extension}";
 			}
 
