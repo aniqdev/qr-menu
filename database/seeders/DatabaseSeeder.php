@@ -17,8 +17,7 @@ class DatabaseSeeder extends Seeder
 
         $companySlug = str($companyName)->slug();
 
-        $company = \App\Models\Company::create([
-            'id' => 1,
+        $company = \App\Models\Company::firstOrCreate([ 'id' => 1], [
             'name' => $companyName,
             'slug' => $companySlug,
         ]);
@@ -28,6 +27,16 @@ class DatabaseSeeder extends Seeder
             'role' => 'superadmin',
             'name' => 'Admin',
             'email' => 'nameaniq@gmail.com',
+            'email_verified_at' => now(),
+            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'remember_token' => Str::random(10),
+        ]);
+
+        \App\Models\User::firstOrCreate(['id' => 2], [
+            'company_id' => $company->id,
+            'role' => 'admin',
+            'name' => 'Admin',
+            'email' => 'admin@admin.com',
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => Str::random(10),

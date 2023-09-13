@@ -15,8 +15,9 @@ return new class extends Migration
             $table->id()->from(rand(1000, 2000));
             $table->foreignId('company_id')->constrained();
             $table->enum('role', ['superadmin', 'admin', 'editor'])->default('admin');
-            $table->string('name');
+            $table->string('name')->nullable();
             $table->string('email')->unique();
+            $table->string('phone')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('lang')->default('en');
