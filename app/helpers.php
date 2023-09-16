@@ -9,9 +9,9 @@ function _t($translationKey)
 	return \App\Services\TranslationsService::translate($translationKey);
 }
 
-function get_admin_home_href()
-{
-	return '/';
+function rand_color() {
+    // return '#' . str_pad(dechex(mt_rand(0, 0xFFFFFF)), 6, '0', STR_PAD_LEFT);
+    return sprintf('#%06X', mt_rand(0, 0xFFFFFF));
 }
 
 function get_img_placeholder_src()
