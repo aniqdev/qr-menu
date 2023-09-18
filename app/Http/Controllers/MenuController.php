@@ -14,10 +14,13 @@ class MenuController extends Controller
 
         $choosenTemplate = $request->template ?? auth()->user()->company->menu_template ?? 'default';
 
+        $companyTemplate = auth()->user()->company->menu_template ?? 'default';
+
         return view('admin.menu', [
             'categories' => $categories,
             'templates' => TemplateService::templates(),
             'choosenTemplate' => $choosenTemplate,
+            'companyTemplate' => $companyTemplate,
             'company' => auth()->user()->company,
         ]);
     }

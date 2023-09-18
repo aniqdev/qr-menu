@@ -52,6 +52,7 @@ Route::group([
 
     Route::get('settings', [\App\Http\Controllers\CompanyController::class, 'edit'])->name('admin.settings');
     Route::put('company/update', [\App\Http\Controllers\CompanyController::class, 'update'])->name('company.update');
+    Route::post('companies/{company}/set-template', [\App\Http\Controllers\CompanyController::class, 'setTemplate'])->name('companies.set-template');
 
     Route::put('profile', [\App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
     Route::put('profile/update-password', [\App\Http\Controllers\ProfileController::class, 'updatePassword'])->name('profile.update-password');

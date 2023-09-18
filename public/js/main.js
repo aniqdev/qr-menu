@@ -41,6 +41,7 @@ function init_app() {
 	init_mark_form()
 	init_image_inputs()
 	init_admin_menu_page()
+	init_owl_carousel()
 }
 
 $(function () {	init_app() })
@@ -49,6 +50,22 @@ window.addEventListener("popstate", (event) => {
   event.state && event.state.url && go_to_page(event.state.url, false)
   !event.state && (location.href = location.href)
 });
+
+function init_owl_carousel() {
+	$(document).ready(function() {
+		$('.templates-carousel').owlCarousel({
+			margin: 10,
+			nav: true,
+			dots: true,
+			loop: false,
+			responsive: {
+				0: { items: 3 },
+				600: { items: 3 },
+				1000: { items: 5 }
+			}
+		})
+	})
+}
 
 function ajax_fail_callback(object, data) {
 	// log('11',object)

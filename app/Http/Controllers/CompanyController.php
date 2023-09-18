@@ -11,6 +11,19 @@ use App\Services\TemplateService;
 
 class CompanyController extends Controller
 {
+    public function setTemplate(Request $request, Company $company)
+    {
+        $company->update(['menu_template' => $request->template ?? $company->menu_template]);
+
+        return [
+            'message' => 'Success',
+            'jquery' => [
+                ['element' => '.choose-template-controls', 'method' => 'removeClass', 'args' => ['active']],
+                ['element' => '#template_controls_'.$request->template, 'method' => 'addClass', 'args' => ['active']],
+            ]
+        ];
+    }
+
     public function edit()
     {
         return view('admin.company.settings', [

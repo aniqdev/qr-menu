@@ -18,6 +18,9 @@
     <link rel="stylesheet" href="/css/bootstrap-colors.css?v={{ filemtime(public_path('css/bootstrap-colors.css')) }}">
     <link rel="stylesheet" href="/css/style.css?v={{ filemtime(public_path('css/style.css')) }}">
 
+   <link rel="stylesheet" href="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.carousel.min.css">
+   <link rel="stylesheet" href="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.theme.default.min.css">
+
     <script src="/js/jquery.min.js"></script>
     <script src="/js/jquery-ui.min.js"></script>
     <script src="/js/jquery.ui.touch-punch.min.js"></script>
@@ -124,6 +127,7 @@
     
     <script src="/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="/js/bs-jsonform.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="/js.php"></script>
 </body>
 </html>

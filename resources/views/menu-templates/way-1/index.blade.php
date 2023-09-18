@@ -6,8 +6,25 @@
 <link rel="stylesheet" href="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.carousel.min.css">
 <link rel="stylesheet" href="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.theme.default.min.css">
 <style>
+	/* cyrillic */
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Montserrat Regular'), local('Montserrat-Regular'), url(/fonts/Montserrat-Regular.woff2) format('woff2');
+}
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: local('Montserrat Bold'), local('Montserrat-Bold'), url(/fonts/Montserrat-Bold.woff2) format('woff2');
+}
 body{
 	background: #fff;
+	color: #555;
+	font-family: 'Montserrat',sans-serif;
 }
 .logo-wrapper{
 	border-bottom: 1px solid #e3e3e3;
@@ -20,7 +37,7 @@ body{
 	border-radius: 12px;
     border: none;
     font-size: 14px;
-    border: 1px solid #eaeaea;
+    border: 2px solid #eaeaea;
     background-color: #fff;
     cursor: pointer;
     overflow: hidden;
@@ -80,9 +97,11 @@ body{
     font-size: 12px;
     max-height: 40px;
     overflow: hidden;
+    margin: -5px 0 5px 0;
 }
-.card-bottom{
-/*	background: #eaeaea;*/
+.item-card .price{
+	font-size: 24px;
+	font-weight: bold;
 }
 .footer .sl-img-link {
     height: 44px;
@@ -92,6 +111,9 @@ body{
     background-repeat: no-repeat;
     background-color: #fff;
     border-radius: 50%;
+}
+.category-item:not(.active) .card{
+	border-color: #eaeaea!important;
 }
 </style>
 <div class="container py-2">
@@ -104,9 +126,10 @@ body{
 		<nav>
 			<div class="row_ mb-3" id="nav-tab" role="tablist">
 				<div class="owl-carousel owl-theme">
-					<div class="_col-6 _col-md-4 _col-lg-3 active _mb-4 item" id="" data-bs-toggle="tab" data-bs-target="#category-all" type="button" role="tab" aria-controls="nav-general" aria-selected="true">
-						<div class="card category-card">
-							<div class="card-title category-card-title" style="border-color: {{ rand_color() }};">All categories</div>
+					<?php $color = rand_color(); ?>
+					<div class="_col-6 _col-md-4 _col-lg-3 active _mb-4 category-item" id="" data-bs-toggle="tab" data-bs-target="#category-all" type="button" role="tab" aria-controls="nav-general" aria-selected="true">
+						<div class="card category-card" style="border-color: {{ $color }}">
+							<div class="card-title category-card-title" style="border-color: {{ $color }};">All categories</div>
 							<div class="card-body">
 								<div class="card-img-bottom">
 	                                <img src="/images/img-placeholder.png" alt="">
@@ -115,9 +138,10 @@ body{
 						</div>
 					</div>
 					@foreach($categories as $category)
-						<div class="_col-6 _col-md-4 _col-lg-3 _mb-4" id="nav-general-tab" data-bs-toggle="tab" data-bs-target="#category-{{ $category->id }}" type="button" role="tab" aria-controls="nav-general" aria-selected="true">
-							<div class="card category-card">
-								<div class="card-title category-card-title" style="border-color: {{ rand_color() }};">{{ $category->name }}</div>
+						<?php $color = rand_color(); ?>
+						<div class="_col-6 _col-md-4 _col-lg-3 _mb-4 category-item" id="nav-general-tab" data-bs-toggle="tab" data-bs-target="#category-{{ $category->id }}" type="button" role="tab" aria-controls="nav-general" aria-selected="true">
+							<div class="card category-card" style="border-color: {{ $color }}">
+								<div class="card-title category-card-title" style="border-color: {{ $color }};">{{ $category->name }}</div>
 								<div class="card-body">
 									<div class="card-img-bottom">
 	                                    <img src="{{ $category->image }}" alt="{{ $category->name }}">
@@ -143,9 +167,9 @@ body{
 	                                </div>
 								</div>
 								<div class="card-title">{{ $item->name }}</div>
-								<div class="card-description mb-2" style="padding: 0 10px; font-size: 12px;">{{ $item->description }}</div>
+								<div class="card-description">{{ $item->description }}</div>
 								<div class="card-bottom d-flex" style="padding: 0 10px;">
-									<div class="price me-2" style="font-size: 30px; font-weight: bold;">
+									<div class="price me-2">
 										{{ number_format($item->price, 
 												tpl_options('price_precision'), 
 												tpl_options('decimal_separator'),
@@ -174,9 +198,9 @@ body{
                                 </div>
 							</div>
 							<div class="card-title">{{ $item->name }}</div>
-							<div class="card-description mb-2" style="padding: 0 10px; font-size: 12px;">{{ $item->description }}</div>
+							<div class="card-description">{{ $item->description }}</div>
 							<div class="card-bottom d-flex" style="padding: 0 10px;">
-								<div class="price me-2" style="font-size: 30px; font-weight: bold;">
+								<div class="price me-2">
 									{{ number_format($item->price, 
 											tpl_options('price_precision'), 
 											tpl_options('decimal_separator'),
