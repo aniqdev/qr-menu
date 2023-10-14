@@ -57,7 +57,7 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect()->route('profile');
+        return redirect()->route('dashboard');
     }
 
     public function generateRandomPassword($length = 10)

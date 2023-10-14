@@ -16,6 +16,7 @@ class Item extends Model
         'name',
         'price',
         'old_price',
+        'volume ',
         'image',
         'description',
         'is_active',

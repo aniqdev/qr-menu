@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('name', 500)->default('');
             $table->float('price', 8, 2)->nullable();
             $table->float('old_price', 8, 2)->nullable();
+            $table->string('volume')->nullable();
             $table->string('image', 500)->nullable();
             $table->text('description')->nullable();
             $table->boolean('is_active')->default(true);

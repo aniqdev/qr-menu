@@ -15,7 +15,7 @@
 			['id' => 'breadcrumb_category', 'href' => route('categories.edit', $category), 'label' => $category->name, 'title' => 'Edit category - ' . $category->name],
 		]
 	])
-	<h2 class="text-truncate">Edit category - {{ $category->name }}</h2>
+	<h2 class="text-truncate">{{ _t('admin_categories.edit') }} - {{ $category->name }}</h2>
 	<form class="row marked-form saved" onsubmit="submit_form(this, event)" action="{{ route('categories.update', $category) }}">
 		@csrf
 		@method('PUT')
@@ -23,24 +23,24 @@
 			@include('admin.blocks.image-input', ['model' => $category])
 		</div>
 		<div class="col-md-8">
-			<label for="item_title" class="form-label">{{ _t('admin_category.name') }}</label>
+			<label for="item_title" class="form-label">{{ _t('admin_categories.name') }}</label>
 			<input type="text" name="name" value="{{ $category->name }}" class="form-control" id="item_title" placeholder="Vine">
 			<br>
-			<label for="description" class="form-label">{{ _t('admin_category.description') }}</label>
+			<label for="description" class="form-label">{{ _t('admin_categories.description') }}</label>
 			<textarea name="description" class="form-control" id="description" rows="3" placeholder="Vines grow in one of four ways: hooked, clinging, twining or tendril.">{{ $category->description }}</textarea>
 			<br>
-			<button type="submit" class="btn btn-primary">{{ _t('admin_category.save') }}</button>
+			<button type="submit" class="btn btn-primary">{{ _t('admin.save') }}</button>
 		</div>
 	</form>
 			@if(true || $category->items->count())
 			    <hr>
 			    <h4 class="d-flex align-items-center">
-			    	{{ _t('admin_category.dishes') }}
+			    	{{ _t('admin_categories.dishes') }}
 			    	<a href="{{ route('items.create') }}" class="ms-auto btn btn-outline-primary" 
 			    			onclick="modal_load(event, this)"
 			    			data-modalurl="{{ route('items.load-create-modal', ['category' => $category->id]) }}"
 			    			data-modalsize="modal-lg">
-			    		{{ _t('admin_category.add_item') }}
+			    		{{ _t('admin_categories.add_item') }}
 			    		<i class="bi bi-plus-square"></i>
 			    	</a>
 			    </h4>

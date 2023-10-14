@@ -36,7 +36,7 @@ class TranslationsService
 
     public static function fillTranslationsCahe($lang = null)
     {
-        $lang = $lang ?? auth()->user()->lang ?? 'en';
+        $lang = app()->getLocale();
 
         $translations = Translation::where('lang', $lang)->get();
 

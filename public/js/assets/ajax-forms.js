@@ -4,9 +4,7 @@ function submit_form(form, event) {
 	event.preventDefault();
 
 	var formData = new FormData(form)
-log(form.action)
-console.dir(form)
-// return false
+
 	ajax_post_formdata(form.action, formData, function(data){
 		data.message && toastr.success(data.message);
 		data.redirect && go_to_page(data.redirect);

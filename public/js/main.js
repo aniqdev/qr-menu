@@ -47,8 +47,12 @@ function init_app() {
 $(function () {	init_app() })
 
 window.addEventListener("popstate", (event) => {
+	log('popstate')
+	log(event)
+	// if push back
   event.state && event.state.url && go_to_page(event.state.url, false)
-  !event.state && (location.href = location.href)
+  // if no state
+  // !event.state && (location.href = location.href) // problems with hash #
 });
 
 function init_owl_carousel() {
@@ -59,7 +63,7 @@ function init_owl_carousel() {
 			dots: true,
 			loop: false,
 			responsive: {
-				0: { items: 3 },
+				0: { items: 2 },
 				600: { items: 3 },
 				1000: { items: 5 }
 			}

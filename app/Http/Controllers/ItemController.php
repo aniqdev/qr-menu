@@ -75,16 +75,17 @@ class ItemController extends Controller
 
 		$item->update(['image' => $item->setImage($request)]);
 
+		$redirect = ($request->go_to_category_edit &&  $item->category_id) ?
+					route('categories.edit', $item->category_id) :
+					route('items.edit', $item);
+
 		return [
 			'item' => $item,
-			'redirect' => $request->go_to_category_edit ? route('categories.edit', $item->category_id) : route('items.edit', $item),
+			'$item->category_id' => $item->category_id,
+			'redirect' => $redirect,
 			'message' => _t('admin.success'),
 			'jquery' => [
-				[
-					'element' => '#universalModal',
-					'method' => 'modal',
-					'args' => ['hide']
-				]
+				['element' => '#universalModal', 'method' => 'modal', 'args' => ['hide']],
 			] 
 		];
 	}

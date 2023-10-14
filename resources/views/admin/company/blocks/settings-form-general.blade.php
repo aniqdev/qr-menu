@@ -35,12 +35,12 @@
 						<i class="bi bi-question-circle-fill" title="{{ _t('admin_settings.company_settings_company_type') }}" data-bs-toggle="tooltip"></i>
 					</label>
 					<select name="company_type" class="form-select" id="company_type">
-						<option value="cafe" {{ $company->company_type !== 'cafe' ?: 'selected' }}>Cafe</option>
-						<option value="bar" {{ $company->company_type !== 'bar' ?: 'selected' }}>Bar</option>
-						<option value="restaurant" {{ $company->company_type !== 'restaurant' ?: 'selected' }}>Restaurant</option>
+						<option value="cafe" {{ $company->company_type !== 'cafe' ?: 'selected' }}>{{ _t('admin_company.company_type_cafe') }}</option>
+						<option value="bar" {{ $company->company_type !== 'bar' ?: 'selected' }}>{{ _t('admin_company.company_type_bar') }}</option>
+						<option value="restaurant" {{ $company->company_type !== 'restaurant' ?: 'selected' }}>{{ _t('admin_company.company_type_bar') }}</option>
 					</select>
 				</div>
-				<div class="col-4_ mb-3">
+				<div class="col-4_ mb-3 d-none">
 					<label for="link_target" class="form-label">
 						{{ _t('admin_company.link_target') }}
 						<i class="bi bi-question-circle-fill" title="{{ _t('admin_settings.company_settings_links_page') }}" data-bs-toggle="tooltip"></i>

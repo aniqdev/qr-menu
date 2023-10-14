@@ -49,13 +49,13 @@ Artisan::command('testt', function () {
 
     return;
 
-    $translationKey = 'admin_sidebar.categories';
+    $translationKey = 'admin_nav.categories';
 
     $res = \App\Services\TranslationsService::getTranslation($translationKey);
 
     dd($res);
 
-    $res = _t('admin_sidebar.categories');
+    $res = _t('admin_nav.categories');
 
     dd($res);
 

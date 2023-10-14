@@ -177,7 +177,7 @@ body{
 											(tpl_options('space_after_price') ? ' ' : '').
 											tpl_options('currency_symbol') }}
 									</div>
-									<div class="volume">1st.</div>
+									<div class="volume">{{ $item->volume }}</div>
 								</div>
 							</div>
 						</div>

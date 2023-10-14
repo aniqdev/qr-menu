@@ -22,7 +22,7 @@
             <div class="card bg-secondary shadow">
                 <div class="card-header bg-white border-0">
                     <div class="row align-items-center">
-                        <h3 class="col-12 mb-0">Register your restaurant</h3>
+                        <h3 class="col-12 mb-0">{{ _t('auth.register_you_company') }}</h3>
                     </div>
                 </div>
                 <div class="card-body">
@@ -37,23 +37,23 @@
                     @endif
                     <form id="registerform" method="post" action="{{ route('register') }}" autocomplete="off">
                         @csrf
-                        <h6 class="heading-small text-muted mb-4">Restaurant information</h6>
+                        <h6 class="heading-small text-muted mb-4">{{ _t('auth.company_information') }}</h6>
                         <div class="pl-lg-4">
                             <div class="form-group">
-                                <label class="form-control-label" for="company_name">Restaurant Name</label>
+                                <label class="form-control-label" for="company_name">{{ _t('auth.company_name') }}</label>
                                 <input type="text" name="company_name" id="company_name" class="form-control form-control-alternative" placeholder="Restaurant Name here ..." value="{{ old('company_name') }}" required autofocus>
                             </div>
                         </div>
                         <hr class="my-4">
-                        <h6 class="heading-small text-muted mb-4">Owner information</h6>
+                        <h6 class="heading-small text-muted mb-4">{{ _t('auth.owner_information') }}</h6>
                         <div class="pl-lg-4">
                             <div class="form-group">
-                                <label class="form-control-label" for="owner_name">Owner Name</label>
-                                <input type="text" name="owner_name" id="owner_name" class="form-control form-control-alternative" placeholder="Owner Name here ..." value="{{ old('owner_name', session('name')) }}">
+                                <label class="form-control-label" for="owner_name">{{ _t('auth.owner_name') }}</label>
+                                <input type="text" name="owner_name" id="owner_name" class="form-control form-control-alternative" placeholder="{{ _t('auth.owner_name') }} ..." value="{{ old('owner_name', session('name')) }}">
                             </div>
                             <div class="form-group">
-                                <label class="form-control-label" for="email">Owner Email</label>
-                                <input type="text" name="email" id="email" class="form-control form-control-alternative" placeholder="Owner Email here ..." value="{{ old('email', session('email')) }}" required>
+                                <label class="form-control-label" for="email">{{ _t('auth.owner_email') }}</label>
+                                <input type="text" name="email" id="email" class="form-control form-control-alternative" placeholder="{{ _t('auth.owner_email') }} ..." value="{{ old('email', session('email')) }}" required>
                             </div>
                             {{-- <div class="form-group">
                                 <label class="form-control-label" for="phone_owner">Owner Phone</label>
@@ -70,7 +70,7 @@
                                 </div>
                             </div> --}}
                             <div class="text-center">
-                                <button type="submit" id="thesubmitbtn" class="btn btn-success mt-4">Create</button>
+                                <button type="submit" id="thesubmitbtn" class="btn btn-success mt-4">{{ _t('auth.create') }}</button>
                             </div>
                         </div>
                     </form>

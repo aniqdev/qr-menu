@@ -8,6 +8,16 @@ use App\Models\{Company, User};
 
 class HomeController extends Controller
 {
+    public function landing()
+    {
+        return view('landing.index');
+    }
+
+    public function landingPageList()
+    {
+        return view('landing.page-list');
+    }
+
     public function runCommand(Request $request)
     {
         abort_if(!auth()->user()->isSuperAdmin(), 401);

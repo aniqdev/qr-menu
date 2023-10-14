@@ -41,13 +41,13 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ _t('Login') }}</a>
+                                    <a class="nav-link" href="{{ route('login') }}">{{ _t('auth.login') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ _t('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ _t('auth.register') }}</a>
                                 </li>
                             @endif
                         @else

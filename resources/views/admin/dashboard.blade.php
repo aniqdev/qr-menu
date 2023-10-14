@@ -1,8 +1,8 @@
 @extends('layouts.back')
 
 @section('content')
-<div class="shadow-block">
-    <h2>Dashboard</h2>
+<div class="shadow-block" id="admin_dashboard">
+    <h2>{{ _t('admin_dashboard.dashboard') }}</h2>
     <hr>
     @if(auth()->user()->isSuperAdmin())
     <form class="laravel-process" onsubmit="submit_form(this, event)" action="{{ route('run-command') }}">

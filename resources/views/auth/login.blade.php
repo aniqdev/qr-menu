@@ -11,6 +11,12 @@ main{
     margin-top: -54px;
     overflow: auto;
 }
+.google-icon{
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 48 48'%3E%3Cdefs%3E%3Cpath id='a' d='M44.5 20H24v8.5h11.8C34.7 33.9 30.1 37 24 37c-7.2 0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 4.1 29.6 2 24 2 11.8 2 2 11.8 2 24s9.8 22 22 22c11 0 21-8 21-22 0-1.3-.2-2.7-.5-4z'/%3E%3C/defs%3E%3CclipPath id='b'%3E%3Cuse xlink:href='%23a' overflow='visible'/%3E%3C/clipPath%3E%3Cpath clip-path='url(%23b)' fill='%23FBBC05' d='M0 37V11l17 13z'/%3E%3Cpath clip-path='url(%23b)' fill='%23EA4335' d='M0 11l17 13 7-6.1L48 14V0H0z'/%3E%3Cpath clip-path='url(%23b)' fill='%2334A853' d='M0 37l30-23 7.9 1L48 0v48H0z'/%3E%3Cpath clip-path='url(%23b)' fill='%234285F4' d='M48 48L17 24l-4-3 35-10z'/%3E%3C/svg%3E");
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
 </style>
 <div class="wrapper">
     <div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="background-image: url(/images/cover.jpg); background-size: cover; background-position: center top;">
@@ -31,7 +37,7 @@ main{
             <div class="card bg-secondary shadow">
                 <div class="card-header bg-white border-0">
                     <div class="row align-items-center">
-                        <h3 class="col-12 mb-0">Login</h3>
+                        <h3 class="col-12 mb-0">{{ _t('auth.login') }}</h3>
                     </div>
                 </div>
                 <div class="card-body">
@@ -41,8 +47,8 @@ main{
                         <div class="">
 
                             <div class="form-group">
-                                <label class="form-control-label" for="name_owner">Email</label>
-                                <input type="text" id="name_owner" class="form-control form-control-alternative @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}"  autocomplete="email" placeholder="Email ..." autofocus>
+                                <label class="form-control-label" for="name_owner">{{ _t('auth.email') }}</label>
+                                <input type="text" id="name_owner" class="form-control form-control-alternative @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}"  autocomplete="email" placeholder="{{ _t('auth.email') }} ..." autofocus>
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -51,8 +57,8 @@ main{
                             </div>
 
                             <div class="form-group">
-                                <label class="form-control-label" for="password">Password</label>
-                                <input type="password" name="password" id="password" class="form-control form-control-alternative @error('password') is-invalid @enderror" placeholder="Password ...">
+                                <label class="form-control-label" for="password">{{ _t('auth.password') }}</label>
+                                <input type="password" name="password" id="password" class="form-control form-control-alternative @error('password') is-invalid @enderror" placeholder="{{ _t('auth.password') }} ...">
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -62,27 +68,31 @@ main{
 
                             <div class="row mt-3">
                                 <div class="col-6">
-                                            <div class="custom-control custom-control-alternative custom-checkbox">
-                                                <input class="custom-control-input" name="remember" id="customCheckLogin" type="checkbox" checked>
-                                                <label class="custom-control-label" for="customCheckLogin">
-                                                    <span class="text-muted">{{ _t('Remember me') }}</span>
-                                                </label>
-                                            </div>
+                                    <div class="custom-control custom-control-alternative custom-checkbox">
+                                        <input class="custom-control-input" name="remember" id="customCheckLogin" type="checkbox" checked>
+                                        <label class="custom-control-label" for="customCheckLogin">
+                                            <span class="text-muted">{{ _t('auth.remember_me') }}</span>
+                                        </label>
+                                    </div>
                                 </div>
                                 <div class="col-6 text-right">
                                     @if (Route::has('password.request'))
                                         <a href="{{ route('password.request') }}" class="text-light">
-                                            <small>{{ _t('Forgot password?') }}</small>
+                                            <small>{{ _t('auth.forgot_password') }}</small>
                                         </a>
                                     @endif
                                 </div>
                             </div>
 
                             <div class="text-center">
-                                <button type="submit" id="thesubmitbtn" class="btn btn-success mt-4">Login</button>
+                                <button type="submit" id="thesubmitbtn" class="btn btn-success mt-4 me-0 mb-3">{{ _t('auth.login') }}</button>
+                                <br>{{ _t('auth.or') }}
                             </div>
                             <div class="text-center">
-                                <button type="button" id="" onclick="googleAuth(this)" name="{{ route('google-login') }}" class="btn btn-primary mt-4">Google Login</button>
+                                <button type="button" id="" onclick="googleAuth(this)" name="{{ route('google-login') }}" class="btn btn-secondary mt-4 d-inline-flex align-items-center bg-white">
+                                    <span class="google-icon me-2"></span>
+                                    <span>{{ _t('auth.google_login') }}</span>
+                                </button>
                             </div>
                         </div>
                     </form>
@@ -132,77 +142,3 @@ function googleLogin(googleLoginUrl, accessToken){
 @include('auth.footer')
 @endsection
 
-
-
-
-@section('content_')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ _t('Login') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
-
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ _t('Email Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}"  autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ _t('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password"  autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ _t('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ _t('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ _t('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-@endsection
