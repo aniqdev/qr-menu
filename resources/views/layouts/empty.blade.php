@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}" id="csrf_token">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>QR-Menu</title>
 
     <link rel="stylesheet" href="/css/bootstrap-icons.css">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
