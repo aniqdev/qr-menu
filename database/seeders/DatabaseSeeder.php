@@ -42,8 +42,43 @@ class DatabaseSeeder extends Seeder
             'remember_token' => Str::random(10),
         ]);
 
-        \App\Models\Category::factory(15)->create();
+        $productsJson = file_get_contents(storage_path('products.json'));
 
-        \App\Models\Item::factory(150)->create();
+        $categories = json_decode($productsJson);
+
+        // dump($categories);
+
+        foreach ($categories as $category) {
+
+            $cat = \App\Models\Category::create([
+                'company_id' => 1,
+                'name' => $category->category,
+                'description' => $category->category,
+                'image' => $category->img,
+                // 'image' => \App\Services\SeedService::getRandomHotDogImageUrl(),
+            ]);
+
+            foreach ($category->products as $product) {
+
+                \App\Models\Item::create([
+                    'company_id' => 1,
+                    'category_id' => $cat->id,
+                    'name' => $product->title,
+                    'description' => $product->desc ?? null,
+                    'price' => $product->price,
+                    // 'old_price' => fake()->numberBetween(100, 10000),
+                    'image' => $this->getLocalImgPath($product->img ?? null),
+                ]);
+            }
+        }
+
+        // \App\Models\Category::factory(15)->create();
+
+        // \App\Models\Item::factory(150)->create();
+    }
+
+    private function getLocalImgPath($originalUrl)
+    {
+        return $originalUrl ? '/images/demo/' . preg_replace('/^.+(dish-\d+\.jpg).+$/', '$1', $originalUrl) : null;
     }
 }

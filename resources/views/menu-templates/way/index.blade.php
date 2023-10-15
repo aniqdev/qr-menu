@@ -132,7 +132,8 @@ body{
 							<div class="card-title category-card-title" style="border-color: {{ $color }};">All categories</div>
 							<div class="card-body">
 								<div class="card-img-bottom">
-	                                <img src="/images/img-placeholder.png" alt="">
+	                                {{-- <img src="/images/all-food.jpg" alt=""> --}}
+	                                <img src="/images/cover-1000.jpg" alt="">
 	                            </div>
 							</div>
 						</div>
@@ -248,7 +249,7 @@ body{
     <div class="container text-center">
         <div class="row">
             <div class="col-md-4 footer-col">
-                <div class="footer-info"> Киев <br>ул. Васильевская, 254 Е. <br>
+                <div class="footer-info">
                     <a href="tel:+380 44 379 48 49">+380 68 121 26 26</a><br>
                     <a href="mailto:qrmenuspace@gmail.com">qrmenuspace@gmail.com</a>
                 </div>

@@ -43,6 +43,7 @@ class RegisteredUserController extends Controller
         $company = Company::create([
             'name' => $request->company_name,
             'slug' => $companySlug,
+            'menu_template' => 'way',
         ]);
 
         $password = $this->generateRandomPassword(8);

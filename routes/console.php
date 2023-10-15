@@ -23,7 +23,31 @@ use App\Notifications\InvoicePaid;
 
 Artisan::command('testt', function () {
 
+    $productsJson = file_get_contents(storage_path('products.json'));
 
+    $categories = json_decode($productsJson);
+
+    // dump($categories);
+
+    foreach ($categories as $category) {
+        dump([
+            'cat' => $category->category,
+            'prods' => $category->products,
+        ]);
+
+        foreach ($category->products as $product) {
+
+            if(empty($product->img)) continue;
+
+            $originalUrl = $product->img;
+
+            $originalName = preg_replace('/^.+(dish-\d+\.jpg).+$/', '$1', $originalUrl);
+
+            copy($originalUrl, public_path('images/demo/' . $originalName));
+        }
+    }
+
+    return;
     $dir = scandir(lang_path('en'));
 
     for ($i=2; $i < count($dir); $i++) { 
