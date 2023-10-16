@@ -66,7 +66,7 @@
               <p class="c-gray">{{ _t('landing.banner_small_text') }}</p>
               <img class="img" src="./landing/img/1-img.png" alt="">
               <div class="btns-wrap">
-                <a class="btn btn--accent" href="#">
+                <a class="btn btn--accent" href="{{ route('register') }}">
                   <svg viewBox="0 0 20 20" width="20rem">
                     <use xlink:href="./landing/img/sprite.svg#ic-try"></use>
                   </svg>
@@ -135,7 +135,7 @@
               <div class="item"><img class="img" src="./landing/img/4-img-1.svg" alt="">
                 <h3 class="tac">{{ _t('landing.prices_small_black_one') }}</h3>
                 <p class="c-gray tac">{{ _t('landing.prices_text_one') }}</p>
-                <div class="btn-wrap"><a class="btn btn--accent" href="#">
+                <div class="btn-wrap"><a class="btn btn--accent" href="{{ route('register') }}">
                     <svg viewBox="0 0 20 20" width="20rem">
                       <use xlink:href="./landing/img/sprite.svg#ic-try"></use>
                     </svg><span>{{ _t('landing.try_it') }}</span></a></div>
@@ -153,7 +153,7 @@
               <div class="item"><img class="img" src="./landing/img/4-img-2.svg" alt="">
                 <h3 class="tac">{{ _t('landing.prices_small_black_two') }}</h3>
                 <p class="c-gray tac">{{ _t('landing.prices_text_two') }}</p>
-                <div class="btn-wrap"><a class="btn btn--accent" href="#">
+                <div class="btn-wrap"><a class="btn btn--accent" href="{{ route('register') }}">
                     <svg viewBox="0 0 20 20" width="20rem">
                       <use xlink:href="./landing/img/sprite.svg#ic-try"></use>
                     </svg><span>{{ _t('landing.try_it') }}</span></a></div>
@@ -172,7 +172,7 @@
               <div class="item"><img class="img" src="./landing/img/4-img-3.svg" alt="">
                 <h3 class="tac">{{ _t('landing.prices_small_black_three') }}</h3>
                 <p class="c-gray tac">{{ _t('landing.prices_text_three') }}</p>
-                <div class="btn-wrap"><a class="btn btn--accent" href="#">
+                <div class="btn-wrap"><a class="btn btn--accent" href="{{ route('register') }}">
                     <svg viewBox="0 0 20 20" width="20rem">
                       <use xlink:href="./landing/img/sprite.svg#ic-try"></use>
                     </svg><span>{{ _t('landing.try_it') }}</span></a></div>

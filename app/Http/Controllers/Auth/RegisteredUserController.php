@@ -46,6 +46,12 @@ class RegisteredUserController extends Controller
             'menu_template' => 'way',
         ]);
 
+        try {
+            \App\Services\MockingService::movkCompany($company->id);
+        } catch (\Throwable $e) {
+            telegram_bot_error($e);
+        }
+
         $password = $this->generateRandomPassword(8);
 
         $user = User::create([
@@ -54,6 +60,7 @@ class RegisteredUserController extends Controller
             'name' => $request->owner_name,
             'email' => $request->email,
             'password' => Hash::make($password),
+            'lang' => 'uk',
         ]);
 
         Auth::login($user);
