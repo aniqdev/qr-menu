@@ -33,14 +33,14 @@
               </div>
               <div class="btn-wrap" style="display: flex; gap: 10px;">
                 @guest()
-                <a class="btn btn--accent" href="{{ route('register') }}">
+                <a class="btn btn--accent header-btns" href="{{ route('register') }}">
                   <svg viewBox="0 0 30 30" width="30rem">
                     <use xlink:href="./landing/img/sprite.svg#ic-register"></use>
                   </svg>
-                  <span>{{ _t('landing.regiser') }}</span>
+                  <span>{{ _t('landing.register') }}</span>
                 </a>
                 @endguest
-                <a class="btn btn--black" href="{{ route('login') }}">
+                <a class="btn btn--black header-btns" href="{{ route('login') }}">
                   <svg viewBox="0 0 20 20" width="20rem">
                     <use xlink:href="./landing/img/sprite.svg#ic-sign-in"></use>
                   </svg>

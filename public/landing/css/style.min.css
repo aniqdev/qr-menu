@@ -2170,6 +2170,15 @@ footer.footer-main .bottom-wrap ul li a svg:hover {
 }
 
 @media only screen and (max-width: 480px) {
+  .header-btns{
+    font-size: 12px;
+    padding: 10px;
+    height: 28px;
+    grid-gap: 5rem;
+  }
+  .header-btns svg{
+    width: 15px;
+  }
   .home-6 .btn-wrap {
     margin-top: 50rem;
   }
