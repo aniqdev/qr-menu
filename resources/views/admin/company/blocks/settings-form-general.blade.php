@@ -8,7 +8,7 @@
 			<div class="col-sm-3">
 				@include('admin.blocks.image-input', ['model' => $company])
 			</div>
-			<div class="col-sm-5">
+			<div class="col-sm-9">
 				<div class="col-6_ mb-3">
 					<label for="company_name" class="form-label">{{ _t('admin_company.name') }}</label>
 					<input type="text" name="name" value="{{ $company->name }}" class="form-control" id="company_name" placeholder="">
@@ -19,7 +19,7 @@
 				</div>
 			</div>
 			<div class="col-sm-4">
-				<div class="col-4_ mb-3">
+				{{-- <div class="col-4_ mb-3">
 					<label for="item_category" class="form-label">{{ _t('admin_company.menu_template') }}</label>
 					<select name="menu_template" class="form-select" id="item_category">
 						@foreach($templates as $template)
@@ -28,7 +28,7 @@
 						</option>
 						@endforeach
 					</select>
-				</div>
+				</div> --}}
 				{{-- <div class="col-4_ mb-3">
 					<label for="company_type" class="form-label">
 						{{ _t('admin_company.company_type') }}

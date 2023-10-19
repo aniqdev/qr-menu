@@ -41,12 +41,12 @@ class CompanyController extends Controller
             'name' => 'required|string|min:3|max:255',
             'slug' => ['required','string','min:3','max:255', Rule::unique('companies')->ignore($company->id)],
             'image' => 'nullable|file|mimes:jpg,png',
-            'menu_template' => 'required|string|min:3|max:255',
+            // 'menu_template' => 'required|string|min:3|max:255',
             'link_target' => 'required|string|in:menu,link_page',
         ]);
 
         $reload = false;
-        $slug = str()->slug($request->slug);
+        $slug = str()->slug($request->slug, '.');
         if ($company->slug !== $slug) {
             if (Company::where('slug', $slug)->exists()) {
                 abort('Slug exists');
@@ -58,7 +58,7 @@ class CompanyController extends Controller
             'name' => $request->name,
             'slug' => $slug,
             'image' => $company->setImage($request),
-            'menu_template' => $request->menu_template,
+            // 'menu_template' => $request->menu_template,
             'link_target' => $request->link_target,
         ]);
 

@@ -76,7 +76,7 @@ class RegisteredUserController extends Controller
 
     public function generateUniqueSlug($title)
     {
-        $initialSlug = $slug = Str::slug($title); // Преобразуем заголовок в слаг
+        $initialSlug = $slug = Str::slug($title, '.'); // Преобразуем заголовок в слаг
 
         $count = 2;
         while ($this->slugExists($slug)) { // Проверяем, существует ли уже такой слаг
