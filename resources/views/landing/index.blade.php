@@ -255,21 +255,31 @@
           <div class="top-wrap">
             <div class="list-wrap"><b>{{ _t('landing.footer_helpful_links') }}</b>
               <ul>
-                <li><a href="tel:+38 (063) 123-45-67">
+                <li>
+                  <a href="tel:+380681212626">
                     <svg viewBox="0 0 30 30" width="30rem">
                       <use xlink:href="./landing/img/sprite.svg#ic-phone"></use>
-                    </svg><span>{{ _t('landing.footer_phone') }}</span></a></li>
-                <li><a href="#" target="_blank">
+                    </svg>
+                    <span>{{ _t('landing.footer_phone') }}</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/qr.online.menu" target="_blank" id="instagram_link">
                     <svg viewBox="0 0 30 30" width="30rem">
                       <use xlink:href="./landing/img/sprite.svg#ic-inst"></use>
-                    </svg><span>{{ _t('landing.footer_instagram') }}</span></a></li>
-                <li><a href="#" target="_blank">
+                    </svg><span>{{ _t('landing.footer_instagram') }}</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://t.me/qr_online_menu" target="_blank" id="telegram_link">
                     <svg viewBox="0 0 30 30" width="30rem">
                       <use xlink:href="./landing/img/sprite.svg#ic-tg"></use>
-                    </svg><span>{{ _t('landing.footer_telegram') }}</span></a></li>
+                    </svg><span>{{ _t('landing.footer_telegram') }}</span>
+                  </a>
+                </li>
               </ul>
             </div>
-            <div class="contacts-wrap">
+            {{-- <div class="contacts-wrap">
               <b>{{ _t('landing.footer_still_have_questions') }}</b>
               <p>{{ _t('landing.footer_still_have_questions_text') }}</p>
               <form action="#"><img class="flag" src="./landing/img/ic-ua.svg" alt="">
@@ -280,17 +290,29 @@
                   </svg>
                 </button>
               </form>
+            </div> --}}
+            <div class="contacts-wrap">
+              <b>{{ _t('landing.footer_middle_title') }}</b>
+              <p>{{ _t('landing.footer_middle_text') }}</p>
             </div>
             <div class="list-wrap"><b>{{ _t('landing.footer_my_account') }}</b>
               <ul>
-                <li><a class="js-popup" href="#popup-sign-in">
+                <li>
+                  {{-- <a class="js-popup" href="#popup-sign-in"> --}}
+                  <a class="" href="{{ route('login') }}">
                     <svg viewBox="0 0 30 30" width="30rem">
                       <use xlink:href="./landing/img/sprite.svg#ic-sign-in"></use>
-                    </svg><span>{{ _t('landing.footer_login') }}</span></a></li>
-                <li><a class="js-popup" href="#popup-register">
+                    </svg><span>{{ _t('landing.footer_login') }}</span>
+                  </a>
+                </li>
+                <li>
+                  {{-- <a class="js-popup" href="#popup-register"> --}}
+                  <a class="" href="{{ route('register') }}">
                     <svg viewBox="0 0 30 30" width="30rem">
                       <use xlink:href="./landing/img/sprite.svg#ic-register"></use>
-                    </svg><span>{{ _t('landing.footer_register') }}</span></a></li>
+                    </svg><span>{{ _t('landing.footer_register') }}</span>
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
