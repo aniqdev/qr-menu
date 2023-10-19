@@ -61,7 +61,7 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label class="form-control-label" for="email">{{ _t('admin_profile.password') }}</label>
-                                        <input type="password" name="password" id="password" class="form-control form-control-alternative" placeholder="{{ _t('admin_profile.password') }} ..." value="{{ old('email', session('email')) }}" required>
+                                        <input type="password" name="password" id="password" class="form-control form-control-alternative" placeholder="{{ _t('admin_profile.password') }} ..." value="" required>
                                     </div>
                                 </div>
                             </div>

@@ -3,6 +3,7 @@
 return [
     'hide_validation' => false,
     'button_orientation' => 'left',
+    'donor' => 'https://expz.menu/a384fe28-7ff2-47ef-aa46-78e411998771/menu?menuId=1714',
     'fields' => [
         // [
         //     'id' => 'name',
