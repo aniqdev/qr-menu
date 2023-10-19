@@ -10,7 +10,10 @@
         @csrf
         <input class="form-control mb-3 command-input" type="text" name="command" placeholder="command" autofocus>
         <textarea class="form-control output-textarea" readonly name="output" cols="30" rows="10" placeholder="output"></textarea>
-    </form><hr>
+    </form>
+    @endif
+    @if(auth()->user()->isSuperAdmin())
+    <hr>
     <div class="row">
         <div class="col-md-6">
             <h4>Companies</h4>
