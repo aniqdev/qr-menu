@@ -273,7 +273,7 @@ html {
 }
 
 code[data-v-404711df] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -303,7 +303,7 @@ a.Link[data-v-404711df]:active {
 }
 
 code[data-v-458d7735] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -357,15 +357,15 @@ a.Link[data-v-458d7735]:active {
 
 .Number-Card.Clickable[data-v-458d7735]:hover {
     cursor: pointer;
-    border-color: #ff6b00
+    border-color: #5a88af
 }
 
 .Number-Card.Active[data-v-458d7735] {
-    border-color: #ff6b00
+    border-color: #5a88af
 }
 
 .Number-Card.Active .Card-Title[data-v-458d7735] {
-    color: #ff6b00
+    color: #5a88af
 }
 
 .Card {
@@ -454,7 +454,7 @@ a.Link[data-v-458d7735]:active {
 }
 
 code[data-v-0066fcdb] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -530,8 +530,8 @@ a.Link[data-v-0066fcdb]:active {
 
 .PageTab.Active {
     font-weight: 500;
-    background-color: rgba(255,107,0,.1);
-    color: #ff6b00;
+    background-color: rgba(90,136,175,.1);
+    color: #5a88af;
     cursor: default
 }
 
@@ -831,7 +831,7 @@ a.Link[data-v-0066fcdb]:active {
 }
 
 .KitButton.TextOrange {
-    color: #ff6b00
+    color: #5a88af
 }
 
 .KitButton.TextOrange:hover {
@@ -898,7 +898,7 @@ a.Link[data-v-0066fcdb]:active {
 }
 
 code[data-v-6cb29cb2] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -1012,7 +1012,7 @@ i.Full[data-v-42d4288d] {
 }
 
 code[data-v-c4fce4fc] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -1130,7 +1130,7 @@ a.Link[data-v-c4fce4fc]:active {
 }
 
 code[data-v-14146337] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -1164,7 +1164,7 @@ a.Link[data-v-14146337]:active {
 }
 
 code[data-v-9376588a] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -1307,7 +1307,7 @@ a.Link[data-v-9376588a]:active {
 }
 
 code[data-v-7be95cb4] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -1344,7 +1344,7 @@ a.Link[data-v-7be95cb4]:active {
 
 .KitDropdownMenuToggle.IsActive[data-v-7be95cb4] {
     background-color: rgba(255,107,0,.05);
-    color: #ff6b00
+    color: #5a88af
 }
 
 .KitDropdownMenuToggle.Small[data-v-7be95cb4] {
@@ -1353,7 +1353,7 @@ a.Link[data-v-7be95cb4]:active {
 }
 
 code[data-v-24c33690] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -1376,7 +1376,7 @@ a.Link[data-v-24c33690]:active {
 }
 
 code[data-v-2fbfae4e] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -1484,7 +1484,7 @@ a.Link[data-v-2fbfae4e]:active {
 }
 
 code[data-v-7cb4220a] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -1640,7 +1640,7 @@ a.Link[data-v-7cb4220a]:active {
 }
 
 code[data-v-0af0e39b] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -1667,7 +1667,7 @@ a.Link[data-v-0af0e39b]:active {
 }
 
 code[data-v-2fe895fa] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -1692,7 +1692,7 @@ a.Link[data-v-2fe895fa]:active {
 }
 
 code[data-v-79b3638d] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -1847,7 +1847,7 @@ a.Link[data-v-79b3638d]:active {
 }
 
 code[data-v-591eab00] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -1875,7 +1875,7 @@ a.Link[data-v-591eab00]:active {
 }
 
 code[data-v-5775ea1f] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -1923,7 +1923,7 @@ a.Link[data-v-5775ea1f]:active {
 }
 
 code[data-v-66930579] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -1967,7 +1967,7 @@ a.Link[data-v-66930579]:active {
 }
 
 code[data-v-e7351d44] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -2069,7 +2069,7 @@ a.Link[data-v-e7351d44]:active {
 }
 
 code[data-v-51c4eddc] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -2156,7 +2156,7 @@ a.Link[data-v-51c4eddc]:active {
 }
 
 code[data-v-edbfba6e] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -2238,7 +2238,7 @@ a.Link[data-v-edbfba6e]:active {
 }
 
 code[data-v-9eb481e8] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -2324,7 +2324,7 @@ a.Link[data-v-9eb481e8]:active {
 }
 
 code[data-v-0fc6f39e] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -2419,7 +2419,7 @@ a.Link[data-v-0fc6f39e]:active {
 }
 
 code[data-v-bc6630d8] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -2514,7 +2514,7 @@ a.Link[data-v-bc6630d8]:active {
 }
 
 code[data-v-f7c214b4] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -2596,7 +2596,7 @@ a.Link[data-v-f7c214b4]:active {
 }
 
 code[data-v-4221ce60] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -2678,7 +2678,7 @@ a.Link[data-v-4221ce60]:active {
 }
 
 code[data-v-7eedcd6e] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -2712,7 +2712,7 @@ a.Link[data-v-7eedcd6e]:active {
 
 .CalendarChose .ChoseEntry.Active[data-v-7eedcd6e] {
     background-color: rgba(255,107,0,.05);
-    color: #ff6b00
+    color: #5a88af
 }
 
 .CalendarChose .ChoseEntry.Disabled[data-v-7eedcd6e] {
@@ -2726,7 +2726,7 @@ a.Link[data-v-7eedcd6e]:active {
 }
 
 code[data-v-d9910e66] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -2750,7 +2750,7 @@ a.Link[data-v-d9910e66]:active {
 }
 
 .CalendarDropdown.Active[data-v-d9910e66] {
-    color: #ff6b00;
+    color: #5a88af;
     background-color: rgba(255,107,0,.1)
 }
 
@@ -2759,7 +2759,7 @@ a.Link[data-v-d9910e66]:active {
 }
 
 code[data-v-80753ea2] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -2793,7 +2793,7 @@ a.Link[data-v-80753ea2]:active {
 
 .CalendarChose .ChoseEntry.Active[data-v-80753ea2] {
     background-color: rgba(255,107,0,.05);
-    color: #ff6b00
+    color: #5a88af
 }
 
 .CalendarChose .ChoseEntry.Disabled[data-v-80753ea2] {
@@ -2807,7 +2807,7 @@ a.Link[data-v-80753ea2]:active {
 }
 
 code[data-v-519de284] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -2900,7 +2900,7 @@ a.Link[data-v-519de284]:active {
 }
 
 code[data-v-53a68f8a] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -2945,7 +2945,7 @@ a.Link[data-v-53a68f8a]:active {
 }
 
 code[data-v-772880f2] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -3013,7 +3013,7 @@ a.Link[data-v-772880f2]:active {
 }
 
 code[data-v-6bc227f0] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -3070,7 +3070,7 @@ a.Link[data-v-6bc227f0]:active {
 }
 
 code[data-v-5303c64c] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -3096,7 +3096,7 @@ a.Link[data-v-5303c64c]:active {
 }
 
 code[data-v-499b5bbe] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -3168,7 +3168,7 @@ a.Link[data-v-499b5bbe]:active {
 }
 
 code[data-v-621cfed0] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -3264,7 +3264,7 @@ a.Link[data-v-621cfed0]:active {
 }
 
 code[data-v-10b34788] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -3314,7 +3314,7 @@ a.Link[data-v-10b34788]:active {
 }
 
 code[data-v-4c091f94] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -3464,7 +3464,7 @@ a.Link[data-v-4c091f94]:active {
 }
 
 code[data-v-5cde24d5] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -3626,7 +3626,7 @@ td[data-v-5cde24d5],th[data-v-5cde24d5] {
 }
 
 code[data-v-1c0642a4] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -3647,7 +3647,7 @@ a.Link[data-v-1c0642a4]:active {
 }
 
 code[data-v-4d4ac2c0] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -3671,7 +3671,7 @@ a.Link[data-v-4d4ac2c0]:active {
 }
 
 code[data-v-260bf10e] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -3695,7 +3695,7 @@ a.Link[data-v-260bf10e]:active {
 }
 
 code[data-v-3073fd35] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -3721,7 +3721,7 @@ a.Link[data-v-3073fd35]:active {
 }
 
 code[data-v-4fa99a73] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -3745,7 +3745,7 @@ a.Link[data-v-4fa99a73]:active {
 }
 
 code[data-v-33ec81bb] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -3769,7 +3769,7 @@ a.Link[data-v-33ec81bb]:active {
 }
 
 code[data-v-2ee68bcc] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -3809,7 +3809,7 @@ a.Link[data-v-2ee68bcc]:active {
 }
 
 code[data-v-37db080c] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -3827,7 +3827,7 @@ a.Link[data-v-37db080c]:active {
 
 .KitBadge[data-v-37db080c] {
     padding: 4px 8px;
-    background-color: #ff6b00;
+    background-color: #5a88af;
     border-radius: 10px;
     color: #fff;
     font-size: .9rem
@@ -3893,7 +3893,7 @@ a.Link[data-v-37db080c]:active {
     font-weight: 500;
     font-size: 24px;
     line-height: 29px;
-    color: #ff6b00
+    color: #5a88af
 }
 
 .AuthPage .ColsContainer .Left .Header .Info {
@@ -3931,7 +3931,7 @@ a.Link[data-v-37db080c]:active {
 .AuthPage .ColsContainer .Left .Nav .NavItem.Active {
     font-weight: 500;
     background-color: rgba(255,107,0,.05);
-    color: #ff6b00;
+    color: #5a88af;
     cursor: default
 }
 
@@ -4024,7 +4024,7 @@ a.Link[data-v-37db080c]:active {
 }
 
 code[data-v-473b837b] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -4047,7 +4047,7 @@ a.Link[data-v-473b837b]:active {
 }
 
 code[data-v-609b9fc7] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -4071,7 +4071,7 @@ a.Link[data-v-609b9fc7]:active {
 }
 
 code[data-v-4aba88e6] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -4113,7 +4113,7 @@ a.Link[data-v-4aba88e6]:active {
 }
 
 code[data-v-6472d073] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -4150,7 +4150,7 @@ a.Link[data-v-6472d073]:active {
 }
 
 code[data-v-6e649a02] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -4263,7 +4263,7 @@ a.Link[data-v-6e649a02]:active {
 }
 
 code[data-v-7295aa8a] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -4318,7 +4318,7 @@ a.Link[data-v-7295aa8a]:active {
 }
 
 code[data-v-5a9052a6] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -4355,7 +4355,7 @@ a.Link[data-v-5a9052a6]:active {
 }
 
 code[data-v-50195304] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -4495,7 +4495,7 @@ a.Link[data-v-50195304]:active {
 }
 
 code[data-v-a4968726] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -4699,7 +4699,7 @@ a.Link[data-v-a4968726]:active {
 }
 
 code[data-v-69cbc652] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -4732,7 +4732,7 @@ a.Link[data-v-69cbc652]:active {
 }
 
 code[data-v-5cb058a0] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -4769,7 +4769,7 @@ a.Link[data-v-5cb058a0]:active {
 }
 
 code[data-v-b2b823ae] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -4883,7 +4883,7 @@ a.Link[data-v-b2b823ae]:active {
 @media only screen and (max-width: 768px) {
     .CategoriesList .CategoryItem.IsActive[data-v-b2b823ae] {
         background-color:rgba(255,107,0,.05);
-        color: #ff6b00;
+        color: #5a88af;
         border: 1px solid rgba(255,107,0,.05)
     }
 }
@@ -4962,7 +4962,7 @@ a.Link[data-v-b2b823ae]:active {
 }
 
 code[data-v-dcded7c0] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -4983,7 +4983,7 @@ a.Link[data-v-dcded7c0]:active {
 }
 
 code[data-v-2a7cc000] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -5024,7 +5024,7 @@ a.Link[data-v-2a7cc000]:active {
 }
 
 code[data-v-0a8adf5a] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -5084,7 +5084,7 @@ a.Link[data-v-0a8adf5a]:active {
 }
 
 code[data-v-0fb210a4] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -5105,7 +5105,7 @@ a.Link[data-v-0fb210a4]:active {
 }
 
 code[data-v-6054ceeb] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -5126,7 +5126,7 @@ a.Link[data-v-6054ceeb]:active {
 }
 
 code[data-v-43a193e3] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -5351,7 +5351,7 @@ a.Link[data-v-43a193e3]:active {
 }
 
 code[data-v-cfba226e] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -5372,7 +5372,7 @@ a.Link[data-v-cfba226e]:active {
 }
 
 code[data-v-4776d08f] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -5395,7 +5395,7 @@ a.Link[data-v-4776d08f]:active {
 
 .ExtensionCard .ExtensionCard-Tags .Tag[data-v-4776d08f] {
     padding: 2px 8px;
-    background-color: #ff6b00;
+    background-color: #5a88af;
     border-radius: 10px;
     color: #fff;
     font-size: .9rem
@@ -5410,7 +5410,7 @@ a.Link[data-v-4776d08f]:active {
 }
 
 code[data-v-37c9e7a9] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -5431,7 +5431,7 @@ a.Link[data-v-37c9e7a9]:active {
 }
 
 code[data-v-66cbcb89] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -5509,7 +5509,7 @@ a.Link[data-v-66cbcb89]:active {
     font-weight: 500;
     font-size: 14px;
     line-height: 149%;
-    color: #ff6b00
+    color: #5a88af
 }
 
 .SkinCard .SkinCard-Body .SkinCard-Footer .Right[data-v-66cbcb89] {
@@ -5622,7 +5622,7 @@ a.Link[data-v-66cbcb89]:active {
 }
 
 code[data-v-8ba69c04] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -5881,7 +5881,7 @@ a.Link[data-v-8ba69c04]:active {
 }
 
 code[data-v-1b1dd970] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -5980,7 +5980,7 @@ a.Link[data-v-1b1dd970]:active {
 }
 
 code[data-v-1b829cf8] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -6001,7 +6001,7 @@ a.Link[data-v-1b829cf8]:active {
 }
 
 code[data-v-6ac1592e] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -6025,7 +6025,7 @@ a.Link[data-v-6ac1592e]:active {
 }
 
 code[data-v-efc5d7a4] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -6229,7 +6229,7 @@ a.Link[data-v-efc5d7a4]:active {
     font-weight: 500;
     font-size: 14px;
     line-height: 149%;
-    color: #ff6b00
+    color: #5a88af
 }
 
 .OrderCard .OrderStatus[data-v-efc5d7a4],.OrderRow .OrderStatus[data-v-efc5d7a4] {
@@ -6371,7 +6371,7 @@ a.Link[data-v-efc5d7a4]:active {
 }
 
 code[data-v-0289bc61] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -6397,7 +6397,7 @@ a.Link[data-v-0289bc61]:active {
 }
 
 code[data-v-0628bce3] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -6424,7 +6424,7 @@ a.Link[data-v-0628bce3]:active {
 }
 
 code[data-v-43006975] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -6451,7 +6451,7 @@ a.Link[data-v-43006975]:active {
 }
 
 code[data-v-126de76e] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -6478,7 +6478,7 @@ a.Link[data-v-126de76e]:active {
 }
 
 code[data-v-40d349f9] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -6567,7 +6567,7 @@ a.Link[data-v-40d349f9]:active {
 }
 
 code[data-v-6fe31f5d] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -6609,7 +6609,7 @@ a.Link[data-v-6fe31f5d]:active {
 }
 
 .QRCardSelectForm .QRCardSelectForm-Element.IsActive[data-v-6fe31f5d] {
-    border: 1px solid #ff6b00
+    border: 1px solid #5a88af
 }
 
 .QRCardSelectForm .QRCardSelectForm-Element .Desc[data-v-6fe31f5d] {
@@ -6641,7 +6641,7 @@ a.Link[data-v-6fe31f5d]:active {
 }
 
 code[data-v-09b099e2] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -6688,7 +6688,7 @@ a.Link[data-v-09b099e2]:active {
 }
 
 code[data-v-31fadfe5] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -6775,7 +6775,7 @@ a.Link[data-v-31fadfe5]:active {
     font-weight: 600;
     font-size: 10px;
     line-height: 12px;
-    background: #ff6b00;
+    background: #5a88af;
     border-radius: 5px;
     color: #fff
 }
@@ -6857,7 +6857,7 @@ a.Link[data-v-31fadfe5]:active {
     padding: 0 8px;
     font-size: 12px;
     color: #fff;
-    background-color: #ff6b00;
+    background-color: #5a88af;
     border-radius: 10px
 }
 
@@ -6881,7 +6881,7 @@ a.Link[data-v-31fadfe5]:active {
 }
 
 .SidebarLink.Active {
-    color: #ff6b00;
+    color: #5a88af;
     background: rgba(255,107,0,.05);
     font-weight: 500
 }
@@ -6891,7 +6891,7 @@ a.Link[data-v-31fadfe5]:active {
 }
 
 .SidebarLink.Active .Counter.Grey {
-    background-color: #ff6b00
+    background-color: #5a88af
 }
 
 .SidebarLink.Disabled {
@@ -6908,7 +6908,7 @@ a.Link[data-v-31fadfe5]:active {
 }
 
 code[data-v-39f43800] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -6963,7 +6963,7 @@ a.Link[data-v-39f43800]:active {
 }
 
 code[data-v-59147eb8] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -6988,7 +6988,7 @@ a.Link[data-v-59147eb8]:active {
 }
 
 code[data-v-25f312c9] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -7013,7 +7013,7 @@ a.Link[data-v-25f312c9]:active {
 }
 
 code[data-v-583ddd78] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -7060,7 +7060,7 @@ a.Link[data-v-583ddd78]:active {
 }
 
 code[data-v-46bc2e1f] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -7085,7 +7085,7 @@ a.Link[data-v-46bc2e1f]:active {
 }
 
 code[data-v-44d01a36] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -7174,7 +7174,7 @@ a.Link[data-v-44d01a36]:active {
 }
 
 code[data-v-778941d0] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -7319,7 +7319,7 @@ a.Link[data-v-778941d0]:active {
 }
 
 code[data-v-0839e021] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -7399,7 +7399,7 @@ a.Link[data-v-0839e021]:active {
 
 .Navbar .MobileToggle.IsActive {
     background-color: rgba(255,107,0,.05);
-    color: #ff6b00
+    color: #5a88af
 }
 
 .Navbar .Navbar-Search {
@@ -7515,7 +7515,7 @@ a.Link[data-v-0839e021]:active {
     align-items: center;
     font-size: 1.5rem;
     color: #fff;
-    background-color: #ff6b00;
+    background-color: #5a88af;
     border-radius: 50%;
     transition: all .2s ease
 }
@@ -7548,7 +7548,7 @@ a.Link[data-v-0839e021]:active {
 
 .Navbar-User:hover .Avatar {
     color: #fff;
-    background-color: #ff6b00;
+    background-color: #5a88af;
     box-shadow: 0 0 0 2px rgba(255,107,0,.4)
 }
 
@@ -7601,7 +7601,7 @@ a.Link[data-v-0839e021]:active {
 }
 
 code[data-v-5befd22e] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -7626,7 +7626,7 @@ a.Link[data-v-5befd22e]:active {
 }
 
 code[data-v-3511445c] {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
@@ -7681,7 +7681,7 @@ a.Link[data-v-3511445c]:active {
 }
 
 code {
-    color: #ff6b00;
+    color: #5a88af;
     font-family: monospace
 }
 
