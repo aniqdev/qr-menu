@@ -18,7 +18,7 @@
     </div>
     <div class="container-fluid mt--7">
         <div class="row"></div>
-        <div class="col-xl-8 offset-xl-2">
+        <div class="col-xl-6 offset-xl-3">
             <div class="card bg-secondary shadow">
                 <div class="card-header bg-white border-0">
                     <div class="row align-items-center">
@@ -51,26 +51,26 @@
                                 <label class="form-control-label" for="owner_name">{{ _t('auth.owner_name') }}</label>
                                 <input type="text" name="owner_name" id="owner_name" class="form-control form-control-alternative" placeholder="{{ _t('auth.owner_name') }} ..." value="{{ old('owner_name', session('name')) }}">
                             </div>
-                            <div class="form-group">
-                                <label class="form-control-label" for="email">{{ _t('auth.owner_email') }}</label>
-                                <input type="text" name="email" id="email" class="form-control form-control-alternative" placeholder="{{ _t('auth.owner_email') }} ..." value="{{ old('email', session('email')) }}" required>
-                            </div>
-                            {{-- <div class="form-group">
-                                <label class="form-control-label" for="phone_owner">Owner Phone</label>
-                                <div class="iti iti--allow-dropdown iti--separate-dial-code">
-                                    <div class="iti__flag-container">
-                                        <div class="iti__selected-flag" role="combobox" aria-owns="iti-0__country-listbox" aria-expanded="true" tabindex="0" title="Ukraine (Україна): +380" aria-activedescendant="iti-0__item-ua">
-                                            <div class="iti__flag iti__ua"></div>
-                                            <div class="iti__selected-dial-code">+380</div>
-                                            <div class="iti__arrow iti__arrow--up"></div>
-                                        </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="email">{{ _t('auth.owner_email') }}</label>
+                                        <input type="text" name="email" id="email" class="form-control form-control-alternative" placeholder="{{ _t('auth.owner_email') }} ..." value="{{ old('email', session('email')) }}" required>
                                     </div>
-                                    <input type="text" name="phone_owner" id="phone_owner" class="form-control form-control-alternative" placeholder="50 123 4567" value="" required="" autofocus="" data-intl-tel-input-id="0" style="padding-left: 95px;">
-                                    <input type="hidden" name="phone_owner" value="380">
                                 </div>
-                            </div> --}}
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="email">{{ _t('admin_profile.password') }}</label>
+                                        <input type="password" name="password" id="password" class="form-control form-control-alternative" placeholder="{{ _t('admin_profile.password') }} ..." value="{{ old('email', session('email')) }}" required>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="text-center">
                                 <button type="submit" id="thesubmitbtn" class="btn btn-success mt-4">{{ _t('auth.create') }}</button>
+                            </div>
+                            <div class="text-center mt-4">
+                                <span>{{ _t('auth.login_suggestion') }}</span>
+                                <a href="{{ route('login') }}">{{ _t('auth.login') }}</a>
                             </div>
                         </div>
                     </form>

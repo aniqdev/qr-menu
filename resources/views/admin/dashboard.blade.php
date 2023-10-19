@@ -4,7 +4,8 @@
 <div class="shadow-block" id="admin_dashboard">
     <h2>{{ _t('admin_dashboard.dashboard') }}</h2>
     <hr>
-    @if(auth()->user()->isSuperAdmin())
+    <iframe src="{{ route('dashboard-iframe-statistic') }}" frameborder="0" onload='javascript:(function(o){o.style.height=o.contentWindow.document.body.scrollHeight+30+"px";}(this));' style="height:200px;width:100%;border:none;overflow:hidden;"></iframe>
+    @if(auth()->user()->isSuperAdmin() && false)
     <form class="laravel-process" onsubmit="submit_form(this, event)" action="{{ route('run-command') }}">
         @csrf
         <input class="form-control mb-3 command-input" type="text" name="command" placeholder="command" autofocus>

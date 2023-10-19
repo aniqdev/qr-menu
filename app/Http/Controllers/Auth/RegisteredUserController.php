@@ -36,6 +36,7 @@ class RegisteredUserController extends Controller
             'company_name' => ['required', 'string', 'max:255'],
             'owner_name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
+            'password' => ['required', 'string', 'max:255'],
         ]);
 
         $companySlug = $this->generateUniqueSlug($request->company_name);
@@ -47,19 +48,19 @@ class RegisteredUserController extends Controller
         ]);
 
         try {
-            \App\Services\MockingService::movkCompany($company->id);
+            \App\Services\MockingService::mockCompany($company->id);
         } catch (\Throwable $e) {
             telegram_bot_error($e);
         }
 
-        $password = $this->generateRandomPassword(8);
+        $password = $request->password ?? Str::random(8);
 
         $user = User::create([
             'company_id' => $company->id,
             'role' => 'admin',
             'name' => $request->owner_name,
             'email' => $request->email,
-            'password' => Hash::make($password),
+            'password' => bcrypt($password),
             'lang' => 'uk',
         ]);
 

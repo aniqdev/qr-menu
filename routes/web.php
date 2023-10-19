@@ -37,6 +37,7 @@ Route::group([
 ], function () {
 
     Route::get('dashboard', [\App\Http\Controllers\HomeController::class, 'dashboard'])->name('dashboard');
+    Route::get('dashboard-iframe-statistic', [\App\Http\Controllers\HomeController::class, 'dashboardIframeStatistic'])->name('dashboard-iframe-statistic');
     Route::post('run-command', [\App\Http\Controllers\HomeController::class, 'runCommand'])->name('run-command');
 
     Route::get('menu', [\App\Http\Controllers\MenuController::class, 'adminMenu'])->name('admin.menu');
@@ -61,6 +62,8 @@ Route::group([
     Route::get('profile/change-lang/{lang}', [\App\Http\Controllers\ProfileController::class, 'changeLang'])->name('profile.change-lang')->whereIn('lang', ['uk', 'en', 'ru']);
 
     Route::get('json-form-test', [\App\Http\Controllers\MenuController::class, 'jsonFormTest'])->name('json-form-test');
+
+    Route::get('menu/load-menu-modal', [\App\Http\Controllers\MenuController::class, 'loadMenuModal'])->name('menu-modal');
 
     Route::get('menu/template-settings-modal', [\App\Http\Controllers\MenuController::class, 'settingsModal']);
 

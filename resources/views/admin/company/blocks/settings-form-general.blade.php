@@ -29,7 +29,7 @@
 						@endforeach
 					</select>
 				</div>
-				<div class="col-4_ mb-3">
+				{{-- <div class="col-4_ mb-3">
 					<label for="company_type" class="form-label">
 						{{ _t('admin_company.company_type') }}
 						<i class="bi bi-question-circle-fill" title="{{ _t('admin_settings.company_settings_company_type') }}" data-bs-toggle="tooltip"></i>
@@ -39,7 +39,7 @@
 						<option value="bar" {{ $company->company_type !== 'bar' ?: 'selected' }}>{{ _t('admin_company.company_type_bar') }}</option>
 						<option value="restaurant" {{ $company->company_type !== 'restaurant' ?: 'selected' }}>{{ _t('admin_company.company_type_bar') }}</option>
 					</select>
-				</div>
+				</div> --}}
 				<div class="col-4_ mb-3 d-none">
 					<label for="link_target" class="form-label">
 						{{ _t('admin_company.link_target') }}

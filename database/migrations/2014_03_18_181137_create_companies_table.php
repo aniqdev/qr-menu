@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('name', 500);
             $table->string('slug', 500)->unique();
             $table->string('image', 500)->nullable();
-            $table->string('company_type')->default('cafe');
             $table->string('menu_template')->default('way');
             $table->string('link_target')->default('menu'); // menu | links_page
             $table->timestamps();

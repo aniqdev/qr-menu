@@ -1,4 +1,4 @@
-@extends('layouts.empty')
+@extends('layouts.bootstrap')
 
 @section('content')
 <style>
@@ -30,11 +30,13 @@
 }
 </style>
 <div class="shadow-block">
-	<div class="text-center">
+	@if(tpl_options('show_logo'))
+	<div class="text-center" {{ tpl_options('show_logo') ? 'true' : 'false'}}>
 		<img src="{{ $company->image }}" alt="" class="img-thumbnail mb-3"
 			style="max-height: 200px;" 
 		>
 	</div>
+	@endif
 	<ul class="category-list">
 		@foreach($categories as $category)
 		<li>

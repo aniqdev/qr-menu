@@ -1,4 +1,4 @@
-@extends('layouts.empty')
+@extends('layouts.bootstrap')
 
 @section('content')
 <div class="shadow-block">

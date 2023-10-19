@@ -1,3 +1,8 @@
+<style>
+.langs img{
+     box-shadow: 0 0 4px #a3a3a3;
+}
+</style>
 <nav class="navbar navbar-expand-lg navbar-light bg-white js-top-nav fixed-top_">
     <div class="container">
         <a class="navbar-brand" href="/">
@@ -37,8 +42,13 @@
 
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav justify-content-end flex-grow-1">
-                    <li class="nav-item">
-                        <a class="nav-link_ btn btn-outline-success" href="{{ auth()->user()->company->cafeLink() }}" title="{{ _t('admin_nav.view_menu') }}" style_="color: #198754;" target="_blank">
+                    <li class="nav-item d-none d-lg-block">
+                        <a class="nav-link_ btn btn-outline-success" 
+                            href="{{ auth()->user()->company->cafeLink() }}" 
+                            title="{{ _t('admin_nav.view_menu') }}" style_="color: #198754;" 
+                            target="_blank"
+                            onclick="modal_load(event, this)"
+                            data-modalurl="{{ route('menu-modal', ['category' => 1]) }}">
                             {{ _t('admin_nav.view') }}
                             <i class="bi bi-cup-straw"></i>
                         </a>
@@ -79,30 +89,55 @@
                     <li>
                         <a class="dropdown-item" href="#">Something else here</a>
                     </li>
-                </ul>
-                </li> --}}
-                <li class="nav-item dropdown">
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ _t('admin_nav.lang') }} ({{ Auth::user()->lang }}) </a>
-                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"> 
-                        @if(Auth::user()->lang !== 'uk') <a class="dropdown-item" href="{{ route('profile.change-lang', 'uk') }}"> Ukrainian </a> @endif
-                        @if(Auth::user()->lang !== 'en') <a class="dropdown-item" href="{{ route('profile.change-lang', 'en') }}"> English </a> @endif
-                        @if(Auth::user()->lang !== 'ru') <a class="dropdown-item" href="{{ route('profile.change-lang', 'ru') }}"> Russian </a> @endif
-                    </div>
-                </li>
-                <!-- Authentication Links --> @guest @if (Route::has('login')) <li class="nav-item">
-                    <a class="nav-link" href="{{ route('login') }}">{{ _t('Login') }}</a>
-                </li> @endif @if (Route::has('register')) <li class="nav-item">
-                    <a class="nav-link" href="{{ route('register') }}">{{ _t('Register') }}</a>
-                </li> @endif @else <li class="nav-item dropdown">
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        {{ Auth::user()->name }}
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ route('logout') }}">
-                            {{ _t('Logout') }}
+                    </ul>
+                    </li> --}}
+                    <li class="nav-item dropdown langs">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="me-1">{{ _t('admin_nav.lang') }} </span>
+                            <img src="/svg/flag-{{ Auth::user()->lang }}.svg" alt="" width="20">
                         </a>
-                    </div>
-                </li> @endguest </ul>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"> 
+                            @if(Auth::user()->lang !== 'uk') <a class="dropdown-item" href="{{ route('profile.change-lang', 'uk') }}">
+                                <img src="/svg/flag-uk.svg" width="20" alt="">
+                                 Ukrainian </a> @endif
+                            @if(Auth::user()->lang !== 'en') <a class="dropdown-item" href="{{ route('profile.change-lang', 'en') }}">
+                                <img src="/svg/flag-en.svg" width="20" alt="">
+                                 English </a> @endif
+                            @if(Auth::user()->lang !== 'ru') <a class="dropdown-item" href="{{ route('profile.change-lang', 'ru') }}">
+                                <img src="/svg/flag-ru.svg" width="20" alt="">
+                                 Russian </a> @endif
+                        </div>
+                    </li>
+                    <!-- Authentication Links -->
+                    @guest 
+                    @if (Route::has('login')) 
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('login') }}">{{ _t('Login') }}</a>
+                    </li> @endif @if (Route::has('register')) <li class="nav-item">
+                        <a class="nav-link" href="{{ route('register') }}">{{ _t('Register') }}</a>
+                    </li> @endif @else <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            {{ Auth::user()->name }}
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('logout') }}">
+                                {{ _t('Logout') }}
+                            </a>
+                        </div>
+                    </li> 
+                    @endguest
+                    <li class="nav-item d-lg-none">
+                        <a class="nav-link_ btn btn-outline-success" 
+                            href="{{ auth()->user()->company->cafeLink() }}" 
+                            title="{{ _t('admin_nav.view_menu') }}" style_="color: #198754;" 
+                            target="_blank"
+                            onclick="modal_load(event, this)"
+                            data-modalurl="{{ route('menu-modal', ['category' => 1]) }}">
+                            {{ _t('admin_nav.view') }}
+                            <i class="bi bi-cup-straw"></i>
+                        </a>
+                    </li>
+                </ul>
                 {{-- <form class="d-flex">
 									<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
 										<button class="btn btn-outline-success" type="submit">Search</button>

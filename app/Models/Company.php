@@ -14,7 +14,6 @@ class Company extends Model
         'name',
         'slug',
         'image',
-        'company_type',
         'menu_template',
         'link_target',
     ];
@@ -26,11 +25,16 @@ class Company extends Model
 
     public function cafeLink()
     {
-        return route($this->company_type . '.links-page', $this->slug);
+        return route('cafe.links-page', $this->slug);
     }
 
-    public function menuLink()
+    public function barLink()
     {
-        return route($this->company_type . '.menu', $this->slug);
+        return route('bar.links-page', $this->slug);
+    }
+
+    public function restaurantLink()
+    {
+        return route('restaurant.links-page', $this->slug);
     }
 }

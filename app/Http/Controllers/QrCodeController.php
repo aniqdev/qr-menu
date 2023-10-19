@@ -11,8 +11,11 @@ class QrCodeController extends Controller
     {
         $company = auth()->user()->company;
 
+        $companyType = request('company_type', 'cafe');
+
         return view('admin.qr-code', [
             'company' => $company,
+            'companyType' => $companyType,
         ]);
     }
 
@@ -20,7 +23,9 @@ class QrCodeController extends Controller
     {
         $company = auth()->user()->company;
 
-        $cafeLink = route('cafe.links-page', $company->slug);
+        $companyType = request('company_type', 'cafe');
+
+        $cafeLink = route($companyType . '.links-page', $company->slug);
 
         return response(QrCode::encoding('UTF-8')->format('png')->size(400)->generate($cafeLink))->header('Content-Type', 'image/png');
 

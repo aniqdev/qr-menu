@@ -94,6 +94,10 @@ main{
                                     <span>{{ _t('auth.google_login') }}</span>
                                 </button>
                             </div>
+                            <div class="text-center mt-4">
+                                <span>{{ _t('auth.register_suggestion') }}</span>
+                                <a href="{{ route('register') }}">{{ _t('auth.create_account') }}</a>
+                            </div>
                         </div>
                     </form>
                 </div>

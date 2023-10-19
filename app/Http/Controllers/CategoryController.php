@@ -114,7 +114,9 @@ class CategoryController extends Controller
 
 		// удалять изображения
 
-		// $category->delete(); // что делать с блюдами из этой категории
+		$category->items()->delete();
+
+		$category->delete();
 
 		return [
 			'message' => 'Deleted',

@@ -23,6 +23,11 @@ use App\Notifications\InvoicePaid;
 
 Artisan::command('testt', function () {
 
+    $status = opcache_get_status();
+
+    dd($status);
+
+    return;
     $productsJson = file_get_contents(storage_path('products.json'));
 
     $categories = json_decode($productsJson);

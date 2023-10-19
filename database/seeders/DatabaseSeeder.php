@@ -42,7 +42,7 @@ class DatabaseSeeder extends Seeder
             'remember_token' => Str::random(10),
         ]);
 
-        \App\Services\MockingService::movkCompany($company->id);
+        \App\Services\MockingService::mockCompany($company->id);
 
         // \App\Models\Category::factory(15)->create();
 

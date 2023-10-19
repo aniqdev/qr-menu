@@ -4,16 +4,16 @@ return [
     'hide_validation' => false,
     'button_orientation' => 'left',
     'fields' => [
-        [
-            'id' => 'name',
-            'name' => 'What is your name?',
-            'type' => 'field',
-            'field' => [
-                'type' => 'text',
-                'placeholder' => 'Name',
-                'default_value' => 'Bob Smith',
-            ],
-        ],
+        // [
+        //     'id' => 'name',
+        //     'name' => 'What is your name?',
+        //     'type' => 'field',
+        //     'field' => [
+        //         'type' => 'text',
+        //         'placeholder' => 'Name',
+        //         'default_value' => 'Bob Smith',
+        //     ],
+        // ],
         // [
         //     'id' => 'color',
         //     'name' => 'What is your favorite color?',
@@ -51,31 +51,40 @@ return [
         //         'default_value' => 'true',
         //     ],
         // ],
+        // [
+        //     'id' => 'asd',
+        //     'name' => 'asdd',
+        //     'type' => 'html',
+        //     'html' => '<hr class="mb-0">',
+        // ],
         [
-            'id' => 'asd',
-            'name' => 'asdd',
-            'type' => 'html',
-            'html' => '<hr class="mb-0">',
+            'id' => 'show_logo',
+            'name' => _t('template_default.show_logo'),
+            'type' => 'field',
+            'field' => [
+                'type' => 'switch',
+                'default_value' => false,
+            ],
         ],
         [
             'id' => 'currency_symbol',
-            'name' => 'Currency',
+            'name' => _t('template_default.currency'),
             'type' => 'field',
             'field' => [
                 'type' => 'select',
                 'width' => 6,
                 'options' => [
-                    '' => 'Disable',
+                    '' => _t('template_default.currency_disable'),
                     '$' => '$ USD',
-                    '£' => '£ PLN',
                     '€' => '€ EUR',
                     '₴' => '₴ UAH',
+                    'грн.' => 'грн.',
                 ],
             ],
         ],
         [
             'id' => 'price_precision',
-            'name' => 'price precision',
+            'name' => _t('template_default.price_precision'),
             'type' => 'field',
             'field' => [
                 'type' => 'select',
@@ -85,56 +94,56 @@ return [
         ],
         [
             'id' => 'decimal_separator',
-            'name' => 'decimal separator',
+            'name' => _t('template_default.decimal_separator'),
             'type' => 'field',
             'field' => [
                 'type' => 'select',
                 'default_value' => ',',
                 'width' => 6,
                 'options' => [
-                    '.' => 'Dot .',
-                    ',' => 'Coma ,',
+                    '.' => _t('template_default.dot'),
+                    ',' => _t('template_default.coma'),
                 ],
             ],
         ],
         [
             'id' => 'thousands_separator',
-            'name' => 'thousands separator',
+            'name' => _t('template_default.thousands_separator'),
             'type' => 'field',
             'field' => [
                 'type' => 'select',
                 'default_value' => ' ',
                 'width' => 6,
                 'options' => [
-                    ',' => 'Coma ,',
-                    ' ' => 'Space',
-                    "'" => "Semicolon '",
+                    ',' => _t('template_default.coma'),
+                    ' ' => _t('template_default.space'),
+                    "'" => _t('template_default.semicolon'),
                 ],
             ],
         ],
         [
             'id' => 'space_after_price',
-            'name' => 'Space after price',
+            'name' => _t('template_default.space_after_price'),
             'type' => 'field',
             'field' => [
                 'type' => 'switch',
-                'default_value' => 'false',
+                'default_value' => false,
             ],
         ],
-        [
-            'id' => 'select',
-            'name' => 'Pick a direction',
-            'type' => 'field',
-            'field' => [
-                'type' => 'select',
-                'default_value' => 'Top',
-                'options' => [
-                    'left' => 'To Left',
-                    'right' => 'To Right',
-                    'top' => 'To Top',
-                    'bottom' => 'To Bottom',
-                ],
-            ],
-        ],
+        // [
+        //     'id' => 'select',
+        //     'name' => 'Pick a direction',
+        //     'type' => 'field',
+        //     'field' => [
+        //         'type' => 'select',
+        //         'default_value' => 'Top',
+        //         'options' => [
+        //             'left' => 'To Left',
+        //             'right' => 'To Right',
+        //             'top' => 'To Top',
+        //             'bottom' => 'To Bottom',
+        //         ],
+        //     ],
+        // ],
     ],
 ];

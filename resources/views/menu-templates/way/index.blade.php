@@ -117,19 +117,21 @@ body{
 }
 </style>
 <div class="container py-2">
+	@if(tpl_options('show_logo'))
 	<div class="logo-wrapper text-center mb-3 pb-4">
 		<img src="{{ $company->image }}" alt="" class="logo">
 	</div>
-	<h2 class="text-center mb-3">Menu</h2>
+	@endif
+	<h2 class="text-center mb-3">{{ _t('template_way.menu') }}</h2>
 	<main>
-		<h4>Categories</h4>
+		<h4>{{ _t('template_way.categories') }}</h4>
 		<nav>
 			<div class="row_ mb-3" id="nav-tab" role="tablist">
 				<div class="owl-carousel owl-theme">
 					<?php $color = rand_color(); ?>
 					<div class="_col-6 _col-md-4 _col-lg-3 active _mb-4 category-item" id="" data-bs-toggle="tab" data-bs-target="#category-all" type="button" role="tab" aria-controls="nav-general" aria-selected="true">
 						<div class="card category-card" style="border-color: {{ $color }}">
-							<div class="card-title category-card-title" style="border-color: {{ $color }};">All categories</div>
+							<div class="card-title category-card-title" style="border-color: {{ $color }};">{{ _t('template_way.all_categories') }}</div>
 							<div class="card-body">
 								<div class="card-img-bottom">
 	                                {{-- <img src="/images/all-food.jpg" alt=""> --}}

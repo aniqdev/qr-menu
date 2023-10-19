@@ -9,7 +9,7 @@ namespace App\Services;
  */
 class MockingService
 {
-	public static function movkCompany($companyId)
+	public static function mockCompany($companyId)
 	{
         $productsJson = file_get_contents(storage_path('products.json'));
 

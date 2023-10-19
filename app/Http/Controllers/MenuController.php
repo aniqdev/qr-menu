@@ -8,6 +8,20 @@ use App\Services\TemplateService;
 
 class MenuController extends Controller
 {
+    public function loadMenuModal(Request $request)
+    {
+        $companySlug = auth()->user()->company->slug;
+
+        $choosenTemplate = $request->template ?? auth()->user()->company->menu_template ?? 'default';
+
+        return [
+            'modal_content' => view('admin.menu.menu-modal', [
+                'companySlug' => $companySlug,
+                'choosenTemplate' => $choosenTemplate,
+            ])->render(),
+        ];
+    }
+
     public function adminMenu(Request $request)
     {
         $categories = Category::with('items')->where('company_id', auth()->user()->company_id)->orderBy('sorting')->get();
@@ -48,7 +62,7 @@ class MenuController extends Controller
 
         return [
             'template' => $request->template,
-            'modal_title' => 'template "' . $request->template . '" settings',
+            'modal_title' => str_replace('$template', $request->template, _t('admin_menu.settings_modal_title')),
             'form_data' => $formArr,
             '$settings' => $template->settings ?? [],
         ];

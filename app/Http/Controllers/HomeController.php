@@ -8,6 +8,11 @@ use App\Models\{Company, User};
 
 class HomeController extends Controller
 {
+    public function dashboardIframeStatistic()
+    {
+        return view('admin.dashboard.statistic');
+    }
+
     public function landing()
     {
         return view('landing.index');
