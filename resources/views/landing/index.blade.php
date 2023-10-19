@@ -14,7 +14,7 @@
     <meta name="msapplication-TileColor" content="#ffffff"/>
     <meta name="msapplication-config" content="./landing/img/favicon/browserconfig.xml"/>
     <meta name="theme-color" content="#ffffff"/>
-    <link rel="stylesheet" href="/landing/css/style.min.css?0.05163599695734551"/>
+    <link rel="stylesheet" href="/landing/css/style.min.css?v=1.0.2"/>
   </head>
   <body>
     <div class="page-container is-home">
