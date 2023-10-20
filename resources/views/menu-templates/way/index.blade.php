@@ -267,11 +267,11 @@ body{
                 </div>
                 <div class="footer-sl-links inline">
                 	@if(tpl_options('footer_instagram'))
-                    <a href="{{ tpl_options('footer_instagram') }}" class="sl-img-link sl-instagram" target="_blank" rel="noreferrer"
+                    <a href="{{ tpl_options('footer_instagram') }}" class="sl-img-link text-decoration-none sl-instagram" target="_blank" rel="noreferrer"
                     	style="background-image: url('https://demo.menu.wayforpay.com/img/social/instagram.svg')">&nbsp;</a>
                     @endif
                 	@if(tpl_options('footer_telegram'))
-                    <a href="{{ tpl_options('footer_telegram') }}" class="sl-img-link sl-telegram" target="_blank" rel="noreferrer"
+                    <a href="{{ tpl_options('footer_telegram') }}" class="sl-img-link text-decoration-none sl-telegram" target="_blank" rel="noreferrer"
                     	style="background-image: url('https://demo.menu.wayforpay.com/img/social/telegram.svg')">&nbsp;</a>
                     @endif
                 </div>
