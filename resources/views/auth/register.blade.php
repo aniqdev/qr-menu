@@ -44,6 +44,14 @@
                                 <input type="text" name="company_name" id="company_name" class="form-control form-control-alternative" placeholder="Restaurant Name here ..." value="{{ old('company_name') }}" required autofocus>
                             </div>
                         </div>
+                        <div class="pl-lg-4">
+                            <div class="custom-control custom-control-alternative custom-checkbox">
+                                <input class="custom-control-input" name="domo_content" id="customCheckLogin" type="checkbox">
+                                <label class="custom-control-label" for="customCheckLogin">
+                                    <span class="text-muted">{{ _t('auth.domo_content') }}</span>
+                                </label>
+                            </div>
+                        </div>
                         <hr class="my-4">
                         <h6 class="heading-small text-muted mb-4">{{ _t('auth.owner_information') }}</h6>
                         <div class="pl-lg-4">

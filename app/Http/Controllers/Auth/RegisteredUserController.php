@@ -47,10 +47,12 @@ class RegisteredUserController extends Controller
             'menu_template' => 'way',
         ]);
 
-        try {
-            \App\Services\MockingService::mockCompany($company->id);
-        } catch (\Throwable $e) {
-            telegram_bot_error($e);
+        if ($request->domo_content) {
+            try {
+                \App\Services\MockingService::mockCompany($company->id);
+            } catch (\Throwable $e) {
+                telegram_bot_error($e);
+            }
         }
 
         $password = $request->password ?? Str::random(8);
