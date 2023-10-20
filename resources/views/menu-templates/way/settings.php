@@ -130,6 +130,53 @@ return [
                 'default_value' => false,
             ],
         ],
+        // footer
+        [
+            'id' => 'asd',
+            'name' => 'asdd',
+            'type' => 'html',
+            'html' => '<hr class="mb-0">',
+        ],
+        [
+            'id' => 'footer_phone',
+            'name' => _t('template_default.footer_phone'),
+            'type' => 'field',
+            'field' => [
+                'type' => 'text',
+                'placeholder' => _t('template_default.footer_phone_placeholder'),
+                'default_value' => '',
+            ],
+        ],
+        [
+            'id' => 'footer_email',
+            'name' => _t('template_default.footer_email'),
+            'type' => 'field',
+            'field' => [
+                'type' => 'text',
+                'placeholder' => 'example@gmail.com',
+                'default_value' => '',
+            ],
+        ],
+        [
+            'id' => 'footer_instagram',
+            'name' => _t('template_default.footer_instagram'),
+            'type' => 'field',
+            'field' => [
+                'type' => 'text',
+                'placeholder' => 'https://www.instagram.com/qr.online.menu',
+                'default_value' => '',
+            ],
+        ],
+        [
+            'id' => 'footer_telegram',
+            'name' => _t('template_default.footer_telegram'),
+            'type' => 'field',
+            'field' => [
+                'type' => 'text',
+                'placeholder' => 'https://t.me/qr_online_menu',
+                'default_value' => '',
+            ],
+        ],
         // [
         //     'id' => 'select',
         //     'name' => 'Pick a direction',

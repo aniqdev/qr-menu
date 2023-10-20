@@ -252,27 +252,37 @@ body{
         <div class="row">
             <div class="col-md-4 footer-col">
                 <div class="footer-info">
-                    <a href="tel:+380 44 379 48 49">+380 68 121 26 26</a><br>
-                    <a href="mailto:qrmenuspace@gmail.com">qrmenuspace@gmail.com</a>
+                	@if(tpl_options('footer_phone'))
+                    <a href="tel:{{ tpl_options('footer_phone') }}">{{ tpl_options('footer_phone') }}</a><br>
+                    @endif
+                	@if(tpl_options('footer_email'))
+                    <a href="mailto:{{ tpl_options('footer_email') }}">{{ tpl_options('footer_email') }}</a>
+                    @endif
                 </div>
             </div>
             <div class="col-md-5 footer-col">
+                @if(tpl_options('footer_instagram') || tpl_options('footer_telegram'))
                 <div class="footer-sl-title">
-                    <b>Ми у соцмережах</b>
+                    <b>{{ _t('template_way.social_media') }}</b>
                 </div>
                 <div class="footer-sl-links inline">
-                    <a href="https://www.instagram.com/qr.online.menu/" class="sl-img-link sl-instagram" target="_blank" rel="noreferrer"
+                	@if(tpl_options('footer_instagram'))
+                    <a href="{{ tpl_options('footer_instagram') }}" class="sl-img-link sl-instagram" target="_blank" rel="noreferrer"
                     	style="background-image: url('https://demo.menu.wayforpay.com/img/social/instagram.svg')">&nbsp;</a>
-                    <a href="https://t.me/qr_online_menu" class="sl-img-link sl-telegram" target="_blank" rel="noreferrer"
+                    @endif
+                	@if(tpl_options('footer_telegram'))
+                    <a href="{{ tpl_options('footer_telegram') }}" class="sl-img-link sl-telegram" target="_blank" rel="noreferrer"
                     	style="background-image: url('https://demo.menu.wayforpay.com/img/social/telegram.svg')">&nbsp;</a>
+                    @endif
                 </div>
+                @endif
             </div>
             <div class="col-md-3 footer-col">
                 <a href="/" target="_blank" rel="noreferrer" class="my-3 d-inline-block">
                     {{-- <img src="/images/qr-online-menu-logo.svg" alt="WayForPay" width="160" height="32"> --}}
-                    <img src="/svg/qr-menu-logo-2.svg" alt="" width="240">
+                    {{-- <img src="/svg/qr-menu-logo-2.svg" alt="" width="240"> --}}
                 </a>
-                <p class="copyright">Створено за допомогою <a href="http://qr-menu.space/" rel="noreferrer" target="_blank">qr-menu.space</a>
+                <p class="copyright text-muted" style="font-size: 0.8em">Створено за допомогою <a href="http://qr-menu.space/" rel="noreferrer" target="_blank">qr-menu.space</a>
                 </p>
             </div>
         </div>
