@@ -68,9 +68,9 @@ class CompanyController extends Controller
         ];
     }
 
-    public function menu($company_slug)
+    public function menu(Company $company)
     {
-        $company = Company::where('slug', $company_slug)->firstOrFail();
+        // $company = Company::where('slug', $company_slug)->firstOrFail();
 
         $categories = Category::with('itemsActive')->where('company_id', $company->id)->orderBy('sorting')->get();
 
@@ -90,16 +90,16 @@ class CompanyController extends Controller
         ]);
     }
 
-    public function linksPage($company_slug)
+    public function linksPage(Company $company)
     {
-        $company = Company::where('slug', $company_slug)->firstOrFail();
+        // $company = Company::where('slug', $company_slug)->firstOrFail();
 
         // $cafeLink = route('cafe.links-page', $company->slug);
 
         // $menuLink = route('cafe.menu', $company->slug);
 
         if ($company->link_target === 'menu') {
-            return $this->menu($company_slug);
+            return $this->menu($company);
         }
 
         return view('front.links-page', [

@@ -23,7 +23,13 @@ body{
     padding: 0;
 }
 .item-list{
-	
+    list-style: none;
+}
+.item-description{
+    font-style: italic;
+    padding-left: 20px;
+    color: #999;
+    font-size: 0.9em;
 }
 .shadow-block{
 	background: #fff;
@@ -32,7 +38,7 @@ body{
 	box-shadow: 0 0 .5rem rgba(0,0,0,.075);
 }
 </style>
-<div class="shadow-block">
+<div class="container shadow-block_">
 	@if(tpl_options('show_logo'))
 	<div class="text-center" {{ tpl_options('show_logo') ? 'true' : 'false'}}>
 		<img src="{{ $company->image }}" alt="" class="img-thumbnail mb-3"
@@ -46,17 +52,22 @@ body{
 			<div><b>{{ $category->name }}</b></div>
 			<ul class="item-list">
 				@foreach($category->itemsActive as $item)
-				<li class="d-flex justify-content-between item-item">
-					<div class="cols">{{ $item->name }} <span style="font-size: 0.9em;">@if($item->volume)({{ $item->volume }})@endif</span></div>
-					<div class="cols flex-grow-1 dotted"></div>
-					<div class="cols">{{
-						number_format($item->price, 
-							tpl_options('price_precision'), 
-							tpl_options('decimal_separator'),
-							tpl_options('thousands_separator')).
-						(tpl_options('space_after_price') ? ' ' : '').
-						tpl_options('currency_symbol') 
-					}}</div>
+				<li class="item-item">
+					<div class="d-flex justify-content-between">
+						<div class="cols">{{ $item->name }} <span style="font-size: 0.9em;">@if($item->volume)({{ $item->volume }})@endif</span></div>
+						<div class="cols flex-grow-1 dotted"></div>
+						<div class="cols">{{
+							number_format($item->price, 
+								tpl_options('price_precision'), 
+								tpl_options('decimal_separator'),
+								tpl_options('thousands_separator')).
+							(tpl_options('space_after_price') ? ' ' : '').
+							tpl_options('currency_symbol') 
+						}}</div>
+					</div>
+					@if(tpl_options('show_description'))
+					<div class="item-description">{{ $item->description }}</div>
+					@endif
 				</li>
 				@endforeach
 			</ul>

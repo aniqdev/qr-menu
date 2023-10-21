@@ -65,13 +65,7 @@ return [
                 'type' => 'select',
                 'width' => 6,
                 'default_value' => '14',
-                'options' => [
-                    '12' => '12',
-                    '13' => '13',
-                    '14' => '14',
-                    '15' => '15',
-                    '16' => '16',
-                ],
+                'options' => [12,13,14,15,16],
             ],
         ],
         [
@@ -141,6 +135,21 @@ return [
         [
             'id' => 'space_after_price',
             'name' => _t('template_default.space_after_price'),
+            'type' => 'field',
+            'field' => [
+                'type' => 'switch',
+                'default_value' => false,
+            ],
+        ],
+        [
+            'id' => 'asd',
+            'name' => 'asdd',
+            'type' => 'html',
+            'html' => '<hr class="mb-0">',
+        ],
+        [
+            'id' => 'show_description',
+            'name' => _t('template_default.show_description'),
             'type' => 'field',
             'field' => [
                 'type' => 'switch',
