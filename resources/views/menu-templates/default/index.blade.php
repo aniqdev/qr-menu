@@ -48,6 +48,9 @@ body{
 	@endif
 	<ul class="category-list">
 		@foreach($categories as $category)
+			@if(!$category->itemsActive->count())
+				@continue
+			@endif
 		<li>
 			<div><b>{{ $category->name }}</b></div>
 			<ul class="item-list">

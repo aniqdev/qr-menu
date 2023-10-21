@@ -23,7 +23,13 @@
 			@include('admin.blocks.image-input', ['model' => $category])
 		</div>
 		<div class="col-md-8">
-			<label for="item_title" class="form-label">{{ _t('admin_categories.name') }}</label>
+			<label for="item_title" class="form-label d-flex justify-content-between">
+				{{ _t('admin_categories.name') }}
+				<label for="is_active" class="">
+					{{ _t('admin_items.is_active') }}
+					<input class="form-check-input" type="checkbox" name="is_active" value="" id="is_active" {{ !$category->is_active ?: 'checked' }} style="width: 25px; height: 25px; margin: 0;">
+				</label>
+			</label>
 			<input type="text" name="name" value="{{ $category->name }}" class="form-control" id="item_title" placeholder="Vine">
 			<br>
 			<label for="description" class="form-label">{{ _t('admin_categories.description') }}</label>

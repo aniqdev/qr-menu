@@ -28,6 +28,9 @@ body,
 <div class="container mt-5 px-5_ mb-10">
 	<div class="category-list row gx-8">
 		@foreach($categories as $category)
+			@if(!$category->itemsActive->count())
+				@continue
+			@endif
 			<div class="category-name pt-4">
 				<h2 class="h2 m-0">{{ $category->name }}</h2>
 			</div>

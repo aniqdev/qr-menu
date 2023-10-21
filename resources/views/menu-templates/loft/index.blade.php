@@ -145,12 +145,18 @@ h2.title {
 		<div class="head-menu-list-content">
 			<div class="head-menu-list">
 				@foreach($categories as $category)
+					@if(!$category->itemsActive->count())
+						@continue
+					@endif
 					<a href="#cat_{{ $category->id }}" class="head-menu-item">{{ $category->name }}</a>
 				@endforeach
 			</div>
 		</div>
 	</div>
 	@foreach($categories as $category)
+		@if(!$category->itemsActive->count())
+			@continue
+		@endif
 		<div class="dish-list" id="cat_{{ $category->id }}">
 			<h2 class="title">{{ $category->name }}</h2>
 			@foreach($category->itemsActive as $item)

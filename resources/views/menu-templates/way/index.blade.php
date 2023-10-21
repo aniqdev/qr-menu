@@ -141,6 +141,9 @@ body{
 						</div>
 					</div>
 					@foreach($categories as $category)
+						@if(!$category->itemsActive->count())
+							@continue
+						@endif
 						<?php $color = rand_color(); ?>
 						<div class="_col-6 _col-md-4 _col-lg-3 _mb-4 category-item" id="nav-general-tab" data-bs-toggle="tab" data-bs-target="#category-{{ $category->id }}" type="button" role="tab" aria-controls="nav-general" aria-selected="true">
 							<div class="card category-card" style="border-color: {{ $color }}">
@@ -159,6 +162,9 @@ body{
 		<div class="tab-content" id="">
 			<div class="tab-pane fade show active" id="category-all" role="tabpanel" aria-labelledby="category-all">
 				@foreach($categories as $category)
+					@if(!$category->itemsActive->count())
+						@continue
+					@endif
 					<h5>{{ $category->name }}</h5>
 					<div class="row" style="padding: 0 7px;">
 					@foreach($category->itemsActive as $item)
@@ -189,6 +195,9 @@ body{
 				@endforeach
 			</div>
 			@foreach($categories as $category)
+			@if(!$category->itemsActive->count())
+				@continue
+			@endif
 			<div class="tab-pane fade" id="category-{{ $category->id }}" role="tabpanel" aria-labelledby="nav-profile-tab">
 				<h5>{{ $category->name }}</h5>
 				<div class="row" style="padding: 0 7px;">
@@ -222,30 +231,6 @@ body{
 			{{-- <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div> --}}
 		</div>
 	</main>
-	<ul class="category-list">
-		@foreach($categories as $category)
-		@break
-		<li>
-			<div><b>{{ $category->name }}</b></div>
-			<ul class="item-list">
-				@foreach($category->itemsActive as $item)
-				<li class="d-flex justify-content-between item-item">
-					<div class="cols">{{ $item->name }}</div>
-					<div class="cols flex-grow-1 dotted"></div>
-					<div class="cols">{{
-						number_format($item->price, 
-							tpl_options('price_precision'), 
-							tpl_options('decimal_separator'),
-							tpl_options('thousands_separator')).
-						(tpl_options('space_after_price') ? ' ' : '').
-						tpl_options('currency_symbol') 
-					}}</div>
-				</li>
-				@endforeach
-			</ul>
-		</li>
-		@endforeach
-	</ul>
 </div>
 <footer class="footer">
     <div class="container text-center">

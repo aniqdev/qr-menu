@@ -96,6 +96,8 @@ class CategoryController extends Controller
 
 		$data = $request->validated();
 
+		$data['is_active'] = $request->has('is_active');
+
 		$data['image'] = $category->setImage($request);
 
 		$category->update($data);
