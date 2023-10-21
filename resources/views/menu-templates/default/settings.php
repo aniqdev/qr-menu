@@ -58,6 +58,23 @@ return [
         //     'html' => '<hr class="mb-0">',
         // ],
         [
+            'id' => 'font_size',
+            'name' => _t('template_default.font_size'),
+            'type' => 'field',
+            'field' => [
+                'type' => 'select',
+                'width' => 6,
+                'default_value' => '14',
+                'options' => [
+                    '12' => '12',
+                    '13' => '13',
+                    '14' => '14',
+                    '15' => '15',
+                    '16' => '16',
+                ],
+            ],
+        ],
+        [
             'id' => 'show_logo',
             'name' => _t('template_default.show_logo'),
             'type' => 'field',
@@ -116,7 +133,7 @@ return [
                 'width' => 6,
                 'options' => [
                     ',' => _t('template_default.coma'),
-                    ' ' => _t('template_default.space'),
+                    '&nbsp;' => _t('template_default.space'),
                     "'" => _t('template_default.semicolon'),
                 ],
             ],

@@ -3,6 +3,7 @@
 return [
     'hide_validation' => false,
     'button_orientation' => 'left',
+    'donor' => 'https://demo.menu.wayforpay.com/',
     'fields' => [
         // [
         //     'id' => 'name',

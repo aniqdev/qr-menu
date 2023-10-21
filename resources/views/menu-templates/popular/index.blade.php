@@ -46,7 +46,7 @@ body,
 
                     		<div class="col-8 col-md-12">
 							    <p class="fs-5 fw-bold mb-1 text-break item-name" itemprop="name">{{ $item->name }}</p>
-							    <div itemprop="description" class="text-muted text-break overflow-hidden small" style="max-height:69px">{{ $item->description }} <br>
+							    <div itemprop="description" class="text-muted text-break overflow-hidden small" style="max-height:69px;">{{ $item->description }} <br>
 							    </div>
 							    <div class="mb-2"></div>
 							    <div itemprop="offers" itemscope="" itemtype="https://schema.org/Offer">
@@ -56,10 +56,12 @@ body,
 											number_format($item->price, 
 												tpl_options('price_precision'), 
 												tpl_options('decimal_separator'),
-												tpl_options('thousands_separator'))
-											 . ' ' . tpl_options('currency_symbol') 
+												tpl_options('thousands_separator')).
+											(tpl_options('space_after_price') ? ' ' : '').
+											tpl_options('currency_symbol')
 										}}
 									</span>
+									<span class="ms-2" style="color: #dee2e6bf; font-size: 0.8em;">{{ $item->volume }}</span>
 							    </div>
 							</div>
 

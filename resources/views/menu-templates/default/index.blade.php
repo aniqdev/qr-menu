@@ -2,6 +2,9 @@
 
 @section('content')
 <style>
+body{
+	font-size: {{ tpl_options('font_size') }}px;
+}
 .item-item .dotted{
     position: relative;
     overflow: hidden;
@@ -44,7 +47,7 @@
 			<ul class="item-list">
 				@foreach($category->itemsActive as $item)
 				<li class="d-flex justify-content-between item-item">
-					<div class="cols">{{ $item->name }}</div>
+					<div class="cols">{{ $item->name }} <span style="font-size: 0.9em;">@if($item->volume)({{ $item->volume }})@endif</span></div>
 					<div class="cols flex-grow-1 dotted"></div>
 					<div class="cols">{{
 						number_format($item->price, 
