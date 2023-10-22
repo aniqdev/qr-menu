@@ -8,6 +8,11 @@
     border-radius: 8px;
     border: 1px solid rgba(0, 0, 0, 0.125);
 }
+.item-left{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 </style>
 <div class="shadow-block">
     @include('admin.blocks.breadcrumbs', [
@@ -31,11 +36,19 @@
     <div class="item-list">
         @foreach($items as $item)
             <div class="row item-item">
-                <div class="col-4 col-sm-3 col-md-2 js-no-reload">
-                    <a href="{{ route('items.edit', $item) }}" class="d-block">
+                <div class="col-4 col-sm-3 col-md-2 item-left">
+                    <a href="{{ route('items.edit', $item) }}" class="d-block js-no-reload-link">
                         <img src="{{ $item->image }}" alt="{{ $item->name }}" 
                         class="d-block m-auto" style="max-width:100%; max-height:100px;">
                     </a>
+                    <form action="{{ route('items.update-visibility', $item) }}" onsubmit="submit_form(this, event)">
+                        @csrf
+                        @if($item->is_active)
+                            <button type="submit" class="btn badge bg-success text-white w-100" id="item_{{ $item->id }}_visibility_badge">Active</button>
+                        @else
+                            <button type="submit" class="btn badge bg-secondary text-white w-100" id="item_{{ $item->id }}_visibility_badge">Hidden</button>
+                        @endif
+                    </form>
                 </div>
                 <div class="col-8 col-sm-9 col-md-10">
 
@@ -46,13 +59,13 @@
                             <a href="{{ route('items.edit', $item) }}" class="text-truncate  js-no-reload-link">
                                 {{ $item->name }}
                             </a>
-                            <span class="ms-2">
+                            {{-- <span class="ms-2">
                                 @if($item->is_active)
                                     <i class="bi bi-eye-fill" style="color: #5a88af;"></i>
                                 @else
                                     <i class="bi bi-eye-slash"></i>
                                 @endif
-                            </span>
+                            </span> --}}
                             @include('admin.items.blocks.item-dropdown')
                         </div>
 

@@ -10,6 +10,34 @@ use Illuminate\Http\Request;
 
 class ItemController extends Controller
 {
+	public function updateVisibility(Item $item, Request $request)
+	{
+        abort_if_no_access($item->company_id);
+
+		$item->update([
+			'is_active' => !$item->is_active,
+		]);
+
+		if ($item->is_active) {
+			$jquery = [
+	            ['element' => '#item_' . $item->id . '_visibility_badge', 'method' => 'removeClass', 'args' => ['bg-secondary']],
+	            ['element' => '#item_' . $item->id . '_visibility_badge', 'method' => 'addClass', 'args' => ['bg-success']],
+	            ['element' => '#item_' . $item->id . '_visibility_badge', 'method' => 'text', 'args' => ['Active']],
+	        ];
+		}else{
+			$jquery = [
+	            ['element' => '#item_' . $item->id . '_visibility_badge', 'method' => 'removeClass', 'args' => ['bg-success']],
+	            ['element' => '#item_' . $item->id . '_visibility_badge', 'method' => 'addClass', 'args' => ['bg-secondary']],
+	            ['element' => '#item_' . $item->id . '_visibility_badge', 'method' => 'text', 'args' => ['Hidden']],
+	        ];
+	    }
+
+		return [
+			// 'message' => 'Success',
+            'jquery' => $jquery,
+		];
+	}
+
 	public function loadCreateModal(Request $request)
 	{
 		$categories = Category::where('company_id', auth()->user()->company_id)->orderBy('sorting')->get(['id', 'name']);

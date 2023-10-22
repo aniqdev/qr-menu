@@ -9,6 +9,34 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
+	public function updateVisibility(Category $category, Request $request)
+	{
+		abort_if_no_access($category->company_id);
+
+		$category->update([
+			'is_active' => !$category->is_active,
+		]);
+
+		if ($category->is_active) {
+			$jquery = [
+	            ['element' => '#category_' . $category->id . '_visibility_badge', 'method' => 'removeClass', 'args' => ['bg-secondary']],
+	            ['element' => '#category_' . $category->id . '_visibility_badge', 'method' => 'addClass', 'args' => ['bg-success']],
+	            ['element' => '#category_' . $category->id . '_visibility_badge', 'method' => 'text', 'args' => ['Active']],
+	        ];
+		}else{
+			$jquery = [
+	            ['element' => '#category_' . $category->id . '_visibility_badge', 'method' => 'removeClass', 'args' => ['bg-success']],
+	            ['element' => '#category_' . $category->id . '_visibility_badge', 'method' => 'addClass', 'args' => ['bg-secondary']],
+	            ['element' => '#category_' . $category->id . '_visibility_badge', 'method' => 'text', 'args' => ['Hidden']],
+	        ];
+	    }
+
+		return [
+			// 'message' => 'Success',
+            'jquery' => $jquery,
+		];
+	}
+
 	public function updateSorting(Request $request)
 	{
 		foreach ($request->ids as $key => $categoryId) {

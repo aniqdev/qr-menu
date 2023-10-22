@@ -44,10 +44,12 @@ Route::group([
 
     Route::resource('categories', \App\Http\Controllers\CategoryController::class);
     Route::post('categories/update-sorting', [\App\Http\Controllers\CategoryController::class, 'updateSorting'])->name('categories.update-sorting');
+    Route::post('categories/{category}/update-visibility', [\App\Http\Controllers\CategoryController::class, 'updateVisibility'])->name('categories.update-visibility');
 
     Route::resource('items', \App\Http\Controllers\ItemController::class);
     Route::post('items/update-sorting', [\App\Http\Controllers\ItemController::class, 'updateSorting'])->name('items.update-sorting');
     Route::get('modals/items/create', [\App\Http\Controllers\ItemController::class, 'loadCreateModal'])->name('items.load-create-modal');
+    Route::post('items/{item}/update-visibility', [\App\Http\Controllers\ItemController::class, 'updateVisibility'])->name('items.update-visibility');
 
     Route::get('templates', [\App\Http\Controllers\TemplateController::class, 'templates'])->name('admin.templates');
 

@@ -54,10 +54,20 @@
 
                     {{-- desription --}}
                     <div class="col-auto_">
-                        <div data-bs-toggle="tooltip" data-bs-title="{{ $category->description }}">
+                        {{-- <div data-bs-toggle="tooltip" data-bs-title="{{ $category->description }}"> --}}
+                        <div>
                             {{ mb_substr($category->description, 0, 50) }}
                         </div>
                     </div>
+
+                    <form action="{{ route('categories.update-visibility', $category) }}" onsubmit="submit_form(this, event)">
+                        @csrf
+                        @if($category->is_active)
+                            <button type="submit" class="btn badge bg-success text-white" id="category_{{ $category->id }}_visibility_badge">Active</button>
+                        @else
+                            <button type="submit" class="btn badge bg-secondary text-white" id="category_{{ $category->id }}_visibility_badge">Hidden</button>
+                        @endif
+                    </form>
 
                 </div>
 
