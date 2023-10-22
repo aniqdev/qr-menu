@@ -20,7 +20,7 @@
     z-index: 2;
 }
 </style>
-<label for="item_image" class="position-relative image-input-wrapper" id="item_image_label">
+<label for="item_image" class="position-relative image-input-wrapper mb-3" id="item_image_label">
 
 	<button type="button" class="btn btn-outline-danger item-image-remove-button"
 		data-imgplaceholder="{{ get_img_placeholder_src() }}"

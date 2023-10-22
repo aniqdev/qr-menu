@@ -23,12 +23,14 @@ class ItemController extends Controller
 	            ['element' => '#item_' . $item->id . '_visibility_badge', 'method' => 'removeClass', 'args' => ['bg-secondary']],
 	            ['element' => '#item_' . $item->id . '_visibility_badge', 'method' => 'addClass', 'args' => ['bg-success']],
 	            ['element' => '#item_' . $item->id . '_visibility_badge', 'method' => 'text', 'args' => ['Active']],
+	            ['element' => '#item_' . $item->id . '_visibility_btn', 'method' => 'text', 'args' => ['Hide']],
 	        ];
 		}else{
 			$jquery = [
 	            ['element' => '#item_' . $item->id . '_visibility_badge', 'method' => 'removeClass', 'args' => ['bg-success']],
 	            ['element' => '#item_' . $item->id . '_visibility_badge', 'method' => 'addClass', 'args' => ['bg-secondary']],
 	            ['element' => '#item_' . $item->id . '_visibility_badge', 'method' => 'text', 'args' => ['Hidden']],
+	            ['element' => '#item_' . $item->id . '_visibility_btn', 'method' => 'text', 'args' => ['Show']],
 	        ];
 	    }
 

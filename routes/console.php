@@ -23,7 +23,15 @@ use App\Notifications\InvoicePaid;
 
 Artisan::command('testt', function () {
 
-    $status = opcache_get_status();
+    dd(session()->getSessionConfig());
+
+    $object = session();
+
+    $status = get_class_methods($object);
+
+    dd($status);
+
+    $status = get_object_vars($object);
 
     dd($status);
 
