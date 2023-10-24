@@ -39,5 +39,6 @@ function admin_menu_open_settings(template) {
 		window.jsonForm.registerSubmit(template_settings_submit, "MyForm")
 		$('#menuSettingsModalLabel').text(data.modal_title)
 		$('#menuSettingsModal').modal('show')
+		$('meta[name="csrf-token"]').attr('content', data.csrf_token)
 	}, 'json')
 }

@@ -37,25 +37,27 @@ body,
 			@foreach($category->itemsActive as $item)
 				<div class="col-sm-12 col-md-4 col-lg-3">
 					<a class="d-block border-md-0 text-body text-decoration-none py-4 pb-sm-6 
-                    border-sm-bottom border-light">
-                    	<div class="row gx-4">
+					border-sm-bottom border-light">
+						<div class="row gx-4">
 
-                    		<div class="col-4 col-md-12 mb-2 pt-1">
-                    			<div style="display:block;overflow:hidden;position:relative;box-sizing:border-box;margin:0">
-	                    			<div style="display:block;box-sizing:border-box;padding-top:100%"></div>
-	                    			<img src="{{ $item->image }}" alt="" class="rounded with-placeholder" style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%;object-fit:cover;">
-	                    		</div>
-                    		</div>
+							<div class="col-4 col-md-12 mb-2 pt-1">
+								<div style="display:block;overflow:hidden;position:relative;box-sizing:border-box;margin:0">
+									<div style="display:block;box-sizing:border-box;padding-top:100%"></div>
+									{{-- <a href="{{ $item->image }}" data-lightbox="img-preview"> --}}
+										<img src="{{ $item->image }}" alt="" class="rounded with-placeholder" style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%;object-fit:cover;">
+									{{-- </a> --}}
+								</div>
+							</div>
 
-                    		<div class="col-8 col-md-12">
-							    <p class="fs-5 fw-bold mb-1 text-break item-name" itemprop="name">{{ $item->name }}</p>
-							    <div itemprop="description" class="text-muted text-break overflow-hidden small" style="max-height:69px;">{{ $item->description }} <br>
-							    </div>
-							    <div class="mb-2"></div>
-							    <div itemprop="offers" itemscope="" itemtype="https://schema.org/Offer">
-							        <meta itemprop="price" content="299">
-							        <meta itemprop="priceCurrency" content="UAH">
-							        <span class="mt-1 float-start item-price">{{
+							<div class="col-8 col-md-12">
+								<p class="fs-5 fw-bold mb-1 text-break item-name" itemprop="name">{{ $item->name }}</p>
+								<div itemprop="description" class="text-muted text-break overflow-hidden small" style="max-height:69px;">{{ $item->description }} <br>
+								</div>
+								<div class="mb-2"></div>
+								<div itemprop="offers" itemscope="" itemtype="https://schema.org/Offer">
+									<meta itemprop="price" content="299">
+									<meta itemprop="priceCurrency" content="UAH">
+									<span class="mt-1 float-start item-price">{{
 											number_format($item->price, 
 												tpl_options('price_precision'), 
 												tpl_options('decimal_separator'),
@@ -65,11 +67,11 @@ body,
 										}}
 									</span>
 									<span class="ms-2" style="color: #dee2e6bf; font-size: 0.8em;">{{ $item->volume }}</span>
-							    </div>
+								</div>
 							</div>
 
-                    	</div>
-                	</a>
+						</div>
+					</a>
 				</div>
 			@endforeach
 		@endforeach

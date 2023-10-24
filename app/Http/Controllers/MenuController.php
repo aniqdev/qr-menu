@@ -65,6 +65,7 @@ class MenuController extends Controller
             'modal_title' => str_replace('$template', $request->template, _t('admin_menu.settings_modal_title')),
             'form_data' => $formArr,
             '$settings' => $template->settings ?? [],
+            'csrf_token' => csrf_token(),
         ];
     }
 

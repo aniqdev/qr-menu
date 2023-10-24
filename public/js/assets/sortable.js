@@ -15,7 +15,7 @@ function on_sortable_update() {
 		ids.push(item.dataset.id)
 	})
 	$.post(this.dataset.route,{
-		_token: $('meta[name="csrf-token"]').attr('content'),
+		// _token: $('meta[name="csrf-token"]').attr('content'),
 		ids: ids,
 	}, function (data) {
 		data.message && toastr.success(data.message)
