@@ -2,6 +2,8 @@
 
 @section('title', $title ?? 'Menu')
 
+@section('body-classes', 'theme-' . tpl_options('theme'))
+
 @section('content')
 <link rel="stylesheet" href="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.carousel.min.css">
 <link rel="stylesheet" href="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.theme.default.min.css">
@@ -22,9 +24,18 @@
     src: local('Montserrat Bold'), local('Montserrat-Bold'), url(/fonts/Montserrat-Bold.woff2) format('woff2');
 }
 body{
-	background: #fff;
+	background-color: #fff;
 	color: #555;
 	font-family: 'Montserrat',sans-serif;
+}
+html{
+	filter: invert(100%);
+}
+html img{
+	filter: invert(100%);
+}
+html iframe{
+	filter: invert(100%);
 }
 .logo-wrapper{
 	border-bottom: 1px solid #e3e3e3;
@@ -38,7 +49,7 @@ body{
     border: none;
     font-size: 14px;
     border: 2px solid #eaeaea;
-    background-color: #fff;
+/*    background-color: #fff;*/
     cursor: pointer;
     overflow: hidden;
     display: inline-flex;
@@ -50,7 +61,7 @@ body{
     font-size: 14px;
 /*    box-shadow: 0 2px 16px rgb(6 2 102 / 25%);*/
     border: 1px solid #eaeaea;
-    background-color: #fff;
+/*    background-color: #fff;*/
     cursor: pointer;
     overflow: hidden;
     margin: 0 -7px;
@@ -108,8 +119,8 @@ body{
     width: 44px;
     display: inline-block;
     margin: 5px;
-    background-repeat: no-repeat;
-    background-color: #fff;
+/*    background-repeat: no-repeat;*/
+/*    background-color: #fff;*/
     border-radius: 50%;
 }
 .category-item:not(.active) .card{

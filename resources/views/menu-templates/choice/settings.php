@@ -5,16 +5,6 @@ return [
     'button_orientation' => 'left',
     'fields' => [
         // [
-        //     'id' => 'name',
-        //     'name' => 'What is your name?',
-        //     'type' => 'field',
-        //     'field' => [
-        //         'type' => 'text',
-        //         'placeholder' => 'Name',
-        //         'default_value' => 'Bob Smith',
-        //     ],
-        // ],
-        // [
         //     'id' => 'color',
         //     'name' => 'What is your favorite color?',
         //     'type' => 'field',
@@ -23,60 +13,59 @@ return [
         //         'placeholder' => 'Color',
         //     ],
         // ],
+        [
+            'id' => 'theme',
+            'name' => _t('template_default.theme'),
+            'type' => 'field',
+            'field' => [
+                'type' => 'radio',
+                'default_value' => 'light',
+                // 'width' => 12,
+                'options' => [
+                    'light' => _t('template_default.theme_dark'),
+                    'dark' => _t('template_default.theme_light'),
+                ],
+            ],
+        ],
+        [
+            'id' => 'show_logo',
+            'name' => _t('template_default.show_logo'),
+            'type' => 'field',
+            'field' => [
+                'type' => 'switch',
+                'width' => 6,
+                'default_value' => false,
+            ],
+        ],
+        [
+            'id' => 'show_company_name',
+            'name' => _t('template_default.show_company_name'),
+            'type' => 'field',
+            'field' => [
+                'type' => 'switch',
+                'width' => 6,
+                'default_value' => false,
+            ],
+        ],
         // [
-        //     'id' => 'canttouchthis',
-        //     'name' => 'You can\'t touch this',
-        //     'type' => 'field',
-        //     'field' => [
-        //         'type' => 'text',
-        //         'readonly' => true,
-        //         'placeholder' => 'I\'m a placeholder',
-        //     ],
-        // ],
-        // [
-        //     'id' => 'notcheckedanddisabled',
-        //     'name' => 'Can\'t check me',
-        //     'type' => 'field',
-        //     'field' => [
-        //         'type' => 'checkbox',
-        //         'readonly' => true,
-        //     ],
-        // ],
-        // [
-        //     'id' => 'checked',
-        //     'name' => 'Uncheck me',
-        //     'type' => 'field',
-        //     'field' => [
-        //         'type' => 'checkbox',
-        //         'default_value' => 'true',
-        //     ],
-        // ],
-        // [
-        //     'id' => 'asd',
-        //     'name' => 'asdd',
-        //     'type' => 'html',
-        //     'html' => '<hr class="mb-0">',
-        // ],
-        // [
-        //     'id' => 'font_size',
-        //     'name' => _t('template_default.font_size'),
-        //     'type' => 'field',
-        //     'field' => [
-        //         'type' => 'select',
-        //         'width' => 6,
-        //         'default_value' => '14',
-        //         'options' => [12,13,14,15,16],
-        //     ],
-        // ],
-        // [
-        //     'id' => 'show_logo',
-        //     'name' => _t('template_default.show_logo'),
+        //     'id' => 'show_company_description',
+        //     'name' => _t('template_default.show_company_description'),
         //     'type' => 'field',
         //     'field' => [
         //         'type' => 'switch',
         //         'default_value' => false,
         //     ],
         // ],
+        [
+            'id' => 'header_text',
+            'name' => _t('template_default.header_text'),
+            'type' => 'field',
+            'field' => [
+                'type' => 'textarea',
+                'placeholder' => _t('template_default.header_text_placeholder'),
+                'default_value' => '',
+            ],
+        ],
         [
             'id' => 'currency_symbol',
             'name' => _t('template_default.currency'),
@@ -128,7 +117,7 @@ return [
                 'options' => [
                     '&nbsp;' => _t('template_default.space'),
                     ',' => _t('template_default.coma'),
-                    "'" => _t('template_default.semicolon'),
+                    "'" => _t('template_default.quote'),
                 ],
             ],
         ],
@@ -208,20 +197,28 @@ return [
         //         'default_value' => '',
         //     ],
         // ],
-        // [
-        //     'id' => 'select',
-        //     'name' => 'Pick a direction',
-        //     'type' => 'field',
-        //     'field' => [
-        //         'type' => 'select',
-        //         'default_value' => 'Top',
-        //         'options' => [
-        //             'left' => 'To Left',
-        //             'right' => 'To Right',
-        //             'top' => 'To Top',
-        //             'bottom' => 'To Bottom',
-        //         ],
-        //     ],
-        // ],
+        [
+            'id' => 'asd',
+            'name' => 'asdd',
+            'type' => 'html',
+            'html' => '<div style="margin: 15px 0 -40px; position: relative;">
+                <label for="JsonForm-MyForm-Input-google_map_iframe">' . _t('template_default.google_map_iframe') . '</label>
+                <a href="{{ route(\'items.create\') }}" class="question-link" 
+                            onclick="modal_load(event, this)"
+                            data-modalurl="' . route('admin-modals', 'google-map-instructiom') . '"
+                            data-modalsize="modal-lg">?</a>
+            </div>',
+        ],
+        [
+            'id' => 'google_map_iframe',
+            'name' => '', // _t('template_default.google_map_iframe'),
+            'type' => 'field',
+            'field' => [
+                'type' => 'textarea',
+                'rows' => 5,
+                'placeholder' => htmlspecialchars(_t('template_default.google_map_iframe_placeholder')),
+                'default_value' => '',
+            ],
+        ],
     ],
 ];

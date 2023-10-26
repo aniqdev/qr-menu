@@ -58,6 +58,20 @@ return [
         //     'html' => '<hr class="mb-0">',
         // ],
         [
+            'id' => 'theme',
+            'name' => _t('template_default.theme'),
+            'type' => 'field',
+            'field' => [
+                'type' => 'radio',
+                'default_value' => 'light',
+                'width' => 6,
+                'options' => [
+                    'light' => _t('template_default.light'),
+                    'dark' => _t('template_default.dark'),
+                ],
+            ],
+        ],
+        [
             'id' => 'font_size',
             'name' => _t('template_default.font_size'),
             'type' => 'field',
@@ -71,6 +85,24 @@ return [
         [
             'id' => 'show_logo',
             'name' => _t('template_default.show_logo'),
+            'type' => 'field',
+            'field' => [
+                'type' => 'switch',
+                'default_value' => false,
+            ],
+        ],
+        [
+            'id' => 'show_company_name',
+            'name' => _t('template_default.show_company_name'),
+            'type' => 'field',
+            'field' => [
+                'type' => 'switch',
+                'default_value' => false,
+            ],
+        ],
+        [
+            'id' => 'show_company_description',
+            'name' => _t('template_default.show_company_description'),
             'type' => 'field',
             'field' => [
                 'type' => 'switch',
@@ -127,8 +159,8 @@ return [
                 'width' => 6,
                 'options' => [
                     ',' => _t('template_default.coma'),
-                    '&nbsp;' => _t('template_default.space'),
-                    "'" => _t('template_default.semicolon'),
+                    ' ' => _t('template_default.space'),
+                    "'" => _t('template_default.quote'),
                 ],
             ],
         ],

@@ -92,7 +92,7 @@
 </div>
 
 
-<!-- Modal -->
+<!-- menuSettingsModal -->
 <div class="modal fade" id="menuSettingsModal" tabindex="-1" aria-labelledby="menuSettingsModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">

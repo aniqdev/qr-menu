@@ -22,4 +22,23 @@
 	</div>
 
 </div>
+
+<!-- menuSettingsModal -->
+<div class="modal fade" id="menuSettingsModal" tabindex="-1" aria-labelledby="menuSettingsModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h1 class="modal-title fs-5" id="menuSettingsModalLabel">...</h1>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<div id="menuSettingsModalForm"></div>
+			</div>
+			<div class="modal-footer">
+				{{-- <button type="button" class="btn btn-secondary" data-bs-dismiss="menuSettingsModal">Close</button> --}}
+				<button type="button" class="btn btn-primary" onclick="$('#menuSettingsModalForm form').submit()">{{ _t('admin.save') }}</button>
+			</div>
+		</div>
+	</div>
+</div>
 @endsection

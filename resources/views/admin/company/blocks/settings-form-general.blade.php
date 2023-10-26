@@ -6,41 +6,55 @@
 			@csrf
 			@method('PUT')
 			<div class="col-sm-3">
+				<label class="form-label d-block">{{ _t('admin_company.logo') }}</label>
 				@include('admin.blocks.image-input', ['model' => $company])
 			</div>
 			<div class="col-sm-9">
-				<div class="col-6_ mb-3">
+				<div class="mb-3">
 					<label for="company_name" class="form-label">{{ _t('admin_company.name') }}</label>
 					<input type="text" name="name" value="{{ $company->name }}" class="form-control" id="company_name" placeholder="">
 				</div>
-				<div class="col-6_ mb-3">
+				<div class="mb-3">
 					<label for="company_slug" class="form-label">{{ _t('admin_company.slug') }}</label>
 					<input type="text" name="slug" value="{{ $company->slug }}" class="form-control" id="company_slug" placeholder="">
 				</div>
+				<button type="button" class="btn btn-outline-secondary my-3" onclick="admin_menu_open_settings('{{ $company->menu_template }}')">
+					<span>{{ _t('admin_company.template_settings') }}</span>
+				  	<i class="bi bi-gear"></i>
+				</button>
+				{{-- <hr>
+				<h4>Contacts</h4>
+				<div class="mb-3">
+					<label for="company_phone" class="form-label">{{ _t('admin_company.phone') }}</label>
+					<input type="text" name="settings[phone]" value="{{ $company->name }}" class="form-control" id="company_phone" placeholder="+38 050 1234567">
+				</div>
+				<div class="mb-3">
+					<label for="company_email" class="form-label">{{ _t('admin_company.email') }}</label>
+					<input type="text" name="settings[email]" value="{{ $company->name }}" class="form-control" id="company_email" placeholder="example@gmail.com">
+				</div>
+				<div class="mb-3">
+					<label for="company_email" class="form-label">{{ _t('admin_company.telegram') }}</label>
+					<input type="text" name="settings[telegram]" value="{{ $company->name }}" class="form-control" id="company_email" placeholder="">
+				</div>
+				<div class="mb-3">
+					<label for="company_email" class="form-label">{{ _t('admin_company.instagram') }}</label>
+					<input type="text" name="settings[instagram]" value="{{ $company->name }}" class="form-control" id="company_email" placeholder="">
+				</div>
+				<div class="mb-3">
+					<label for="company_email" class="form-label">{{ _t('admin_company.facebook') }}</label>
+					<input type="text" name="settings[facebook]" value="{{ $company->name }}" class="form-control" id="company_email" placeholder="">
+				</div>
+				<div class="mb-3">
+					<label for="company_email" class="form-label">{{ _t('admin_company.working_hours') }}</label>
+					<input type="text" name="settings[working_hours]" value="{{ $company->name }}" class="form-control" id="company_email" placeholder="">
+				</div>
+				<div class="mb-3">
+					<label for="description" class="form-label">{{ _t('admin_categories.google_maps') }}</label>
+					<textarea name="description" class="form-control" id="description" rows="3" placeholder="Insert iframe code here ..."></textarea>
+				</div> --}}
 			</div>
-			<div class="col-sm-4">
-				{{-- <div class="col-4_ mb-3">
-					<label for="item_category" class="form-label">{{ _t('admin_company.menu_template') }}</label>
-					<select name="menu_template" class="form-select" id="item_category">
-						@foreach($templates as $template)
-						<option value="{{ $template }}" {{ $company->menu_template !== $template ?: 'selected' }}>
-							{{ ucfirst(str_replace('_', '.', $template)) }}
-						</option>
-						@endforeach
-					</select>
-				</div> --}}
-				{{-- <div class="col-4_ mb-3">
-					<label for="company_type" class="form-label">
-						{{ _t('admin_company.company_type') }}
-						<i class="bi bi-question-circle-fill" title="{{ _t('admin_settings.company_settings_company_type') }}" data-bs-toggle="tooltip"></i>
-					</label>
-					<select name="company_type" class="form-select" id="company_type">
-						<option value="cafe" {{ $company->company_type !== 'cafe' ?: 'selected' }}>{{ _t('admin_company.company_type_cafe') }}</option>
-						<option value="bar" {{ $company->company_type !== 'bar' ?: 'selected' }}>{{ _t('admin_company.company_type_bar') }}</option>
-						<option value="restaurant" {{ $company->company_type !== 'restaurant' ?: 'selected' }}>{{ _t('admin_company.company_type_bar') }}</option>
-					</select>
-				</div> --}}
-				<div class="col-4_ mb-3 d-none">
+			<div class="col-sm-4"> {{-- hidden --}}
+				<div class="mb-3 d-none">
 					<label for="link_target" class="form-label">
 						{{ _t('admin_company.link_target') }}
 						<i class="bi bi-question-circle-fill" title="{{ _t('admin_settings.company_settings_links_page') }}" data-bs-toggle="tooltip"></i>

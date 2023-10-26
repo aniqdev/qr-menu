@@ -7,5 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class CompanySetting extends Model
 {
-    use HasFactory;
+    protected $fillable = [
+        'company_id',
+        'key',
+        'value',
+    ];
 }

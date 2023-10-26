@@ -35,6 +35,11 @@ function tpl_options($settingKey, $default = null)
 	return \App\Services\TemplateService::getSettig($settingKey, $default);
 }
 
+function tpl_google_map_src()
+{
+	return preg_replace('/^.+src="([^"]+)".+$/', '$1', tpl_options('google_map_iframe'));
+}
+
 function get_lang_by_country($country)
 {
 	return \App\Services\CountryISO::getByCountry($country);

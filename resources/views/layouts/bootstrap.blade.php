@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/css/bootstrap-icons.css">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
 </head>
-<body class="">
+<body class="@yield('body-classes')">
     <div id="app_root">
         @yield('content')
     </div>

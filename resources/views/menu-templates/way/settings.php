@@ -59,6 +59,20 @@ return [
         //     'html' => '<hr class="mb-0">',
         // ],
         [
+            'id' => 'theme',
+            'name' => _t('template_default.theme'),
+            'type' => 'field',
+            'field' => [
+                'type' => 'radio',
+                'default_value' => 'light',
+                'width' => 12,
+                'options' => [
+                    'light' => _t('template_default.light'),
+                    'dark' => _t('template_default.dark'),
+                ],
+            ],
+        ],
+        [
             'id' => 'show_logo',
             'name' => _t('template_default.show_logo'),
             'type' => 'field',
@@ -118,7 +132,7 @@ return [
                 'options' => [
                     ',' => _t('template_default.coma'),
                     ' ' => _t('template_default.space'),
-                    "'" => _t('template_default.semicolon'),
+                    "'" => _t('template_default.quote'),
                 ],
             ],
         ],

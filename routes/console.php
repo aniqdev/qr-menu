@@ -23,6 +23,13 @@ use App\Notifications\InvoicePaid;
 
 Artisan::command('testt', function () {
 
+    $iframe = '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1510.866189075673!2d30.62359005283181!3d50.44177261627694!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4c531b575c6a7%3A0x7c73670df622d21f!2z8J2XlvCdl67wnZe98J2YhvCdl6_wnZeu8J2Xv_Cdl64g8J2XpvCdl73wnZeu8J2XsPCdl7I!5e0!3m2!1sru!2sua!4v1698266554678!5m2!1sru!2sua" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
+
+    $res = tpl_google_map_src($iframe);
+
+    dd($res);
+
+    return;
     dd(session()->getSessionConfig());
 
     $object = session();

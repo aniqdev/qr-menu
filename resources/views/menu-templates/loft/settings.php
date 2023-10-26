@@ -68,6 +68,20 @@ return [
         //     ],
         // ],
         [
+            'id' => 'theme',
+            'name' => _t('template_default.theme'),
+            'type' => 'field',
+            'field' => [
+                'type' => 'radio',
+                'default_value' => 'light',
+                'width' => 12,
+                'options' => [
+                    'light' => _t('template_default.light'),
+                    'dark' => _t('template_default.dark'),
+                ],
+            ],
+        ],
+        [
             'id' => 'currency_symbol',
             'name' => _t('template_default.currency'),
             'type' => 'field',
@@ -118,7 +132,7 @@ return [
                 'options' => [
                     ',' => _t('template_default.coma'),
                     ' ' => _t('template_default.space'),
-                    "'" => _t('template_default.semicolon'),
+                    "'" => _t('template_default.quote'),
                 ],
             ],
         ],

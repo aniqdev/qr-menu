@@ -68,11 +68,12 @@ Route::group([
     Route::get('menu/load-menu-modal', [\App\Http\Controllers\MenuController::class, 'loadMenuModal'])->name('menu-modal');
 
     Route::get('menu/template-settings-modal', [\App\Http\Controllers\MenuController::class, 'settingsModal']);
-
     Route::post('menu/template-settings-save', [\App\Http\Controllers\MenuController::class, 'saveTemplateSettings']);
 
     Route::get('cafe-qr-code-image', [\App\Http\Controllers\QrCodeController::class, 'cafeQrCodeImage'])->name('admin.cafe-qr-code-image');
     Route::get('menu-qr-code-image', [\App\Http\Controllers\QrCodeController::class, 'menuQrCodeImage'])->name('admin.menu-qr-code-image');
+
+    Route::get('modals/{view}', [\App\Http\Controllers\ModalsController::class, 'modals'])->name('admin-modals');
 });
 
 

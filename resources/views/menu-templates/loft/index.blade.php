@@ -2,6 +2,8 @@
 
 @section('title', $title ?? 'Menu')
 
+@section('body-classes', 'theme-' . tpl_options('theme'))
+
 @section('content')
 <style>
 *,*:after,*:before {
@@ -23,6 +25,15 @@
 }
 body{
 	background: #f6f6f6;
+}
+.theme-dark{
+	filter: invert(100%);
+}
+.theme-dark img{
+	filter: invert(100%);
+}
+.theme-dark iframe{
+	filter: invert(100%);
 }
 .head-menu-list-wrapper {
 	overflow: hidden;

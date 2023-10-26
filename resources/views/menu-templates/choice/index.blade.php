@@ -1,11 +1,48 @@
 @extends('layouts.empty')
 
+@section('title', $title ?? 'Menu')
+
+@section('body-classes', 'theme-' . tpl_options('theme'))
+
 @section('content')
 <link rel="stylesheet" href="/css/lightbox.min.css">
 <link rel="stylesheet" href="/templates/choice/choice.css">
 <style>
+@media (prefers-reduced-motion:no-preference) {
+    :root {
+        scroll-behavior: smooth
+    }
+}
+body{
+    padding: 1px 0;
+}
 iframe{
-	max-width: 100%;
+	width: 100%;
+}
+.theme-dark{
+	filter: invert(100%);
+}
+.theme-dark img{
+	filter: invert(100%);
+}
+.theme-dark iframe{
+	filter: invert(100%);
+}
+.text-center{
+	text-align: center;
+}
+.logo-wrapper{
+	margin-top: 15px;
+}
+.company-name{
+	margin-bottom: 5px;
+	font-family: cursive;
+}
+.company-description{
+	margin: 0 auto 15px;
+    width: 80%;
+    text-align: center;
+    font-size: 0.9em;
 }
 .styles_mobile-section-menu-body__CueSw{
 	max-width: 600px;
@@ -42,6 +79,23 @@ iframe{
 }
 </style>
 <div class="styles_mobile-section-menu-body__CueSw">
+
+	@if(tpl_options('show_logo'))
+	<div class="text-center logo-wrapper" {{ tpl_options('show_logo') ? 'true' : 'false'}}>
+		<img src="{{ $company->image }}" alt="" class="img-thumbnail my-3"
+			style="max-height: 200px;" 
+		>
+	</div>
+	@endif
+
+	@if(tpl_options('show_company_name'))
+	<h1 class="text-center company-name">{{ $company->name }}</h1>
+	@endif
+
+	@if(tpl_options('header_text'))
+	<p class="company-description">{{ tpl_options('header_text') }}</p>
+	@endif
+
 	<div class="styles_mobile-categories-tabs__xmj3r" id="mobile-categories-tabs">
 		@foreach($categories as $category)
 			@if(!$category->itemsActive->count())
@@ -158,8 +212,10 @@ iframe{
 				</div>
 			</div>
 			<div class="style_FooterBlockMap__NRGag">
+				@if($tpl_google_map_src = tpl_google_map_src())
 				<p class="style_FooterLabel__mReSa">На карті</p>
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1284.6124236232852!2d34.915553182202835!3d48.485133518469524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40dbe16c8cde1e45%3A0x2ca2eb4b6cfb14e4!2z0YPQuy4g0L3QsNCxLiDQl9Cw0LLQvtC00YHQutCw0Y8sINCU0L3QtdC_0YAsINCU0L3QtdC_0YDQvtC_0LXRgtGA0L7QstGB0LrQsNGPINC-0LHQu9Cw0YHRgtGMLCA0OTAwMA!5e0!3m2!1sru!2sua!4v1697975851209!5m2!1sru!2sua" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+				<iframe src="{{ $tpl_google_map_src }}" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+				@endif
 				{{-- <a target="_blank" href="https://maps.google.com/?q=Shevchenka Square, 1Л, Dnipro, Dnipropetrovs'ka oblast, Ukraine, 49000" rel="noreferrer">
 					<button class="styles_button__eH6h8 styles_appearanceStroke__2w0V8 styles_fullWidth__n1V8K style_FooterMapButton__7Eot7">
 						@include('menu-templates/choice/svg/izvilina-icon')

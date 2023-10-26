@@ -52,11 +52,11 @@ class MenuController extends Controller
 
         if ($template) {
             foreach ($formArr['fields'] as &$field) {
-                $value = $template->settings[$field['id']] ?? '';
+                $value = $template->settings[$field['id']] ?? null;
                 if (is_bool($value)) {
                     $value = json_encode($value);
                 }
-                $field['field']['default_value'] = $value;
+                $field['field']['default_value'] = $value ?? $field['field']['default_value'] ?? null;
             }
         }
 

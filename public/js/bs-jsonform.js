@@ -606,7 +606,7 @@ class JsonForm {
                 <div class="col-`+json.field.width+`">
                 <div class="form-group `+spacer_class+`">
                     `+label+`
-                    <textarea class="form-control `+sizeClass+`" id="`+id+`" rows="`+json.field.rows+`" placeholder="`+json.field.placeholder+`"></textarea>
+                    <textarea class="form-control `+sizeClass+`" id="`+id+`" rows="`+json.field.rows+`" placeholder="`+json.field.placeholder+`">`+json.field.default_value+`</textarea>
                 </div>
                 </div>
                 `

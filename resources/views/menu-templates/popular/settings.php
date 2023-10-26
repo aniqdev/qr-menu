@@ -117,7 +117,7 @@ return [
                 'options' => [
                     ',' => _t('template_default.coma'),
                     ' ' => _t('template_default.space'),
-                    "'" => _t('template_default.semicolon'),
+                    "'" => _t('template_default.quote'),
                 ],
             ],
         ],

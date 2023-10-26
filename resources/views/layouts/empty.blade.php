@@ -9,7 +9,7 @@
 
     <title>@yield('title', 'QR-Menu')</title>
 </head>
-<body>
+<body class="@yield('body-classes')">
 
 @yield('content')
 
