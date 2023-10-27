@@ -1,5 +1,5 @@
 <nav aria-label="breadcrumb">
-	<ol class="breadcrumb">
+	<ol class="breadcrumb js-no-reload">
 		<li class="breadcrumb-item" title="{{ _t('breadcrumbs.home_title') }}">
 			<a href="{{ route('dashboard') }}">{{ _t('breadcrumbs.home_label') }}</a>
 		</li>

@@ -47,8 +47,8 @@ main{
                         <div class="">
 
                             <div class="form-group">
-                                <label class="form-control-label" for="name_owner">{{ _t('auth.email') }}</label>
-                                <input type="text" id="name_owner" class="form-control form-control-alternative @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}"  autocomplete="email" placeholder="{{ _t('auth.email') }} ..." autofocus>
+                                <label class="form-control-label" for="email">{{ _t('auth.email') }}</label>
+                                <input type="text" id="email" class="form-control form-control-alternative @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}"  autocomplete="email" placeholder="{{ _t('auth.email') }} ..." autofocus>
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

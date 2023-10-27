@@ -43,6 +43,10 @@ class HomeController extends Controller
 
     public function dashboard()
     {
+        if (request('become-admin-of-company') && auth()->user()->isSuperAdmin()) {
+            auth()->user()->update(['company_id' => +request('become-admin-of-company')]);
+        }
+
         $companies = Company::paginate(20);
 
         $users = User::paginate(20);

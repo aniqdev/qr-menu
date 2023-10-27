@@ -4,8 +4,8 @@
 <style>
 .sortable-handle{
 	margin-left: -15px;
-    margin-right: -15px;
-    border: 0;
+	margin-right: -15px;
+	border: 0;
 }
 </style>
 <div class="shadow-block">
@@ -39,35 +39,35 @@
 		</div>
 	</form>
 			@if(true || $category->items->count())
-			    <hr>
-			    <h4 class="d-flex align-items-center">
-			    	{{ _t('admin_categories.dishes') }}
-			    	<a href="{{ route('items.create') }}" class="ms-auto btn btn-outline-primary" 
-			    			onclick="modal_load(event, this)"
-			    			data-modalurl="{{ route('items.load-create-modal', ['category' => $category->id]) }}"
-			    			data-modalsize="modal-lg">
-			    		{{ _t('admin_categories.add_item') }}
-			    		<i class="bi bi-plus-square"></i>
-			    	</a>
-			    </h4>
-			    <ul class="list-group sortable" data-route="{{ route('items.update-sorting') }}">
-			    @foreach($category->items as $item)
+				<hr>
+				<h4 class="d-flex align-items-center">
+					{{ _t('admin_categories.dishes') }}
+					<a href="{{ route('items.create') }}?category_id={{ $category->id }}" class="ms-auto btn btn-outline-primary js-no-reload-link" 
+							{{-- onclick="modal_load(event, this)" --}}
+							data-modalurl="{{ route('items.load-create-modal', ['category' => $category->id]) }}"
+							data-modalsize="modal-lg">
+						{{ _t('admin_categories.add_item') }}
+						<i class="bi bi-plus-square"></i>
+					</a>
+				</h4>
+				<ul class="list-group sortable" data-route="{{ route('items.update-sorting') }}">
+				@foreach($category->items as $item)
 				  <li class="list-group-item sortable-item d-flex align-items-center" data-id="{{ $item->id }}">
-				  	<div class="col-auto me-3">
-				  		<span class="btn btn-outline-secondary sortable-handle"><i class="bi bi-arrows-move"></i></span>
-				  	</div>
-				  	<div class="col me-auto pe-3" style="min-width: 0;" title="{{ $item->description }}">
-				  		<a href="{{ route('items.edit', $item) }}" class="text-truncate mw-100 d-block js-no-reload-link">{{ $item->name }}</a>
-				  		<small class="text-truncate mw-100 d-block">{{ $item->description }}</small>
-				  	</div>
-				  	<div class="col-auto me-3">{{ $item->price }}</div>
-				  	<div class="col-auto">
-				  		@include('admin.items.blocks.item-dropdown')
-				  	</div>
+					<div class="col-auto me-3">
+						<span class="btn btn-outline-secondary sortable-handle"><i class="bi bi-arrows-move"></i></span>
+					</div>
+					<div class="col me-auto pe-3" style="min-width: 0;" title="{{ $item->description }}">
+						<a href="{{ route('items.edit', $item) }}" class="text-truncate mw-100 d-block js-no-reload-link">{{ $item->name }}</a>
+						<small class="text-truncate mw-100 d-block">{{ $item->description }}</small>
+					</div>
+					<div class="col-auto me-3">{{ $item->price }}</div>
+					<div class="col-auto">
+						@include('admin.items.blocks.item-dropdown')
+					</div>
 				  </li>
-			    @endforeach
-			    {{-- example of placeholder list item --}}
-			  	{{-- <li class="ui-sortable-placeholder list-group-item ui-placeholder">ui-placeholder</li> --}}
+				@endforeach
+				{{-- example of placeholder list item --}}
+				{{-- <li class="ui-sortable-placeholder list-group-item ui-placeholder">ui-placeholder</li> --}}
 			  </ul>
 			@endif
 </div>

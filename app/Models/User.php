@@ -61,4 +61,9 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Company::class);
     }
+
+    public function isSuperAdminNotOwner($ifTrue = 1, $ifFalse = '')
+    {
+        return ($this->isSuperAdmin() && $this->company->owner_id !== $this->company_id) ? $ifTrue : $ifFalse;
+    }
 }

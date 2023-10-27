@@ -16,6 +16,7 @@ class Company extends Model
         'image',
         'menu_template',
         'link_target',
+        'owner_id',
     ];
 
     public function items()
@@ -36,5 +37,10 @@ class Company extends Model
     public function restaurantLink()
     {
         return route('restaurant.links-page', $this->slug);
+    }
+
+    public function isAuthUserAdmin($ifTrue = 1, $ifFalse = '')
+    {
+        return auth()->user()->company_id === $this->id ? $ifTrue : $ifFalse;
     }
 }

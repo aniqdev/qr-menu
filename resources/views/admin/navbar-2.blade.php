@@ -2,8 +2,11 @@
 .langs img{
      box-shadow: 0 0 4px #a3a3a3;
 }
+.not-owner{
+    box-shadow: inset 0 0 10px red;
+}
 </style>
-<nav class="navbar navbar-expand-lg navbar-light bg-white js-top-nav fixed-top_">
+<nav class="navbar navbar-expand-lg navbar-light bg-white js-top-nav fixed-top_ {{ auth()->user()->isSuperAdminNotOwner('not-owner') }}" id="top_nav">
     <div class="container">
         <a class="navbar-brand" href="/">
             <img src="{{ logo_src() }}" alt="qr-menu logo" id="qr_menu_logo" style="width: 200px; margin: -10px 0;">
@@ -92,11 +95,11 @@
                     </ul>
                     </li> --}}
                     <li class="nav-item dropdown langs">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a id="navbarDropdownLangs" class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span class="me-1">{{ _t('admin_nav.lang') }} </span>
                             <img src="/svg/flag-{{ Auth::user()->lang }}.svg" alt="" width="20">
                         </a>
-                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"> 
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownLangs"> 
                             @if(Auth::user()->lang !== 'uk') <a class="dropdown-item" href="{{ route('profile.change-lang', 'uk') }}">
                                 <img src="/svg/flag-uk.svg" width="20" alt="">
                                  Ukrainian </a> @endif
@@ -122,10 +125,10 @@
                         @endif
                     @else
                         <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }}
+                            <a id="navbarDropdownAdmin" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()->name }}({{ Auth::user()->company->name }})
                             </a>
-                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownAdmin">
                                 <a class="dropdown-item" href="{{ route('logout') }}">
                                     {{ _t('Logout') }}
                                 </a>

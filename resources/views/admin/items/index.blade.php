@@ -38,8 +38,7 @@
             <div class="row item-item">
                 <div class="col-4 col-sm-3 col-md-2 item-left">
                     <a href="{{ route('items.edit', $item) }}" class="d-block js-no-reload-link">
-                        <img src="{{ $item->image }}" alt="{{ $item->name }}" 
-                        class="d-block m-auto" style="max-width:100%; max-height:100px;">
+                        <img src="{{ $item->image_small }}" alt="{{ $item->name }}" class="d-block m-auto" style="max-width:100%; max-height:100px;">
                     </a>
                     <form action="{{ route('items.update-visibility', $item) }}" onsubmit="submit_form(this, event)">
                         @csrf

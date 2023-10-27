@@ -43,6 +43,11 @@ trait HasImage
 		return str_replace('/original@', '/1000@', $this->attributes['image']);
 	}
 
+	public function getHasImageAttribute()
+	{
+		return isset($this->attributes['image']);
+	}
+
 	public function setImage($request)
 	{
 		if ($request->remove_image) {

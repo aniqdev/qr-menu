@@ -27,7 +27,7 @@
 		onclick="window.remove_image(this)" 
 	><i class="bi bi-trash"></i></button>
 
-	<img class="img-thumbnail js-img-preview" src="{{ $model->image ?? get_img_placeholder_src() }}" alt="">
+	<img class="img-thumbnail js-img-preview" src="{{ $model->image_medium ?? get_img_placeholder_src() }}" alt="">
 	<input type="file" name="image" class="image-input" id="item_image" accept=".jpg, .jpeg, .png, .webp">
 	<input type="hidden" name="remove_image">
 </label>
