@@ -156,7 +156,7 @@ iframe{
 				</div>
 				<div class="styles_menu-item-right__ARHxs">
 					<a href="{{ $item->image }}" data-lightbox="img-preview-{{ $item->id }}">
-						<img loading="lazy" src="{{ $item->image_small }}" alt="">
+						<img {{-- loading="lazy" --}} src="{{ $item->image_small }}" alt="">
 					</a>
 				</div>
 			 </div>
