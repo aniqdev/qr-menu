@@ -73,7 +73,7 @@ class ItemController extends Controller
 	public function index()
 	{
 		// dd(\Illuminate\Support\Facades\Route::getCurrentRoute()->middleware());
-		$items = \App\Models\Item::where('company_id', auth()->user()->company_id)->paginate(50);
+		$items = \App\Models\Item::with('category')->where('company_id', auth()->user()->company_id)->paginate(50);
 
 		return view('admin.items.index', [
 			'items' => $items,

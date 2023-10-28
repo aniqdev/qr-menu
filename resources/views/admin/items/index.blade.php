@@ -54,7 +54,7 @@
                     <div class="row">
 
                         {{-- name --}}
-                        <div class=" d-flex align-items-center item-name mb-lg-2">
+                        <div class=" d-flex align-items-center item-name mb-1 mb-lg-2">
                             <a href="{{ route('items.edit', $item) }}" class="text-truncate  js-no-reload-link">
                                 {{ $item->name }}
                             </a>
@@ -68,19 +68,26 @@
                             @include('admin.items.blocks.item-dropdown')
                         </div>
 
+                        <div class="col-12 mb-1">
+                            <span>{{ _t('items.category') }}:</span>
+                            @if($item->category)
+                                <a href="{{ route('categories.edit', $item->category) }}">{{ $item->category?->name }}</a>
+                            @endif
+                        </div>
+
+                        {{-- description --}}
+                        <div class="order-1_ col-lg-9 d-flex align-items-center mb-1">
+                            <div class="text-truncate overflow-hidden" title="{{ $item->description }}">{{ $item->description }}</div>
+                        </div>
+
                         {{-- prices --}}
-                        <div class="order-2 col-lg-3">
+                        <div class="order-2_ col-lg-3">
                             <form class="input-group" onsubmit="submit_form(this, event)" action="{{ route('items.update', $item) }}">
                                 <input class="form-control pe-0" type="number" name="price" value="{{ $item->price }}" title="{{ _t('item.price') }}">
                                 {{-- <input class="form-control pe-0" type="number" name="old_price" value="{{ $item->old_price }}" title="{{ _t('item.old_price') }}"> --}}
                                 @csrf @method('PUT')
                                 <button class="input-group-text" title="{{ _t('admin.save') }}"><i class="bi bi-cloud-arrow-up"></i></button>
                             </form>
-                        </div>
-
-                        {{-- description --}}
-                        <div class="order-1 col-lg-9 d-flex align-items-center" style="height: 38px;">
-                            <div class="text-truncate overflow-hidden" title="{{ $item->description }}">{{ $item->description }}</div>
                         </div>
 
                     </div>
