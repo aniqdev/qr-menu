@@ -36,6 +36,15 @@
                         @endif
                         <span class="badge bg-primary rounded-pill ms-auto">{{ $company->items()->count() }}</span>
                     </div>
+                    <div>
+                        @foreach($company->admins as $user)
+                            @if($user->isMe()) @continue @endif
+                            <div class="company-admin"
+                                 title="user id: {{ $user->id }} &#013;created_at: {{ $user->created_at }} &#013;updated_at: {{ $user->updated_at }}">
+                                <span class="fw-bold" >{{ $user->name }}</span> {{ $user->email }}
+                            </div>
+                        @endforeach
+                    </div>
                     <a href="{{ $company->cafeLink() }}" target="_blank" class="d-block text-truncate {{ $company->isAuthUserAdmin('link-light') }}">{{ $company->cafeLink() }}</a>
                 </li>
                 @endforeach

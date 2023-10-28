@@ -32,7 +32,7 @@ Route::get('/notification', function () {
 Route::get('profile', [\App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
 
 Route::group([
-    'middleware' => 'auth',
+    'middleware' => ['auth', \App\Http\Middleware\UserLastSeen::class],
     'prefix' => 'admin',
 ], function () {
 

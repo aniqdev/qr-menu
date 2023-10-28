@@ -25,7 +25,7 @@ function template_settings_submit(valid, settings) {
 	}, function (data) {
     	$('#menuSettingsModal').modal('hide')
 		data.message && toastr.success(data.message)
-		document.getElementById('menu_iframe').contentWindow.location.reload();
+		if(iframe = document.getElementById('menu_iframe')) iframe.contentWindow.location.reload();
     }).fail(ajax_fail_callback)
 }
 

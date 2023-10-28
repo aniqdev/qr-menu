@@ -25,6 +25,9 @@ class User extends Authenticatable
         'phone',
         'password',
         'lang',
+        'last_seen',
+        'ip',
+        'user_agent',
     ];
 
     /**
@@ -65,5 +68,10 @@ class User extends Authenticatable
     public function isSuperAdminNotOwner($ifTrue = 1, $ifFalse = '')
     {
         return ($this->isSuperAdmin() && $this->company->owner_id !== $this->company_id) ? $ifTrue : $ifFalse;
+    }
+
+    public function isMe($ifTrue = 1, $ifFalse = '')
+    {
+        return auth()->user()->id === $this->id ? $ifTrue : $ifFalse;
     }
 }

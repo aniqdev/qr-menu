@@ -24,6 +24,11 @@ class Company extends Model
         return $this->hasMany(\App\Models\Item::class)->orderBy('sorting');
     }
 
+    public function admins()
+    {
+        return $this->hasMany(\App\Models\User::class);
+    }
+
     public function cafeLink()
     {
         return route('cafe.links-page', $this->slug);

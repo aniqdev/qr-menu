@@ -23,7 +23,9 @@ use App\Notifications\InvoicePaid;
 
 Artisan::command('testt', function () {
 
+    dd(@$_SERVER['REMOTE_ADDRs']);
 
+    return;
     $companies = \App\Models\Company::all();
 
     foreach ($companies as $company) {
