@@ -5,65 +5,17 @@ return [
     'button_orientation' => 'left',
     'fields' => [
         // [
-        //     'id' => 'name',
-        //     'name' => 'What is your name?',
+        //     'id' => 'theme',
+        //     'name' => _t('template_default.theme'),
         //     'type' => 'field',
         //     'field' => [
-        //         'type' => 'text',
-        //         'placeholder' => 'Name',
-        //         'default_value' => 'Bob Smith',
-        //     ],
-        // ],
-        // [
-        //     'id' => 'color',
-        //     'name' => 'What is your favorite color?',
-        //     'type' => 'field',
-        //     'field' => [
-        //         'type' => 'color',
-        //         'placeholder' => 'Color',
-        //     ],
-        // ],
-        // [
-        //     'id' => 'canttouchthis',
-        //     'name' => 'You can\'t touch this',
-        //     'type' => 'field',
-        //     'field' => [
-        //         'type' => 'text',
-        //         'readonly' => true,
-        //         'placeholder' => 'I\'m a placeholder',
-        //     ],
-        // ],
-        // [
-        //     'id' => 'notcheckedanddisabled',
-        //     'name' => 'Can\'t check me',
-        //     'type' => 'field',
-        //     'field' => [
-        //         'type' => 'checkbox',
-        //         'readonly' => true,
-        //     ],
-        // ],
-        // [
-        //     'id' => 'checked',
-        //     'name' => 'Uncheck me',
-        //     'type' => 'field',
-        //     'field' => [
-        //         'type' => 'checkbox',
-        //         'default_value' => 'true',
-        //     ],
-        // ],
-        // [
-        //     'id' => 'asd',
-        //     'name' => 'asdd',
-        //     'type' => 'html',
-        //     'html' => '<hr class="mb-0">',
-        // ],
-        // [
-        //     'id' => 'show_logo',
-        //     'name' => _t('template_default.show_logo'),
-        //     'type' => 'field',
-        //     'field' => [
-        //         'type' => 'switch',
-        //         'default_value' => false,
+        //         'type' => 'radio',
+        //         'default_value' => 'light',
+        //         // 'width' => 12,
+        //         'options' => [
+        //             'light' => _t('template_default.theme_dark'),
+        //             'dark' => _t('template_default.theme_light'),
+        //         ],
         //     ],
         // ],
         [

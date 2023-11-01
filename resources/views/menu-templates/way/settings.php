@@ -6,16 +6,6 @@ return [
     'donor' => 'https://demo.menu.wayforpay.com/',
     'fields' => [
         // [
-        //     'id' => 'name',
-        //     'name' => 'What is your name?',
-        //     'type' => 'field',
-        //     'field' => [
-        //         'type' => 'text',
-        //         'placeholder' => 'Name',
-        //         'default_value' => 'Bob Smith',
-        //     ],
-        // ],
-        // [
         //     'id' => 'color',
         //     'name' => 'What is your favorite color?',
         //     'type' => 'field',
@@ -25,53 +15,19 @@ return [
         //     ],
         // ],
         // [
-        //     'id' => 'canttouchthis',
-        //     'name' => 'You can\'t touch this',
+        //     'id' => 'theme',
+        //     'name' => _t('template_default.theme'),
         //     'type' => 'field',
         //     'field' => [
-        //         'type' => 'text',
-        //         'readonly' => true,
-        //         'placeholder' => 'I\'m a placeholder',
+        //         'type' => 'radio',
+        //         'default_value' => 'light',
+        //         'width' => 12,
+        //         'options' => [
+        //             'light' => _t('template_default.light'),
+        //             'dark' => _t('template_default.dark'),
+        //         ],
         //     ],
         // ],
-        // [
-        //     'id' => 'notcheckedanddisabled',
-        //     'name' => 'Can\'t check me',
-        //     'type' => 'field',
-        //     'field' => [
-        //         'type' => 'checkbox',
-        //         'readonly' => true,
-        //     ],
-        // ],
-        // [
-        //     'id' => 'checked',
-        //     'name' => 'Uncheck me',
-        //     'type' => 'field',
-        //     'field' => [
-        //         'type' => 'checkbox',
-        //         'default_value' => 'true',
-        //     ],
-        // ],
-        // [
-        //     'id' => 'asd',
-        //     'name' => 'asdd',
-        //     'type' => 'html',
-        //     'html' => '<hr class="mb-0">',
-        // ],
-        [
-            'id' => 'theme',
-            'name' => _t('template_default.theme'),
-            'type' => 'field',
-            'field' => [
-                'type' => 'radio',
-                'default_value' => 'light',
-                'width' => 12,
-                'options' => [
-                    'light' => _t('template_default.light'),
-                    'dark' => _t('template_default.dark'),
-                ],
-            ],
-        ],
         [
             'id' => 'show_logo',
             'name' => _t('template_default.show_logo'),
@@ -192,20 +148,5 @@ return [
                 'default_value' => '',
             ],
         ],
-        // [
-        //     'id' => 'select',
-        //     'name' => 'Pick a direction',
-        //     'type' => 'field',
-        //     'field' => [
-        //         'type' => 'select',
-        //         'default_value' => 'Top',
-        //         'options' => [
-        //             'left' => 'To Left',
-        //             'right' => 'To Right',
-        //             'top' => 'To Top',
-        //             'bottom' => 'To Bottom',
-        //         ],
-        //     ],
-        // ],
     ],
 ];

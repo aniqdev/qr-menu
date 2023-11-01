@@ -32,7 +32,7 @@ return [
             'name' => _t('template_default.show_logo'),
             'type' => 'field',
             'field' => [
-                'type' => 'switch',
+                'type' => 'checkbox',
                 'width' => 6,
                 'default_value' => false,
             ],
@@ -42,7 +42,7 @@ return [
             'name' => _t('template_default.show_company_name'),
             'type' => 'field',
             'field' => [
-                'type' => 'switch',
+                'type' => 'checkbox',
                 'width' => 6,
                 'default_value' => false,
             ],
@@ -52,7 +52,7 @@ return [
         //     'name' => _t('template_default.show_company_description'),
         //     'type' => 'field',
         //     'field' => [
-        //         'type' => 'switch',
+        //         'type' => 'checkbox',
         //         'default_value' => false,
         //     ],
         // ],
@@ -126,7 +126,7 @@ return [
             'name' => _t('template_default.space_after_price'),
             'type' => 'field',
             'field' => [
-                'type' => 'switch',
+                'type' => 'checkbox',
                 'default_value' => false,
             ],
         ],

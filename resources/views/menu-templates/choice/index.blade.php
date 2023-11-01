@@ -154,11 +154,13 @@ iframe{
 					  </div>
 				   </div> --}}
 				</div>
+				@if($item->has_image)
 				<div class="styles_menu-item-right__ARHxs">
 					<a href="{{ $item->image }}" data-lightbox="img-preview-{{ $item->id }}">
 						<img {{-- loading="lazy" --}} src="{{ $item->image_small }}" alt="">
 					</a>
 				</div>
+				@endif
 			 </div>
 			 @endforeach
 		  </div>

@@ -50,8 +50,10 @@ trait HasImage
 
 	public function setImage($request)
 	{
+		$image = $this->attributes['image'];
+
 		if ($request->remove_image) {
-			$this->image = null;
+			$image = null;
 			// here delete image files
 		}
 
@@ -93,9 +95,9 @@ trait HasImage
 				$constraint->upsize();
 			})->save(storage_path("app/public/companies/{$companyId}/{$dirname}/{$this->id}/1000@" . $filename . '.' . $extension));
 
-			return $this->image = '/storage/' . $filepath. '?v=' . time();
+			return $image = '/storage/' . $filepath. '?v=' . time();
 		}
 
-		return $this->image;
+		return $image;
 	}
 }

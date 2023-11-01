@@ -28,15 +28,6 @@ body{
 	color: #555;
 	font-family: 'Montserrat',sans-serif;
 }
-html{
-	filter: invert(100%);
-}
-html img{
-	filter: invert(100%);
-}
-html iframe{
-	filter: invert(100%);
-}
 .logo-wrapper{
 	border-bottom: 1px solid #e3e3e3;
 }

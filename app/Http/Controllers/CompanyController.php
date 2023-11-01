@@ -40,7 +40,7 @@ class CompanyController extends Controller
         $request->validate([
             'name' => 'required|string|min:3|max:255',
             'slug' => ['required','string','min:3','max:255', Rule::unique('companies')->ignore($company->id)],
-            'image' => 'nullable|file|mimes:jpg,png',
+            'image' => 'nullable|file|mimes:jpg,png,webp',
             // 'menu_template' => 'required|string|min:3|max:255',
             'link_target' => 'required|string|in:menu,link_page',
         ]);

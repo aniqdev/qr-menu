@@ -15,11 +15,11 @@
     <link rel="stylesheet" href="/css/toastr.min.css"/>
     <link rel="stylesheet" href="/css/jquery-ui.min.css"/>
 
-    <link rel="stylesheet" href="/css/bootstrap-colors.css?v={{ filemtime(public_path('css/bootstrap-colors.css')) }}">
-    <link rel="stylesheet" href="/css/style.css?v={{ filemtime(public_path('css/style.css')) }}">
-
    <link rel="stylesheet" href="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.carousel.min.css">
    <link rel="stylesheet" href="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="/css/bootstrap-colors.css?v={{ filemtime(public_path('css/bootstrap-colors.css')) }}">
+    <link rel="stylesheet" href="/css/style.css?v={{ filemtime(public_path('css/style.css')) }}">
 
     <script src="/js/jquery.min.js"></script>
     <script src="/js/jquery-ui.min.js"></script>

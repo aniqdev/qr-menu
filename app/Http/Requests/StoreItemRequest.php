@@ -20,7 +20,7 @@ class StoreItemRequest extends FormRequest
             'old_price' => 'nullable|numeric',
             'volume' => 'nullable|string|max:255',
             'category_id' => 'nullable|integer',
-            'image' => 'nullable|file|mimes:jpg,png',
+            'image' => 'nullable|file|mimes:jpg,png,webp',
         ];
     }
 }

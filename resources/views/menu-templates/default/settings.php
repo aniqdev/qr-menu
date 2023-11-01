@@ -64,10 +64,10 @@ return [
             'field' => [
                 'type' => 'radio',
                 'default_value' => 'light',
-                'width' => 6,
+                // 'width' => 12,
                 'options' => [
-                    'light' => _t('template_default.light'),
-                    'dark' => _t('template_default.dark'),
+                    'light' => _t('template_default.theme_dark'),
+                    'dark' => _t('template_default.theme_light'),
                 ],
             ],
         ],
