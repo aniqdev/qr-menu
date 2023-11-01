@@ -6,7 +6,7 @@
 
 @section('content')
 <link rel="stylesheet" href="/css/lightbox.min.css">
-<link rel="stylesheet" href="/templates/choice/choice.css">
+<link rel="stylesheet" href="/templates/choice/choice-{{ tpl_options('theme', 'light') }}.css">
 <style>
 @media (prefers-reduced-motion:no-preference) {
     :root {
@@ -18,15 +18,6 @@ body{
 }
 iframe{
 	width: 100%;
-}
-.theme-dark{
-	filter: invert(100%);
-}
-.theme-dark img{
-	filter: invert(100%);
-}
-.theme-dark iframe{
-	filter: invert(100%);
 }
 .text-center{
 	text-align: center;
