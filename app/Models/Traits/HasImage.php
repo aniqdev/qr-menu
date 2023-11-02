@@ -50,7 +50,7 @@ trait HasImage
 
 	public function setImage($request)
 	{
-		$image = $this->attributes['image'];
+		$image = $this->attributes['image'] ?? null;
 
 		if ($request->remove_image) {
 			$image = null;
