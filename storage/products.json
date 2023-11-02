@@ -51,24 +51,6 @@
         ]
     },
     {
-        "category": "Гарячі закуски",
-        "img": "/images/demo/1000@gariaci-zakuski.jpg",
-        "products": [
-            {
-                "img": "https://docs-s2p.s3.eu-west-1.amazonaws.com/menu-prod/dish-72375.jpg?t=1675679514169",
-                "title": "Курячі нагетси з картоплею фрі",
-                "desc": "150/90/50 г",
-                "price": "235"
-            },
-            {
-                "img": "https://docs-s2p.s3.eu-west-1.amazonaws.com/menu-prod/dish-72376.jpg?t=1675679554459",
-                "title": "Сирні палички з ягідним соусом",
-                "desc": "170/50 г",
-                "price": "225"
-            }
-        ]
-    },
-    {
         "category": "Бургери",
         "img": "/images/demo/1000@burgeri.jpg",
         "products": [
@@ -129,106 +111,6 @@
         ]
     },
     {
-        "category": "Закуски на компанію",
-        "img": "/images/demo/1000@zakuski-na-kompaniiu.jpg",
-        "products": [
-            {
-                "img": "https://docs-s2p.s3.eu-west-1.amazonaws.com/menu-prod/dish-72387.jpg?t=1675679900065",
-                "title": "Асорті брускет",
-                "desc": "З тар-таром із лосося, з овочевою сальсою, з кремом файше, з прошуто",
-                "price": "295"
-            },
-            {
-                "img": "https://docs-s2p.s3.eu-west-1.amazonaws.com/menu-prod/dish-72388.jpg?t=1680330911213",
-                "title": "Асорті сирів",
-                "desc": "Сир Дор Блю, Камамбер, Пармезан, Голландський сир, мед, горіхи, виноград",
-                "price": "295"
-            },
-            {
-                "img": "https://docs-s2p.s3.eu-west-1.amazonaws.com/menu-prod/dish-72389.jpg?t=1675679945068",
-                "title": "Плато м'ясних делікатесів",
-                "desc": "Тар-тар із телятини, махан, прошуто,\nчіпси бекону, житні тости",
-                "price": "650"
-            },
-            {
-                "img": "https://docs-s2p.s3.eu-west-1.amazonaws.com/menu-prod/dish-102534.jpg?t=1682159494088",
-                "title": "Плато Баффало",
-                "desc": "Курячі крильця та ніжки, картопля фрі,\nсоуси: чилі, томатний\n850/250/50 г",
-                "price": "645"
-            }
-        ]
-    },
-    {
-        "category": "Паста",
-        "img": "/images/demo/1000@pasta.jpg",
-        "products": [
-            {
-                "img": "https://docs-s2p.s3.eu-west-1.amazonaws.com/menu-prod/dish-72390.jpg?t=1675679989586",
-                "title": "Спагеті Карбонара",
-                "price": "240"
-            },
-            {
-                "img": "https://docs-s2p.s3.eu-west-1.amazonaws.com/menu-prod/dish-72391.jpg?t=1675680006034",
-                "title": "Фетучіні з яловичиною, грибами та сиром Дор Блю",
-                "price": "260"
-            },
-            {
-                "img": "https://docs-s2p.s3.eu-west-1.amazonaws.com/menu-prod/dish-72393.jpg?t=1675680042675",
-                "title": "Чорна паста з морепродуктами",
-                "price": "385"
-            }
-        ]
-    },
-    {
-        "category": "Супи",
-        "img": "/images/demo/1000@supi.jpg",
-        "products": [
-            {
-                "img": "https://docs-s2p.s3.eu-west-1.amazonaws.com/menu-prod/dish-72394.jpg?t=1675680088285",
-                "title": "Курячий бульон з грибами",
-                "price": "165"
-            },
-            {
-                "img": "https://docs-s2p.s3.eu-west-1.amazonaws.com/menu-prod/dish-72395.jpg?t=1675680102211",
-                "title": "Борщ український в оригінальній подачі",
-                "price": "195"
-            },
-            {
-                "img": "https://docs-s2p.s3.eu-west-1.amazonaws.com/menu-prod/dish-72396.jpg?t=1675680129940",
-                "title": "Крем-суп із шампіньонів",
-                "price": "195"
-            },
-            {
-                "img": "https://docs-s2p.s3.eu-west-1.amazonaws.com/menu-prod/dish-72397.jpg?t=1675680143229",
-                "title": "Суп з морепродуктами на кокосовому молоці",
-                "price": "325"
-            }
-        ]
-    },
-    {
-        "category": "М'ясо",
-        "img": "/images/demo/1000@miaso.jpg",
-        "products": [
-            {
-                "img": "https://docs-s2p.s3.eu-west-1.amazonaws.com/menu-prod/dish-72403.jpg?t=1675680277463",
-                "title": "Скибочки телятини зі смаженою картоплею та грибами",
-                "price": "360"
-            },
-            {
-                "img": "https://docs-s2p.s3.eu-west-1.amazonaws.com/menu-prod/dish-72404.jpg?t=1675680292380",
-                "title": "Стейк із свинячого ошийку з перцем Чилі",
-                "desc": "190/100/50 г",
-                "price": "360"
-            },
-            {
-                "img": "https://docs-s2p.s3.eu-west-1.amazonaws.com/menu-prod/dish-72405.jpg?t=1675680310557",
-                "title": "Стейк із індички з авокадо та брокколі",
-                "desc": "200/60/50 г",
-                "price": "330"
-            }
-        ]
-    },
-    {
         "category": "Гарніри",
         "img": "/images/demo/1000@garniri.jpg",
         "products": [
@@ -252,28 +134,6 @@
                 "img": "https://docs-s2p.s3.eu-west-1.amazonaws.com/menu-prod/dish-72413.jpg?t=1675680536265",
                 "title": "Овочі гриль з пряними травами",
                 "price": "195"
-            }
-        ]
-    },
-    {
-        "category": "Десерти та морозиво",
-        "img": "/images/demo/1000@deserti-ta-morozivo.jpg",
-        "products": [
-            {
-                "img": "https://docs-s2p.s3.eu-west-1.amazonaws.com/menu-prod/dish-72414.jpg?t=1675679156547",
-                "title": "Манговий чізкейк",
-                "price": "160"
-            },
-            {
-                "img": "https://docs-s2p.s3.eu-west-1.amazonaws.com/menu-prod/dish-72415.jpg?t=1675679175331",
-                "title": "Шоколадний брауні з ванільним морозивом",
-                "price": "160"
-            },
-            {
-                "img": "https://docs-s2p.s3.eu-west-1.amazonaws.com/menu-prod/dish-72416.jpg?t=1675679189363",
-                "title": "Морозиво",
-                "desc": "-ваниль\n-шоколад\n-лайм\n-лiсовi ягоди",
-                "price": "85"
             }
         ]
     }

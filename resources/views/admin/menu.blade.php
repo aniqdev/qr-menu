@@ -69,7 +69,8 @@
 					<a href="?template={{ $template }}" class="template-link js-no-reload-link {{ $choosenTemplate !== $template ?: 'active' }}">
 						<img class="img-thumbnail" src="/images/template-screenshot-{{ $template }}.jpg" alt="" width="120">
 					</a>
-					<div class="mt-3">
+					<h4 class="text-center">"{{ $template }}"</h4>
+					<div>
 						<div class="choose-template-controls btn-group {{ $companyTemplate !== $template ?: 'active' }}" style="width: 100%;" id="template_controls_{{ $template }}">
 						  <button type="button" class="btn btn-primary text-truncate" onclick="$(this).closest('div').find('form').submit()">{{ _t('admin_menu.set_template') }}</button style="border: 0;">
 						  <form onsubmit="submit_form(this, event)" action="{{ route('companies.set-template', $company) }}">
