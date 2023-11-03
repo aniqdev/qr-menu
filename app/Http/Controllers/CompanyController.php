@@ -46,7 +46,7 @@ class CompanyController extends Controller
         ]);
 
         $reload = false;
-        $slug = str()->slug($request->slug, '.');
+        $slug = str()->slug($request->slug);
         if ($company->slug !== $slug) {
             if (Company::where('slug', $slug)->exists()) {
                 abort('Slug exists');

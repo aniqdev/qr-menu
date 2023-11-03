@@ -23,6 +23,13 @@ use App\Notifications\InvoicePaid;
 
 Artisan::command('testt', function () {
 
+
+    $str = str()->slug('! d@d # $ % ^ & * ( ) . - _asd./asd.', '-', 'uk', ['@' => '@']);
+
+    dd($str);
+
+
+    return;
     dd(@$_SERVER['REMOTE_ADDRs']);
 
     return;
