@@ -76,6 +76,9 @@ Route::group([
     Route::get('modals/{view}', [\App\Http\Controllers\ModalsController::class, 'modals'])->name('admin-modals');
 });
 
+Route::get('/cafe/sail.bar', function () {
+    return redirect('/cafe/sail-bar');
+});
 
 Route::get('restaurant/{company:slug}/menu', [\App\Http\Controllers\CompanyController::class, 'menu'])->name('restaurant.menu');
 Route::get('cafe/{company:slug}/menu', [\App\Http\Controllers\CompanyController::class, 'menu'])->name('cafe.menu');
