@@ -26,8 +26,14 @@ class MenuAnalytics
     {
         if(auth()->check()) return; // ignore auth users because it's me or client
 
+        $companyId = request()->company->id ?? null;
+
+        if(!$companyId) return;
+
         try {
-            $visitId = $_COOKIE['visit_id'] ?? null;
+            $sessionKey = "visit_{$companyId}_id"; // for different companies
+
+            $visitId = $_COOKIE[$sessionKey] ?? null;
 
             if ($visitId) {
                 CustomerVisit::where('id', $visitId)->increment('visits_count');
@@ -41,6 +47,7 @@ class MenuAnalytics
 
                 $visit = CustomerVisit::create([
                     'ip' => @$_SERVER['REMOTE_ADDR'],
+                    'company_id' => $companyId,
                     'city' => $record->city->name ?? null,
                     'region' => $record->mostSpecificSubdivision->name ?? null,
                     'country' => $record->country->name ?? null,
@@ -50,7 +57,7 @@ class MenuAnalytics
                     'accept_language' => @$_SERVER['HTTP_ACCEPT_LANGUAGE'],
                 ]);
 
-                setcookie("visit_id", $visit->id, strtotime('tomorrow midnight'));
+                setcookie($sessionKey, $visit->id, strtotime('tomorrow midnight'));
             }
         } catch (\Throwable $e) { }
     }

@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('customer_visits', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('company_id')->nullable()->constrained();
             $table->integer('visits_count')->default(1);
             $table->string('city')->nullable();
             $table->string('region')->nullable();
