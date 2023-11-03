@@ -80,10 +80,16 @@ Route::get('/cafe/sail.bar', function () {
     return redirect('/cafe/sail-bar');
 });
 
-Route::get('restaurant/{company:slug}/menu', [\App\Http\Controllers\CompanyController::class, 'menu'])->name('restaurant.menu');
-Route::get('cafe/{company:slug}/menu', [\App\Http\Controllers\CompanyController::class, 'menu'])->name('cafe.menu');
-Route::get('bar/{company:slug}/menu', [\App\Http\Controllers\CompanyController::class, 'menu'])->name('bar.menu');
+Route::group([
+    'middleware' => \App\Http\Middleware\MenuAnalytics::class,
+], function () {
 
-Route::get('restaurant/{company:slug}', [\App\Http\Controllers\CompanyController::class, 'linksPage'])->name('restaurant.links-page');
-Route::get('cafe/{company:slug}', [\App\Http\Controllers\CompanyController::class, 'linksPage'])->name('cafe.links-page');
-Route::get('bar/{company:slug}', [\App\Http\Controllers\CompanyController::class, 'linksPage'])->name('bar.links-page');
+    Route::get('restaurant/{company:slug}/menu', [\App\Http\Controllers\CompanyController::class, 'menu'])->name('restaurant.menu');
+    Route::get('cafe/{company:slug}/menu', [\App\Http\Controllers\CompanyController::class, 'menu'])->name('cafe.menu');
+    Route::get('bar/{company:slug}/menu', [\App\Http\Controllers\CompanyController::class, 'menu'])->name('bar.menu');
+
+    Route::get('restaurant/{company:slug}', [\App\Http\Controllers\CompanyController::class, 'linksPage'])->name('restaurant.links-page');
+    Route::get('cafe/{company:slug}', [\App\Http\Controllers\CompanyController::class, 'linksPage'])->name('cafe.links-page');
+    Route::get('bar/{company:slug}', [\App\Http\Controllers\CompanyController::class, 'linksPage'])->name('bar.links-page');
+
+});

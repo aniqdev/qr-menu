@@ -180,7 +180,11 @@ body{
 								<div class="card-title">{{ $item->name }}</div>
 								<div class="card-description">{{ $item->description }}</div>
 								<div class="card-bottom d-flex" style="padding: 0 10px;">
-									<div class="price me-2">
+									<div class="price me-2"
+										price_precision="{{ tpl_options('price_precision') }}"
+										decimal_separator="{{ tpl_options('decimal_separator') }}"
+										thousands_separator="{{ tpl_options('thousands_separator') }}"
+									>
 										{{ number_format($item->price, 
 												tpl_options('price_precision'), 
 												tpl_options('decimal_separator'),

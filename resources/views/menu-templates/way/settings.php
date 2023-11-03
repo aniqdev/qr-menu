@@ -59,6 +59,7 @@ return [
             'type' => 'field',
             'field' => [
                 'type' => 'select',
+                'default_value' => 0,
                 'width' => 6,
                 'options' => [0, 1, 2],
             ],
