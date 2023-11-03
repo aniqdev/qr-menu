@@ -16,14 +16,13 @@ class MenuAnalytics
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
     public function handle(Request $request, Closure $next): Response
-    {        
+    {
+        $this->saveVisit();
+
         return $next($request);
     }
 
-    /**
-     * Handle tasks after the response has been sent to the browser.
-     */
-    public function terminate(Request $request, Response $response): void
+    private function saveVisit()
     {
         if(auth()->check()) return; // ignore auth users because it's me or client
 
