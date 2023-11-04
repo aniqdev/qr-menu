@@ -37,6 +37,7 @@ Route::group([
 ], function () {
 
     Route::get('dashboard', [\App\Http\Controllers\HomeController::class, 'dashboard'])->name('dashboard');
+    Route::get('statistics', [\App\Http\Controllers\HomeController::class, 'statistics'])->name('admin.statistics');
     Route::get('dashboard-iframe-statistic', [\App\Http\Controllers\HomeController::class, 'dashboardIframeStatistic'])->name('dashboard-iframe-statistic');
     Route::post('run-command', [\App\Http\Controllers\HomeController::class, 'runCommand'])->name('run-command');
 

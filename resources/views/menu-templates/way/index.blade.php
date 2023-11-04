@@ -121,7 +121,7 @@ body{
 <div class="container py-2">
 	@if(tpl_options('show_logo'))
 	<div class="logo-wrapper text-center mb-3 pb-4">
-		<img src="{{ $company->image }}" alt="" class="logo">
+		<img src="{{ $company->image_small }}" alt="" class="logo">
 	</div>
 	@endif
 	<h2 class="text-center mb-3">{{ _t('template_way.menu') }}</h2>
@@ -152,7 +152,7 @@ body{
 								<div class="card-title category-card-title" style="border-color: {{ $color }};">{{ $category->name }}</div>
 								<div class="card-body">
 									<div class="card-img-bottom">
-	                                    <img src="{{ $category->image }}" alt="{{ $category->name }}">
+	                                    <img src="{{ $category->image_small }}" alt="{{ $category->name }}">
 	                                </div>
 								</div>
 							</div>
@@ -279,10 +279,11 @@ body{
         </div>
     </div>
 </footer>
-<script src="https://owlcarousel2.github.io/OwlCarousel2/assets/vendors/jquery.min.js" crossorigin="anonymous"></script>
+{{-- <script src="https://owlcarousel2.github.io/OwlCarousel2/assets/vendors/jquery.min.js" crossorigin="anonymous"></script> --}}
 {{-- <script src="/menu-templates/way-1/js/owl.carousel.js" crossorigin="anonymous"></script> --}}
 {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> --}}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/owl.carousel.min.js"></script>
 <script>
 $(document).ready(function() {
 	$('.owl-carousel').owlCarousel({

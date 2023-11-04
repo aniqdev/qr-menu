@@ -5,12 +5,25 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Process;
 use App\Models\{Company, User};
+use App\Services\StatisticsService;
 
 class HomeController extends Controller
 {
     public function dashboardIframeStatistic()
     {
         return view('admin.dashboard.statistic');
+    }
+
+    public function statistics(Request $request)
+    {
+        // dd(StatisticsService::getLastVisits()->toArray());
+        return view('admin.statistics', [
+            'online' => StatisticsService::getOnline(),
+            'today' => StatisticsService::getTodayVisits(),
+            'reviews' => 0, // in developing
+            'chartData' => StatisticsService::getTodayChartData(),
+            'lastVisits' => StatisticsService::getLastVisits(),
+        ]);
     }
 
     public function landing()

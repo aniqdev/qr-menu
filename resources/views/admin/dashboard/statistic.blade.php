@@ -29,8 +29,8 @@
                 <div class="Card-Title">Останні візити</div>
                 <div class="Card-Content">
                     <div class="vue-apexcharts Chart" data-v-9eb481e8="" style="min-height: 466.553px;">
-                        <div id="apexchartsvuechartxexample" class="apexcharts-canvas apexchartsvuechartxexample apexcharts-theme-light" style="width: 727px; height: 451.553px;">
-                            <svg id="SvgjsSvg9302" width="727" height="451.5527950310559" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev" class="apexcharts-svg" xmlns:data="ApexChartsNS" transform="translate(0, 0)" style="background: transparent;">
+                        <div id="apexchartsvuechartxexample" class="apexcharts-canvas apexchartsvuechartxexample apexcharts-theme-light" style="max-width: 727px; height: 451.553px;">
+{{--                             <svg id="SvgjsSvg9302" width="" height="451.5527950310559" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev" class="apexcharts-svg" xmlns:data="ApexChartsNS" transform="translate(0, 0)" style="background: transparent;">
                                 <g id="SvgjsG9304" class="apexcharts-inner apexcharts-graphical" transform="translate(22, 30)">
                                     <defs id="SvgjsDefs9303">
                                         <linearGradient id="SvgjsLinearGradient9307" x1="0" y1="0" x2="0" y2="1">
@@ -154,7 +154,7 @@
                                     <g id="SvgjsG9372" class="apexcharts-yaxis-texts-g"></g>
                                 </g>
                                 <g id="SvgjsG9305" class="apexcharts-annotations"></g>
-                            </svg>
+                            </svg> --}}
                             <div class="apexcharts-legend" style="max-height: 225.776px;"></div>
                             <div class="apexcharts-tooltip apexcharts-theme-light">
                                 <div class="apexcharts-tooltip-title" style="font-family: Helvetica, Arial, sans-serif; font-size: 12px;"></div>
@@ -186,7 +186,7 @@
             </div>
         </div>
         <div class="Right" data-v-9eb481e8="">
-            <div class="Card" data-v-51c4eddc="" data-v-9eb481e8="">
+            {{-- <div class="Card" data-v-51c4eddc="" data-v-9eb481e8="">
                 <!---->
                 <div class="Card-Title">
                     <div class="Card-Header" data-v-51c4eddc="">
@@ -237,7 +237,7 @@
                     </section>
                 </div>
                 <!---->
-            </div>
+            </div> --}}
         </div>
     </div>
 </div>
