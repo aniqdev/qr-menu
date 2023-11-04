@@ -36,6 +36,7 @@ iframe{
     font-size: 0.9em;
 }
 .styles_mobile-section-menu-body__CueSw{
+	width: 100%;
 	max-width: 600px;
 	margin: auto;
 }

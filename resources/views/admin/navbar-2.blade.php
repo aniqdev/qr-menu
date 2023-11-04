@@ -68,8 +68,11 @@
                     <li class="nav-item d-lg-none">
                         <a class="nav-link js-no-reload-link" href="{{ route('admin.qr-code') }}">{{ _t('admin_nav.qr_code') }}</a>
                     </li>
-                    <li class="nav-item d-lg-none border-bottom">
+                    <li class="nav-item d-lg-none">
                         <a class="nav-link js-no-reload-link" href="{{ route('admin.settings') }}">{{ _t('admin_nav.settings') }}</a>
+                    </li>
+                    <li class="nav-item d-lg-none">
+                        <a class="nav-link" href="{{ route('admin.statistics') }}">{{ _t('admin_nav.statistics') }}</a>
                     </li>
                     {{-- <li class="nav-item dropdown">
 								<a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -140,7 +143,7 @@
                             href="{{ auth()->user()->company->cafeLink() }}" 
                             title="{{ _t('admin_nav.view_menu') }}" style_="color: #198754;" 
                             target="_blank"
-                            onclick="modal_load(event, this)"
+                            {{-- onclick="modal_load(event, this)" --}}
                             data-modalurl="{{ route('menu-modal', ['category' => 1]) }}">
                             {{ _t('admin_nav.view') }}
                             <i class="bi bi-cup-straw"></i>
