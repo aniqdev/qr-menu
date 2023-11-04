@@ -19,9 +19,9 @@ class HomeController extends Controller
         // dd(StatisticsService::getLastVisits()->toArray());
         return view('admin.statistics', [
             'online' => StatisticsService::getOnline(),
-            'today' => StatisticsService::getTodayVisits(),
+            'visits' => StatisticsService::getVisits(),
             'reviews' => 0, // in developing
-            'chartData' => StatisticsService::getTodayChartData(),
+            'chartData' => StatisticsService::getChartData(),
             'lastVisits' => StatisticsService::getLastVisits(),
         ]);
     }

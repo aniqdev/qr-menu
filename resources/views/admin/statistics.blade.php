@@ -162,7 +162,7 @@
 		</div>
 		<div class="number-item">
 			<span class="number-item-title">{{ _t('admin_statistics.visits') }}</span>
-			<span class="number-item-number">{{ $today }}</span>
+			<span class="number-item-number">{{ $visits }}</span>
 		</div>
 		<div class="number-item">
 			<span class="number-item-title">{{ _t('admin_statistics.reviews') }}</span>
