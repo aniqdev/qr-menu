@@ -142,17 +142,11 @@
 	<h2>{{ _t('admin_statistics.statistics') }}</h2>
 	<hr>
 
-{{-- 	<div class="periods mt-3 js-no-reload_">
+	<div class="periods mt-3 js-no-reload_">
 		<a href="?period=today" class="period {{ request('period') !== 'today' ?: 'active' }}">{{ _t('admin_statistics.today') }}</a>
 		<a href="?period=yesterday" class="period {{ request('period') !== 'yesterday' ?: 'active' }}">{{ _t('admin_statistics.yesterday') }}</a>
 		<a href="?period=7_days" class="period {{ request('period') !== '7_days' ?: 'active' }}">{{ _t('admin_statistics.7_days') }}</a>
 		<a href="?period=30_days" class="period {{ request('period') !== '30_days' ?: 'active' }}">{{ _t('admin_statistics.30_days') }}</a>
-	</div> --}}
-	<div class="periods mt-3 js-no-reload_">
-		<a href="?period=today" class="period active">{{ _t('admin_statistics.today') }}</a>
-		<a href="?period=yesterday" class="period">{{ _t('admin_statistics.yesterday') }}</a>
-		<a href="?period=7_days" class="period">{{ _t('admin_statistics.7_days') }}</a>
-		<a href="?period=30_days" class="period">{{ _t('admin_statistics.30_days') }}</a>
 	</div>
 
 	<div class="numbers mt-3">
