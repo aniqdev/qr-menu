@@ -191,7 +191,7 @@
 				<tr>
 					<td data-label="Time">{{ $visit->updated_at->format('d-m H:i') }}</td>
 					<td data-label="Times">{{ $visit->visits_count }}</td>
-					<td data-label="City">{{ $visit->city }}</td>
+					<td data-label="City">{{ $visit->city ?? '-' }}</td>
 					<td data-label="User agent">
 						<div class="text-truncate d-inline-block">{{ $visit->user_agent }}</div>
 					</td>
