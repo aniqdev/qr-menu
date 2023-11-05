@@ -50,7 +50,7 @@
                             href="{{ auth()->user()->company->cafeLink() }}" 
                             title="{{ _t('admin_nav.view_menu') }}" style_="color: #198754;" 
                             target="_blank"
-                            onclick="modal_load(event, this)"
+                            {{-- onclick="modal_load(event, this)" --}}
                             data-modalurl="{{ route('menu-modal', ['category' => 1]) }}">
                             {{ _t('admin_nav.view') }}
                             <i class="bi bi-cup-straw"></i>

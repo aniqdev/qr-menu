@@ -16,7 +16,8 @@ class HomeController extends Controller
 
     public function statistics(Request $request)
     {
-        // dd(StatisticsService::getLastVisits()->toArray());
+        // dump(StatisticsService::getLastVisits()[0]->toArray());
+        // dd(get_browser(StatisticsService::getLastVisits()[0]->user_agent));
         return view('admin.statistics', [
             'online' => StatisticsService::getOnline(),
             'visits' => StatisticsService::getVisits(),

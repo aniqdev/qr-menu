@@ -30,7 +30,7 @@
 					</label>
 					<input type="text" name="name" value="{{ $item->name }}" class="form-control" id="item_title" placeholder="Vine">
 				</div>
-				<div class="col-12 col-sm-5">
+				<div class="col-12 col-sm-5 mb-3">
 					<label for="item_category" class="form-label">{{ _t('admin_items.category') }}</label>
 					<select name="category_id" class="form-select" id="item_category">
 						<option value="">{{ _t('admin_items.hidden_category') }}</option>
@@ -41,19 +41,51 @@
 						@endforeach
 					</select>
 				</div>
-				<div class="col-6 col-sm-6">
-					<label for="item_price" class="form-label">{{ _t('admin_items.price') }}</label>
-					<input type="number" name="price" value="{{ $item->price }}" class="form-control" id="item_price" placeholder="">
+				<div class="col prices">
+					@forelse ($item->prices ?? [] as $priceRow)
+					<div class="prices-row row">
+						<div class="col-5">
+							<label for="item_price" class="form-label">{{ _t('admin_items.price') }}</label>
+							<input type="number" name="prices[]" value="{{ $priceRow->price }}" class="form-control" id="item_price" placeholder="">
+						</div>
+						<div class="col-5">
+							<label for="item_volume" class="form-label">{{ _t('admin_items.volume') }}</label>
+							<input type="text" name="volumes[]" value="{{ $priceRow->volume }}" class="form-control" id="item_volume" placeholder="" list="volumes">
+						</div>
+						<div class="col-2">
+							<label for="" class="form-label">&nbsp;</label>
+							<button type="button" class="btn btn-outline-danger w-100 px-0 text-center"
+								onclick="if($('.prices-row').length > 1) $(this).closest('.prices-row').remove()" 
+							>
+								<i class="bi bi-x-square"></i>
+							</button>
+						</div>
+					</div>
+					@empty
+					<div class="prices-row row">
+						<div class="col-5">
+							<label for="item_price" class="form-label">{{ _t('admin_items.price') }}</label>
+							<input type="number" name="prices[]" value="{{ $item->price }}" class="form-control" id="item_price" placeholder="">
+						</div>
+						<div class="col-5">
+							<label for="item_volume" class="form-label">{{ _t('admin_items.volume') }}</label>
+							<input type="text" name="volumes[]" value="{{ $item->volume }}" class="form-control" id="item_volume" placeholder="" list="volumes">
+						</div>
+						<div class="col-2">
+							<label for="" class="form-label">&nbsp;</label>
+							<button type="button" class="btn btn-outline-danger w-100 px-0 text-center"
+								onclick="if($('.prices-row').length > 1) $(this).closest('.prices-row').remove()" 
+							>
+								<i class="bi bi-x-square"></i>
+							</button>
+						</div>
+					</div>
+					@endforelse
 				</div>
-				<div class="col-6 col-sm-6">
-					<label for="item_volume" class="form-label">{{ _t('admin_items.volume') }}</label>
-					<input type="text" name="volume" value="{{ $item->volume }}" class="form-control" id="item_volume" placeholder="" list="volumes">
-					<datalist id="volumes">
-					  <option value="{{ _t('volumes.50ml') }}">
-					  <option value="{{ _t('volumes.100ml') }}">
-					  <option value="{{ _t('volumes.500ml') }}">
-					  <option value="{{ _t('volumes.100g') }}">
-					</datalist>
+				<div class="col-12">
+					<button type="button" class="btn btn-sm btn-outline-success mt-3"
+						onclick="$('.prices-row').last().clone().prependTo('.prices')"
+					><i class="bi bi-plus-square me-2"></i>{{ _t('admin_items.add_variant') }}</button>
 				</div>
 				{{-- <div class="col-6 col-sm-3">
 					<label for="item_old_price" class="form-label">{{ _t('admin_items.old_price') }}</label>
@@ -65,6 +97,13 @@
 				</div>
 			</div>
 		</div>
+
+		<datalist id="volumes">
+		  <option value="{{ _t('volumes.50ml') }}">
+		  <option value="{{ _t('volumes.100ml') }}">
+		  <option value="{{ _t('volumes.500ml') }}">
+		  <option value="{{ _t('volumes.100g') }}">
+		</datalist>
 	</form>
 </div>
 @endsection

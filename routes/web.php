@@ -29,7 +29,7 @@ Route::get('/notification', function () {
     return (new \App\Notifications\InvoicePaid)->toMail($user);
 });
 
-Route::get('profile', [\App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
+// Route::get('profile', [\App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
 
 Route::group([
     'middleware' => ['auth', \App\Http\Middleware\UserLastSeen::class],

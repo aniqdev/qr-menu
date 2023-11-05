@@ -9,12 +9,12 @@
 <link rel="stylesheet" href="/templates/choice/choice-{{ tpl_options('theme', 'light') }}.css">
 <style>
 @media (prefers-reduced-motion:no-preference) {
-    :root {
-        scroll-behavior: smooth
-    }
+	:root {
+		scroll-behavior: smooth
+	}
 }
 body{
-    padding: 1px 0;
+	padding: 1px 0;
 }
 iframe{
 	width: 100%;
@@ -31,9 +31,9 @@ iframe{
 }
 .company-description{
 	margin: 0 auto 15px;
-    width: 80%;
-    text-align: center;
-    font-size: 0.9em;
+	width: 80%;
+	text-align: center;
+	font-size: 0.9em;
 }
 .styles_mobile-section-menu-body__CueSw{
 	width: 100%;
@@ -113,14 +113,19 @@ iframe{
 				<div class="styles_menu-item-left__aENNx">
 				   <div class="styles_menu-item-title__92eAl">{{ $item->name }}</div>
 				   <div class="styles_menu-item-price__H0JSQ">
-					  <div class="styles_PriceDiscount__Kccnr styles_discount__XM9HB">{{
-							number_format($item->price, 
-								tpl_options('price_precision'), 
-								tpl_options('decimal_separator'),
-								tpl_options('thousands_separator')).
-							(tpl_options('space_after_price') ? ' ' : '').
-							tpl_options('currency_symbol') 
-						}}</div>
+					  <div class="styles_PriceDiscount__Kccnr styles_discount__XM9HB">
+						@foreach($item->prices_arr as $price)
+							{{
+								number_format($price,
+									tpl_options('price_precision'),
+									tpl_options('decimal_separator'),
+									tpl_options('thousands_separator')).
+								(tpl_options('space_after_price') ? ' ' : '').
+								tpl_options('currency_symbol')
+							}}
+							{{ !$loop->last ? ' / ' : '' }}
+						@endforeach
+					  </div>
 				   </div>
 				   <div class="styles_menu-item-description__jSMJ6">
 					  <div class="styles_CollapsedText__blArN styles_collapsed__3d5qr styles_line_lampShort__JCqRm">
@@ -130,8 +135,11 @@ iframe{
 				   @if($item->volume)
 				   <div class="styles_menu-label-list__YC7Iy">
 					  <div class="styles_menu-label__UhWo8">
-						 @include('menu-templates/choice/svg/vesy-svg')
-						 <span>{{ $item->volume }}</span>
+						@include('menu-templates/choice/svg/vesy-svg')
+						@foreach($item->volumes_arr as $volume)
+						  {{ $volume }}
+						  {{ !$loop->last ? ' / ' : '' }}
+						@endforeach
 					  </div>
 				   </div>
 				   @endif

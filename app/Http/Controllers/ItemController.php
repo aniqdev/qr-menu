@@ -101,6 +101,17 @@ class ItemController extends Controller
 
 		$data['company_id'] = auth()->user()->company_id;
 
+		foreach ($request->prices as $key => $price) { // prepare data for save in json
+			$data['prices'][] = [
+				'price' => $price,
+				'volume' => $request->volumes[$key],
+			];
+		}
+
+		$data['price'] = $request->prices[0];
+
+		$data['volume'] = $request->volumes[0];
+
 		$item = Item::create($data);
 
 		$item->update(['image' => $item->setImage($request)]);
@@ -156,11 +167,23 @@ class ItemController extends Controller
 
 		$data['image'] = $item->setImage($request);
 
+		foreach ($request->prices as $key => $price) { // prepare data for save in json
+			$data['prices'][] = [
+				'price' => $price,
+				'volume' => $request->volumes[$key],
+			];
+		}
+
+		$data['price'] = $request->prices[0];
+
+		$data['volume'] = $request->volumes[0];
+
 		$item->update($data);
 
 		return [
 			'request' => $request->all(),
 			'message' => 'Success',
+			'data' => $data,
 		];
 	}
 

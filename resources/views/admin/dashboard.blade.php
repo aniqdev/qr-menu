@@ -3,17 +3,13 @@
 @section('content')
 <div class="shadow-block" id="admin_dashboard">
     <h2>{{ _t('admin_dashboard.dashboard') }}</h2>
-    {{-- <div class="row"> --}}
-        <h5 class="">Links</h5>
-        {{-- <div class="col-sm-6 mb-3"> --}}
-            <a class="btn btn-primary" href="{{ route('categories.index') }}">{{ _t('admin_nav.categories') }}</a>
-        {{-- </div> --}}
-        {{-- <div class="col-sm-6 mb-3"> --}}
-            <a class="btn btn-primary" href="{{ route('items.index') }}">{{ _t('admin_nav.dishes') }}</a>
-        {{-- </div> --}}
-    {{-- </div> --}}
-    {{-- <hr> --}}
-    {{-- <iframe src="{{ route('dashboard-iframe-statistic') }}" frameborder="0" onload='javascript:(function(o){o.style.height=o.contentWindow.document.body.scrollHeight+30+"px";}(this));' style="height:200px;width:100%;border:none;overflow:hidden;"></iframe> --}}
+
+    <h5 class="">Links</h5>
+    <a class="btn btn-primary" href="{{ route('categories.index') }}">{{ _t('admin_nav.categories') }}</a>
+    <a class="btn btn-primary" href="{{ route('items.index') }}">{{ _t('admin_nav.dishes') }}</a>
+    <br><br>
+    <a class="btn btn-primary" href="{{ route('admin.statistics') }}">{{ _t('admin_nav.statistics') }}</a>
+
     @if(auth()->user()->isSuperAdmin() && false)
     <form class="laravel-process" onsubmit="submit_form(this, event)" action="{{ route('run-command') }}">
         @csrf
