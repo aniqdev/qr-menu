@@ -8,6 +8,8 @@ return [
 
     'translations_excel_url' => env('TRANSLATIONS_EXCEL_URL'),
 
+    'import_excel_url' => 'https://script.google.com/macros/s/AKfycby5CzdLR9xqPESfPLI6-xdz9NnhjDff6-a8EJ9BI8dlJqrDlqD5rMqDC7-88a4blwGK/exec',
+
     /*
     |--------------------------------------------------------------------------
     | Application Name

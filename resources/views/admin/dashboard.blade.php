@@ -10,6 +10,17 @@
     <br><br>
     <a class="btn btn-primary" href="{{ route('admin.statistics') }}">{{ _t('admin_nav.statistics') }}</a>
 
+    @if(auth()->user()->isSuperAdmin())
+    <a class="btn btn-warning" href="{{ route('import-google-table') }}"
+        onclick="
+            event.preventDefault()
+            if(!confirm('Sure?')) return false
+            $.get(this.href, data => data.message && toastr.success(data.message))
+        ">
+        Import from google table <i class="bi bi-arrow-repeat"></i>
+    </a>
+    @endif
+
     @if(auth()->user()->isSuperAdmin() && false)
     <form class="laravel-process" onsubmit="submit_form(this, event)" action="{{ route('run-command') }}">
         @csrf

@@ -41,6 +41,8 @@ Route::group([
     Route::get('dashboard-iframe-statistic', [\App\Http\Controllers\HomeController::class, 'dashboardIframeStatistic'])->name('dashboard-iframe-statistic');
     Route::post('run-command', [\App\Http\Controllers\HomeController::class, 'runCommand'])->name('run-command');
 
+    Route::get('import-google-table', [\App\Http\Controllers\ImportController::class, 'importItemsFromGoogleTable'])->name('import-google-table');
+
     Route::get('menu', [\App\Http\Controllers\MenuController::class, 'adminMenu'])->name('admin.menu');
 
     Route::resource('categories', \App\Http\Controllers\CategoryController::class);
