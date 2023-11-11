@@ -52,7 +52,9 @@
                                 <span>{{ $user->email }}</span>
                                 <br>
                                 <span><b><small>{{ $user->last_seen?->format('Y-m-d H:i') }}</small></b></span>
-                                <span class="last-seen-city" title="{{ get_country_by_ip($user->ip) }}"> - {{ get_city_by_ip($user->ip) }}</span>
+                                @if($city = get_city_by_ip($user->ip))
+                                <span class="last-seen-city"> - {{ $city }} ({{ get_country_by_ip($user->ip) }})</span>
+                                @endif
                             </div>
                         @endforeach
                     </div>
