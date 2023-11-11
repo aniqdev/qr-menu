@@ -24,7 +24,7 @@ use App\Notifications\InvoicePaid;
 Artisan::command('testt', function () {
 
 
-    $record = \App\Services\GeoIpService::getCity('111.229.9.239');
+    $record = get_country_by_ip('37.229.9.239');
 
     dd($record);
 

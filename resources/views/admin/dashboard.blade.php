@@ -47,12 +47,12 @@
                         @foreach($company->admins as $user)
                             @if($user->isMe()) @continue @endif
                             <div class="company-admin"
-                                 title="user id: {{ $user->id }} &#013;created_at: {{ $user->created_at }} &#013;updated_at: {{ $user->updated_at }}">
+                                 title="user id: {{ $user->id }} &#013;ip: {{ $user->ip }} &#013;created_at: {{ $user->created_at }} &#013;updated_at: {{ $user->updated_at }}">
                                 <span class="fw-bold" >{{ $user->name }}</span>
                                 <span>{{ $user->email }}</span>
                                 <br>
                                 <span><b><small>{{ $user->last_seen?->format('Y-m-d H:i') }}</small></b></span>
-                                <span> - {{ get_city_by_ip($user->ip) }}</span>
+                                <span class="last-seen-city" title="{{ get_country_by_ip($user->ip) }}"> - {{ get_city_by_ip($user->ip) }}</span>
                             </div>
                         @endforeach
                     </div>
