@@ -23,6 +23,13 @@ use App\Notifications\InvoicePaid;
 
 Artisan::command('testt', function () {
 
+
+    $record = \App\Services\GeoIpService::getCity('111.229.9.239');
+
+    dd($record);
+
+
+    return;
     $start = microtime(true);
 
     $cityDbReader = new Reader(public_path('data/GeoLite2-City.mmdb'));

@@ -50,7 +50,9 @@
                                  title="user id: {{ $user->id }} &#013;created_at: {{ $user->created_at }} &#013;updated_at: {{ $user->updated_at }}">
                                 <span class="fw-bold" >{{ $user->name }}</span>
                                 <span>{{ $user->email }}</span>
-                                <span> - <b><small>{{ $user->last_seen?->format('Y-m-d H:i') }}</small></b></span>
+                                <br>
+                                <span><b><small>{{ $user->last_seen?->format('Y-m-d H:i') }}</small></b></span>
+                                <span> - {{ get_city_by_ip($user->ip) }}</span>
                             </div>
                         @endforeach
                     </div>
