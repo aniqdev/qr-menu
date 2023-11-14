@@ -31,8 +31,14 @@
     @if(auth()->user()->isSuperAdmin())
     <hr>
     <div class="row">
-        <div class="col-md-6">
-            <h4>Companies</h4>
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8">
+            <div class="row">
+                <h4 class="col">Companies
+                    <small>({{ \App\Models\Company::count() }}/{{ \App\Models\Category::count() }}/{{ \App\Models\Item::count() }})</small>
+                </h4>
+                <div class="col js-no-reload">{{ $companies->links() }}</div>
+            </div>
             <ul class="list-group">
                 @foreach($companies as $company)
                 <li class="list-group-item {{ $company->isAuthUserAdmin('active') }}">
@@ -63,18 +69,8 @@
                 @endforeach
             </ul>
         </div>
-        <div class="col-md-6">
-            <h4>Users</h4>
-            <ol class="list-group list-group-numbered">
-                @foreach($users as $user)
-                <li class="list-group-item d-flex justify-content-between align-items-start">
-                    <div class="ms-2 me-auto">
-                        <div class="fw-bold">{{ $user->name }}</div> {{ $user->email }}
-                    </div>
-                    <span class="badge bg-primary rounded-pill">...</span>
-                </li>
-                @endforeach
-            </ol>
+        <div class="col-lg-6">
+
         </div>
     </div>
     @endif
