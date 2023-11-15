@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('reviews', function (Blueprint $table) {
+        Schema::create('feedbacks', function (Blueprint $table) {
             $table->id();
             $table->foreignId('company_id')->nullable()->constrained();
             $table->unsignedTinyInteger('kitchen_vote')->default(0);

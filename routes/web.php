@@ -87,6 +87,11 @@ Route::group([
     'middleware' => \App\Http\Middleware\MenuAnalytics::class,
 ], function () {
 
+    Route::get('restaurant/{company:slug}/feedback', [\App\Http\Controllers\FeedbackController::class, 'leaveFeedback'])->name('restaurant.feedback');
+    Route::get('cafe/{company:slug}/feedback', [\App\Http\Controllers\FeedbackController::class, 'leaveFeedback'])->name('cafe.feedback');
+    Route::get('bar/{company:slug}/feedback', [\App\Http\Controllers\FeedbackController::class, 'leaveFeedback'])->name('bar.feedback');
+    Route::post('cafe/{company:slug}/feedback', [\App\Http\Controllers\FeedbackController::class, 'saveFeedback'])->name('cafe.save-feedback');
+
     Route::get('restaurant/{company:slug}/menu', [\App\Http\Controllers\CompanyController::class, 'menu'])->name('restaurant.menu');
     Route::get('cafe/{company:slug}/menu', [\App\Http\Controllers\CompanyController::class, 'menu'])->name('cafe.menu');
     Route::get('bar/{company:slug}/menu', [\App\Http\Controllers\CompanyController::class, 'menu'])->name('bar.menu');
