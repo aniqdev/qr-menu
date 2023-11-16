@@ -74,6 +74,9 @@
                     <li class="nav-item d-lg-none">
                         <a class="nav-link" href="{{ route('admin.statistics') }}">{{ _t('admin_nav.statistics') }}</a>
                     </li>
+                    <li class="nav-item d-lg-none">
+                        <a class="nav-link js-no-reload-link" href="{{ route('admin.feedbacks') }}">{{ _t('admin_nav.feedback') }}</a>
+                    </li>
                     {{-- <li class="nav-item dropdown">
 								<a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 			  Dropdown

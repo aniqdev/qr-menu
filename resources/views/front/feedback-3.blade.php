@@ -56,7 +56,7 @@ body{
     font-size: 18px;
     border: 0;
     border-radius: 4px;
-    outline: 1px solid #ababab;
+    outline: 1px solid #bbb;
     font-family: 'PT-Sans', arial;
 }
 
