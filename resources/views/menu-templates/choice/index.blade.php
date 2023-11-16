@@ -73,6 +73,7 @@ iframe{
 	display: flex;
     gap: 15px;
     margin: 20px 0;
+    padding: 0 15px;
 }
 .qcol{
 	flex-grow: 1;
@@ -82,6 +83,9 @@ iframe{
 }
 .qmr-10{
 	margin-right: 10px;
+}
+.qcol .styles_sizeExtraLarge__CKjnf {
+    padding: 0 10px;
 }
 </style>
 <div class="styles_mobile-section-menu-body__CueSw">
