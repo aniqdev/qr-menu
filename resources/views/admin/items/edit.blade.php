@@ -1,7 +1,7 @@
 @extends('layouts.back')
 
 @section('content')
-<div class="shadow-block">
+<div class="shadow-block" id="items_edit">
 	@include('admin.blocks.breadcrumbs', [
 		'breadcrumbs' => [
 			['id' => 'breadcrumb_categories', 'href' => route('categories.index'), 'label' => _t('breadcrumbs.categories'), 'title' => _t('breadcrumbs.categories')],

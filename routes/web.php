@@ -77,6 +77,8 @@ Route::group([
     Route::get('menu-qr-code-image', [\App\Http\Controllers\QrCodeController::class, 'menuQrCodeImage'])->name('admin.menu-qr-code-image');
 
     Route::get('modals/{view}', [\App\Http\Controllers\ModalsController::class, 'modals'])->name('admin-modals');
+
+    Route::get('feedbacks', [\App\Http\Controllers\FeedbackController::class, 'feedbacks'])->name('admin.feedbacks');
 });
 
 Route::get('/cafe/sail.bar', function () {

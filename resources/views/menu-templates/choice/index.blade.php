@@ -69,6 +69,20 @@ iframe{
 	border-color: var(--primary-color);
 	box-shadow: inset 0 0 0 1px var(--primary-color);
 }
+.qrow{
+	display: flex;
+    gap: 15px;
+    margin: 20px 0;
+}
+.qcol{
+	flex-grow: 1;
+}
+.qcol > a{
+	box-shadow: 0 4px 4px rgba(0,0,0,.05);
+}
+.qmr-10{
+	margin-right: 10px;
+}
 </style>
 <div class="styles_mobile-section-menu-body__CueSw">
 
@@ -166,16 +180,29 @@ iframe{
 		  </div>
 	   </div>
 	   @endforeach
-	   <div class="styles_menuToTop__9vHrM">
-		  <a href="#" class="styles_button__eH6h8 styles_sizeExtraLarge__CKjnf styles_appearanceStroke__2w0V8 styles_fullWidth__n1V8K">
-			 <div class="styles_menuToTopIcon__lqez4">
-				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-				   <path d="M21 17L12 8L3 17" stroke="currentColor" stroke-width="2"></path>
-				</svg>
-			 </div>
-			 <div class="styles_menuToTopText__uunk8">{{ _t('template_default.go_top') }}</div>
-		  </a>
+
+	   <div class="qrow">
+	   		<div class="qcol">
+			  <a href="{{ $company->leaveFeedbackLink() }}" class="styles_button__eH6h8 styles_sizeExtraLarge__CKjnf styles_appearanceStroke__2w0V8 styles_fullWidth__n1V8K">
+				 <div class="styles_menuToTopIcon__lqez4 qmr-10">
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.00195 3C2.90889 3 2.00195 3.90694 2.00195 5V17C2.00195 18.0931 2.90889 19 4.00195 19H18.002L22.002 23L21.9902 4.99805C21.9902 3.90498 21.0821 3 19.9902 3H4.00195ZM4.00195 5H19.9902L19.998 18.168L18.8301 17H4.00195V5ZM7 8V10H17V8H7ZM7 12V14H14V12H7Z" fill="currentColor"></path></svg>
+				 </div>
+				 <div class="styles_menuToTopText__uunk8">{{ _t('template_default.leave_feedback') }}</div>
+			  </a>
+	   		</div>
+
+	   		<div class="qcol">
+			  <a href="#" class="styles_button__eH6h8 styles_sizeExtraLarge__CKjnf styles_appearanceStroke__2w0V8 styles_fullWidth__n1V8K">
+				 <div class="styles_menuToTopIcon__lqez4 qmr-10">
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+					   <path d="M21 17L12 8L3 17" stroke="currentColor" stroke-width="2"></path>
+					</svg>
+				 </div>
+				 <div class="styles_menuToTopText__uunk8">{{ _t('template_default.go_top') }}</div>
+			  </a>
+	   		</div>
 	   </div>
+
 	</div>
 </div>
 

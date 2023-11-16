@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="shadow-block">
+<div class="shadow-block" id="items_create">
 	<h2>{{ _t('admin_items.add_new') }}</h2>
 	@include('admin.items.blocks.create-item-form')
 </div>

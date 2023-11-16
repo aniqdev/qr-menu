@@ -27,18 +27,26 @@
 	</nav>
 	<br>
 
-	<nav class="list-group js-sidebar-nav" id="sidebar_nav_2">
-		<a href="{{ route('admin.qr-code') }}" class="list-group-item text-truncate js-no-reload-link">
+	<nav class="list-group js-no-reload js-sidebar-nav" id="sidebar_nav_2">
+		<a href="{{ route('admin.qr-code') }}" class="list-group-item text-truncate">
 			<i class="bi bi-qr-code me-1"></i>
 			{{ _t('admin_nav.qr_code') }}
 		</a>
-		<a href="{{ route('admin.settings') }}" class="list-group-item text-truncate js-no-reload-link">
+		<a href="{{ route('admin.settings') }}" class="list-group-item text-truncate">
 			<i class="bi bi-sliders me-1"></i>
 			{{ _t('admin_nav.settings') }}
 		</a>
+	</nav>
+	<br>
+
+	<nav class="list-group js-sidebar-nav" id="sidebar_nav_3">
 		<a href="{{ route('admin.statistics') }}" class="list-group-item text-truncate">
 			<i class="bi bi-graph-up-arrow"></i>
 			{{ _t('admin_nav.statistics') }}
+		</a>
+		<a href="{{ route('admin.feedbacks') }}" class="list-group-item text-truncate js-no-reload-link">
+			<i class="bi bi-chat-square-text"></i>
+			{{ _t('admin_nav.feedback') }}
 		</a>
 	</nav>
 </div>

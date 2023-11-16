@@ -23,7 +23,9 @@ use App\Notifications\InvoicePaid;
 
 Artisan::command('testt', function () {
 
+    dd(app('debugbar'));
 
+    return;
     $ip = '176.105.255.64';
 
     dd(get_city_by_ip($ip) . ' - ' . get_country_by_ip($ip));

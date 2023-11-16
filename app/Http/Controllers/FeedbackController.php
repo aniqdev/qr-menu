@@ -10,8 +10,6 @@ class FeedbackController extends Controller
 {
     public function leaveFeedback(Company $company)
     {
-        app('debugbar')->disable();
-
         return view('front.feedback-3', [
             'company' => $company,
         ]);
@@ -29,5 +27,14 @@ class FeedbackController extends Controller
             'status' => 'success',
             'request' => $request->all(),
         ];
+    }
+
+    public function feedbacks(Request $request)
+    {
+        $feedbacks = Feedback::orderBy('id', 'desc')->paginate(50);
+
+        return view('admin.feedbacks', [
+            'feedbacks' => $feedbacks,
+        ]);
     }
 }

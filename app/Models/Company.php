@@ -44,6 +44,11 @@ class Company extends Model
         return route('restaurant.links-page', $this->slug);
     }
 
+    public function leaveFeedbackLink()
+    {
+        return route('cafe.feedback', $this->slug);
+    }
+
     public function isAuthUserAdmin($ifTrue = 1, $ifFalse = '')
     {
         return auth()->user()->company_id === $this->id ? $ifTrue : $ifFalse;

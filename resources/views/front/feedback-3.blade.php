@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Leave Feedback</title>
+	<title>{{ _t('feedback.leave_feedback') }}</title>
 </head>
 <body>
 
@@ -118,12 +118,12 @@ textarea{
 
 <div class="form-wrapper">
 	<form class="feedback-form" action="{{ route('cafe.save-feedback', $company->slug) }}" onsubmit="leave_feedback_submit(this, event)">
-		<h3 class="form-title">Leave feedback</h3>
+		<h3 class="form-title">{{ _t('feedback.leave_feedback') }}</h3>
 		<div class="inputs d-block">
-			<input class="text-input" type="text" name="email" placeholder="Email">
-			<input class="text-input" type="text" name="phone" placeholder="Phone">
-			<textarea name="message" rows="4" placeholder="Message">a</textarea>
-			<button class="submit-button">Send</button>
+			<input class="text-input" type="text" name="email" placeholder="{{ _t('feedback.email') }}">
+			<input class="text-input" type="text" name="phone" placeholder="{{ _t('feedback.phone') }}">
+			<textarea name="message" rows="4" placeholder="{{ _t('feedback.message') }}" autofocus></textarea>
+			<button class="submit-button">{{ _t('feedback.send') }}</button>
 		</div>
 		<div class="thank-you d-none">
 			<p>
@@ -131,9 +131,9 @@ textarea{
 				  <path d="M3 14.5A1.5 1.5 0 0 1 1.5 13V3A1.5 1.5 0 0 1 3 1.5h8a.5.5 0 0 1 0 1H3a.5.5 0 0 0-.5.5v10a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5V8a.5.5 0 0 1 1 0v5a1.5 1.5 0 0 1-1.5 1.5H3z"/>
 				  <path d="m8.354 10.354 7-7a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0z"/>
 				</svg>
-				Thank You!
+				<span>{{ _t('feedback.thank_you') }}</span>
 			</p>
-			<a href="{{ $company->cafeLink() }}" class="submit-button">Back to Menu</a>
+			<a href="{{ $company->cafeLink() }}" class="submit-button">{{ _t('feedback.back_to_menu') }}</a>
 		</div>
 	</form>
 </div>
