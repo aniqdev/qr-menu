@@ -3,6 +3,11 @@
 @section('content')
 <link rel="stylesheet" href="/css/argon-design-system.min.css">
 {{-- <link rel="stylesheet" href="/css/register.css"> --}}
+<style>
+select.form-control {
+    appearance: auto;
+}
+</style>
 <div class="wrapper">
     <div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="background-image: url(/images/cover.jpg); background-size: cover; background-position: center top;">
         <!-- Mask -->
@@ -35,21 +40,42 @@
                             </ul>
                         </div>
                     @endif
-                    <form id="registerform" method="post" action="{{ route('register') }}" autocomplete="off">
+                    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+                    <script>
+                       function gOnSubmit(token) {
+                         document.getElementById("register_form").submit();
+                       }
+                    </script>
+                    <form method="POST" action="{{ route('register') }}" autocomplete="off" id="register_form">
                         @csrf
                         <h6 class="heading-small text-muted mb-4">{{ _t('auth.company_information') }}</h6>
                         <div class="pl-lg-4">
                             <div class="form-group">
                                 <label class="form-control-label" for="company_name">{{ _t('auth.company_name') }}</label>
-                                <input type="text" name="company_name" id="company_name" class="form-control form-control-alternative" placeholder="Restaurant Name here ..." value="{{ old('company_name') }}" required autofocus>
+                                <input type="text" name="company_name" id="company_name" class="form-control form-control-alternative" placeholder="Restaurant Name here ..." value="{{ old('company_name') }}" autofocus>
                             </div>
                         </div>
-                        <div class="pl-lg-4">
-                            <div class="custom-control custom-control-alternative custom-checkbox">
-                                <input class="custom-control-input" name="domo_content" id="customCheckLogin" type="checkbox">
-                                <label class="custom-control-label" for="customCheckLogin">
-                                    <span class="text-muted">{{ _t('auth.domo_content') }}</span>
-                                </label>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group pl-lg-4">
+                                    <label class="form-control-label" for="menu_lang">{{ _t('auth.menu_lang') }}</label>
+                                    <select name="menu_lang" id="" class="form-control form-control-alternative">
+                                        <option value="uk">Ukrainian</option>
+                                        <option value="en">English</option>
+                                        <option value="ru">Russian</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <label class="form-control-label">&nbsp;</label>
+                                <div class="pl-lg-4_">
+                                    <div class="custom-control custom-control-alternative custom-checkbox">
+                                        <input class="custom-control-input" name="demo_content" id="customCheckLogin" type="checkbox">
+                                        <label class="custom-control-label" for="customCheckLogin">
+                                            <span class="text-muted">{{ _t('auth.demo_content') }}</span>
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <hr class="my-4">
@@ -63,18 +89,18 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label class="form-control-label" for="email">{{ _t('auth.owner_email') }}</label>
-                                        <input type="text" name="email" id="email" class="form-control form-control-alternative" placeholder="{{ _t('auth.owner_email') }} ..." value="{{ old('email', session('email')) }}" required>
+                                        <input type="text" name="email" id="email" class="form-control form-control-alternative" placeholder="{{ _t('auth.owner_email') }} ..." value="{{ old('email', session('email')) }}">
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label class="form-control-label" for="email">{{ _t('admin_profile.password') }}</label>
-                                        <input type="password" name="password" id="password" class="form-control form-control-alternative" placeholder="{{ _t('admin_profile.password') }} ..." value="" required>
+                                        <input type="password" name="password" id="password" class="form-control form-control-alternative" placeholder="{{ _t('admin_profile.password') }} ..." value="">
                                     </div>
                                 </div>
                             </div>
                             <div class="text-center">
-                                <button type="submit" id="thesubmitbtn" class="btn btn-success mt-4">{{ _t('auth.create') }}</button>
+                                <button type="submit" class="g-recaptcha btn btn-success mt-4" data-sitekey="{{ config('app.recaotcha_site') }}" data-callback="gOnSubmit">{{ _t('auth.create') }}</button>
                             </div>
                             <div class="text-center mt-4">
                                 <span>{{ _t('auth.login_suggestion') }}</span>
@@ -89,83 +115,4 @@
     <br>
 </div>
 @include('auth.footer')
-@endsection
-
-
-
-
-@section('content_')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ _t('Register') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
-
-                        <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ _t('Name') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" autocomplete="name" autofocus>
-
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ _t('Email Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email">
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ _t('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ _t('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ _t('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 @endsection

@@ -8,6 +8,10 @@
 .sidebar-nav .active i{
     color: #fff;
 }
+.sidebar-nav .list-group-item{
+	display: flex;
+	gap: 8px;
+}
 </style>
 
 <div class="sidebar-nav">

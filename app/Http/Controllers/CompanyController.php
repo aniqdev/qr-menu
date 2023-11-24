@@ -92,6 +92,7 @@ class CompanyController extends Controller
 
     public function linksPage(Company $company)
     {
+        app('debugbar')->disable();
         // $company = Company::where('slug', $company_slug)->firstOrFail();
 
         // $cafeLink = route('cafe.links-page', $company->slug);

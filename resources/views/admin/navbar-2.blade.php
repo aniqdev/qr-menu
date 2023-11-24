@@ -57,25 +57,46 @@
                         </a>
                     </li>
                     <li class="nav-item d-lg-none">
-                        <a class="nav-link js-no-reload-link" href="{{ route('categories.index') }}">{{ _t('admin_nav.categories') }}</a>
+                        <a class="nav-link js-no-reload-link" href="{{ route('categories.index') }}">
+                            <i class="bi bi-menu-button-wide me-1"></i>
+                            {{ _t('admin_nav.categories') }}
+                        </a>
                     </li>
                     <li class="nav-item d-lg-none border-bottom">
-                        <a class="nav-link js-no-reload-link" href="{{ route('items.index') }}">{{ _t('admin_nav.dishes') }}</a>
+                        <a class="nav-link js-no-reload-link" href="{{ route('items.index') }}">
+                            <i class="bi bi-menu-app-fill me-1"></i>
+                            {{ _t('admin_nav.dishes') }}
+                        </a>
                     </li>
                     <li class="nav-item d-lg-none">
-                        <a class="nav-link js-no-reload-link" href="{{ route('admin.menu') }}">{{ _t('admin_nav.templates') }}</a>
+                        <a class="nav-link js-no-reload-link" href="{{ route('admin.menu') }}">
+                            <i class="bi bi-list-columns me-1"></i>
+                            {{ _t('admin_nav.templates') }}
+                        </a>
                     </li>
                     <li class="nav-item d-lg-none">
-                        <a class="nav-link js-no-reload-link" href="{{ route('admin.qr-code') }}">{{ _t('admin_nav.qr_code') }}</a>
+                        <a class="nav-link js-no-reload-link" href="{{ route('admin.qr-code') }}">
+                            <i class="bi bi-qr-code"></i>
+                            <span class="ms-1">{{ _t('admin_nav.qr_code') }}</span>
+                        </a>
                     </li>
                     <li class="nav-item d-lg-none">
-                        <a class="nav-link js-no-reload-link" href="{{ route('admin.settings') }}">{{ _t('admin_nav.settings') }}</a>
+                        <a class="nav-link js-no-reload-link" href="{{ route('admin.settings') }}">
+                            <i class="bi bi-sliders"></i>
+                            <span class="ms-1">{{ _t('admin_nav.settings') }}</span>
+                        </a>
                     </li>
                     <li class="nav-item d-lg-none">
-                        <a class="nav-link" href="{{ route('admin.statistics') }}">{{ _t('admin_nav.statistics') }}</a>
+                        <a class="nav-link" href="{{ route('admin.statistics') }}">
+                            <i class="bi bi-graph-up-arrow"></i>
+                            <span class="ms-1">{{ _t('admin_nav.statistics') }}</span>
+                        </a>
                     </li>
                     <li class="nav-item d-lg-none">
-                        <a class="nav-link js-no-reload-link" href="{{ route('admin.feedbacks') }}">{{ _t('admin_nav.feedback') }}</a>
+                        <a class="nav-link js-no-reload-link" href="{{ route('admin.feedbacks') }}">
+                            <i class="bi bi-chat-square-text"></i>
+                            <span class="ms-1">{{ _t('admin_nav.feedback') }}</span>
+                        </a>
                     </li>
                     {{-- <li class="nav-item dropdown">
 								<a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

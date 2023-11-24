@@ -13,6 +13,7 @@ class Company extends Model
     protected $fillable = [
         'name',
         'slug',
+        'lang',
         'image',
         'menu_template',
         'link_target',

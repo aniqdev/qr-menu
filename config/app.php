@@ -10,6 +10,10 @@ return [
 
     'import_excel_url' => 'https://script.google.com/macros/s/AKfycby5CzdLR9xqPESfPLI6-xdz9NnhjDff6-a8EJ9BI8dlJqrDlqD5rMqDC7-88a4blwGK/exec',
 
+    'recaotcha_site' => env('RECAPTCHA_SITE'),
+
+    'recaotcha_secret' => env('RECAPTCHA_SECRET'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Name

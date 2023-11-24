@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
 use Illuminate\Support\Str;
+use App\Services\RecaptchaService;
 
 class RegisteredUserController extends Controller
 {
@@ -32,11 +33,20 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
+        if (!RecaptchaService::validate()) {
+            return back()->withErrors(['recaptcha' => 'You are a robot']);
+        }
+
         $request->validate([
             'company_name' => ['required', 'string', 'max:255'],
             'owner_name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'string', 'max:255'],
+        ], [
+            'company_name.required' => _t('auth.company_name_required'),
+            'owner_name.required' => _t('auth.owner_name_required'),
+            'email.required' => _t('auth.email_required'),
+            'password.required' => _t('auth.password_required'),
         ]);
 
         $companySlug = $this->generateUniqueSlug($request->company_name);
@@ -44,10 +54,11 @@ class RegisteredUserController extends Controller
         $company = Company::create([
             'name' => $request->company_name,
             'slug' => $companySlug,
-            'menu_template' => 'way',
+            'menu_template' => 'choice',
+            'lang' => $request->menu_lang,
         ]);
 
-        if ($request->domo_content) {
+        if ($request->demo_content) {
             try {
                 \App\Services\MockingService::mockCompany($company->id);
             } catch (\Throwable $e) {
@@ -63,7 +74,7 @@ class RegisteredUserController extends Controller
             'name' => $request->owner_name,
             'email' => $request->email,
             'password' => bcrypt($password),
-            'lang' => 'uk',
+            'lang' => $request->menu_lang,
         ]);
 
         Auth::login($user);
