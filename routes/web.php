@@ -19,6 +19,11 @@ Route::get('/test', function ()
     dd($_REQUEST);
 });
 
+Route::get('/terms', function ()
+{
+    return view('pages.terms');
+});
+
 Route::get('/qrsaas', [\App\Http\Controllers\HomeController::class, 'qrsaas']);
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'landing'])->name('home');
 Route::get('/landing-page-list', [\App\Http\Controllers\HomeController::class, 'landingPageList']);
