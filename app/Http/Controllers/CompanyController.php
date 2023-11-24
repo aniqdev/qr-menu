@@ -37,34 +37,38 @@ class CompanyController extends Controller
     {
         $company = auth()->user()->company;
 
+        $slug = str()->slug(request('slug'));
+
         $request->validate([
             'name' => 'required|string|min:3|max:255',
-            'slug' => ['required','string','min:3','max:255', Rule::unique('companies')->ignore($company->id)],
+            'slug' => ['required','string','min:3','max:255',
+                Rule::unique('companies')->ignore($company->id),
+                function (string $attribute, mixed $value, \Closure $fail) use ($company, $slug) {
+                    if ($company->slug !== $slug && Company::where('slug', $slug)->exists()) {
+                        $fail("Slug allready exists");
+                    }
+                }
+            ],
+            'lang' => 'string',
             'image' => 'nullable|file|mimes:jpg,png,webp',
-            // 'menu_template' => 'required|string|min:3|max:255',
             'link_target' => 'required|string|in:menu,link_page',
         ]);
-
-        $reload = false;
-        $slug = str()->slug($request->slug);
-        if ($company->slug !== $slug) {
-            if (Company::where('slug', $slug)->exists()) {
-                abort('Slug exists');
-            }
-            $reload = true;
-        }
 
         $company->update([
             'name' => $request->name,
             'slug' => $slug,
+            'lang' => $request->lang,
             'image' => $company->setImage($request),
-            // 'menu_template' => $request->menu_template,
             'link_target' => $request->link_target,
         ]);
 
         return [
             'message' => 'Success',
-            'reload' => $reload,
+            'reload' => true,
+            'updated' => $company->isDirty(['slug']),
+            'jquery' => [
+                ['element' => '[name="slug"]', 'method' => 'val', 'args' => [$slug]], // in case of slug has been changed
+            ]
         ];
     }
 

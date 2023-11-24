@@ -9,7 +9,7 @@ function submit_form(form, event) {
 		data.message && toastr.success(data.message);
 		data.redirect && go_to_page(data.redirect);
 		form.classList.add('saved');
-		data.reload && (location.href = location.href);
+		data.reload && go_to_page(location.href);
 		data.form_reset && form.reset()
 		data.jquery && data.jquery.forEach(jq => $(jq.element)[jq.method](...jq.args))
 	}).fail(ajax_fail_callback)

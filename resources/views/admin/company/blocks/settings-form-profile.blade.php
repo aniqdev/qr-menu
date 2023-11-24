@@ -13,7 +13,7 @@
 				<label for="profile_email" class="form-label">{{ _t('admin_profile.email') }}</label>
 				<input type="text" name="email" value="{{ $user->email }}" class="form-control" id="profile_email" placeholder="">
 			</div>
-			<div class="col-12 mb-3">
+			{{-- <div class="col-12 mb-3">
 				<label for="item_category" class="form-label">{{ _t('admin_profile.lang') }}</label>
 				<select name="lang" class="form-select" id="item_category">
 					<option value="en" {{ $user->lang !== 'en' ?: 'selected' }} style="background-image:url('/images/flags/en.png');">
@@ -26,7 +26,7 @@
 						Українська
 					</option>
 				</select>
-			</div>
+			</div> --}}
 			{{-- <hr class=""> --}}
 			<div class="col mb-3">
 				<button type="submit" class="btn btn-primary">{{ _t('admin.save') }}</button>

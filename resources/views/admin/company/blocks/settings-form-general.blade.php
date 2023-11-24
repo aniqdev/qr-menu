@@ -10,13 +10,29 @@
 				@include('admin.blocks.image-input', ['model' => $company])
 			</div>
 			<div class="col-sm-9">
-				<div class="mb-3">
-					<label for="company_name" class="form-label">{{ _t('admin_company.name') }}</label>
-					<input type="text" name="name" value="{{ $company->name }}" class="form-control" id="company_name" placeholder="">
-				</div>
-				<div class="mb-3">
-					<label for="company_slug" class="form-label">{{ _t('admin_company.slug') }}</label>
-					<input type="text" name="slug" value="{{ $company->slug }}" class="form-control" id="company_slug" placeholder="">
+				<div class="row">
+					<div class="col-sm-6 mb-3">
+						<label for="company_name" class="form-label">{{ _t('admin_company.name') }}</label>
+						<input type="text" name="name" value="{{ $company->name }}" class="form-control" id="company_name" placeholder="">
+					</div>
+					<div class="col-sm-6 mb-3">
+						<label for="company_slug" class="form-label">{{ _t('admin_company.slug') }}</label>
+						<input type="text" name="slug" value="{{ $company->slug }}" class="form-control" id="company_slug" placeholder="">
+					</div>
+					<div class="col-sm-6 mb-3">
+						<label for="menu_lang" class="form-label">{{ _t('admin_company.lang') }}</label>
+						<select name="lang" class="form-select" id="menu_lang">
+							<option value="en" {{ $company->lang !== 'en' ?: 'selected' }} style="background-image:url('/images/flags/en.png');">
+								English
+							</option>
+							<option value="ru" {{ $company->lang !== 'ru' ?: 'selected' }} style="background-image:url('/images/flags/ru.png');">
+								Русский
+							</option>
+							<option value="uk" {{ $company->lang !== 'uk' ?: 'selected' }} style="background-image:url('/images/flags/uk.png');">
+								Українська
+							</option>
+						</select>
+					</div>
 				</div>
 				<button type="button" class="btn btn-outline-secondary my-3" onclick="admin_menu_open_settings('{{ $company->menu_template }}')">
 					<span>{{ _t('admin_company.template_settings') }}</span>
