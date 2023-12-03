@@ -17,15 +17,15 @@
 <div class="sidebar-nav">
 	<nav class="list-group js-no-reload js-sidebar-nav" id="sidebar_nav_1">
 		<a href="{{ route('categories.index') }}" class="list-group-item text-truncate">
-			<i class="bi bi-menu-button-wide me-1"></i>
+			<i class="bi bi-list-ul me-1"></i>
 			{{ _t('admin_nav.categories') }}
 		</a>
 		<a href="{{ route('items.index') }}" class="list-group-item text-truncate">
-			<i class="bi bi-menu-app-fill me-1"></i>
+			<i class="bi bi-egg-fried me-1"></i>
 			{{ _t('admin_nav.dishes') }}
 		</a>
 		<a href="{{ route('admin.menu') }}" class="list-group-item text-truncate">
-			<i class="bi bi-list-columns me-1"></i>
+			<i class="bi bi-filetype-html me-1"></i>
 			{{ _t('admin_nav.templates') }}
 		</a>
 	</nav>

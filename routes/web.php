@@ -34,6 +34,13 @@ Route::get('/notification', function () {
     return (new \App\Notifications\InvoicePaid)->toMail($user);
 });
 
+Route::get('/checkout', [\App\Http\Controllers\OrderController::class, 'checkout'])->name('monobank.returnUrl');
+
+Route::any('/mono/returnUrl/{orderId}', [\App\Http\Controllers\OrderController::class, 'monobankReturnUrl'])->name('monobank.returnUrl');
+Route::any('/mono/webHook', [\App\Http\Controllers\OrderController::class, 'monobankWebHook'])->name('monobank.webHook');
+
+
+
 // Route::get('profile', [\App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
 
 Route::group([

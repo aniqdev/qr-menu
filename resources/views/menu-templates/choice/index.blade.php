@@ -93,7 +93,7 @@ iframe{
 	@if(tpl_options('show_logo'))
 	<div class="text-center logo-wrapper" {{ tpl_options('show_logo') ? 'true' : 'false'}}>
 		<img src="{{ $company->image }}" alt="" class="img-thumbnail my-3"
-			style="max-height: 200px;" 
+			style="max-height: 200px; max-width: 100%;"
 		>
 	</div>
 	@endif

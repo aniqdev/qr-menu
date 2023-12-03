@@ -14,6 +14,10 @@ return [
 
     'recaotcha_secret' => env('RECAPTCHA_SECRET'),
 
+    'monobank_token' => env('MONOBANK_TOKEN'),
+
+    'monobank_test_token' => env('MONOBANK_TEST_TOKEN'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Name

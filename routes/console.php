@@ -23,7 +23,11 @@ use App\Notifications\InvoicePaid;
 
 Artisan::command('testt', function () {
 
-    dd(app('debugbar'));
+    dump([
+        'action' => 'test',
+        'monobank_token' => config('app.monobank_token'),
+        'monobank_test_token' => config('app.monobank_test_token'),
+    ]);
 
     return;
     $ip = '176.105.255.64';

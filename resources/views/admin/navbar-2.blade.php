@@ -58,19 +58,19 @@
                     </li>
                     <li class="nav-item d-lg-none">
                         <a class="nav-link js-no-reload-link" href="{{ route('categories.index') }}">
-                            <i class="bi bi-menu-button-wide me-1"></i>
+                            <i class="bi bi-list-ul me-1"></i>
                             {{ _t('admin_nav.categories') }}
                         </a>
                     </li>
                     <li class="nav-item d-lg-none border-bottom">
                         <a class="nav-link js-no-reload-link" href="{{ route('items.index') }}">
-                            <i class="bi bi-menu-app-fill me-1"></i>
+                            <i class="bi bi-egg-fried me-1"></i>
                             {{ _t('admin_nav.dishes') }}
                         </a>
                     </li>
                     <li class="nav-item d-lg-none">
                         <a class="nav-link js-no-reload-link" href="{{ route('admin.menu') }}">
-                            <i class="bi bi-list-columns me-1"></i>
+                            <i class="bi bi-filetype-html me-1"></i>
                             {{ _t('admin_nav.templates') }}
                         </a>
                     </li>
