@@ -15,13 +15,18 @@ class FeedbackController extends Controller
         ]);
     }
 
-    public function saveFeedback(Request $request)
+    public function saveFeedback(Request $request, Company $company)
     {
         $request->validate([
             'message' => 'required|string|min:3',
         ]);
 
-        Feedback::create($request->only(['email', 'phone', 'message']));
+        Feedback::create([
+            'company_id' => $company->id,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'message' => $request->message,
+        ]);
 
         return [
             'status' => 'success',
@@ -31,7 +36,7 @@ class FeedbackController extends Controller
 
     public function feedbacks(Request $request)
     {
-        $feedbacks = Feedback::orderBy('id', 'desc')->paginate(50);
+        $feedbacks = Feedback::where('company_id', auth()->user()->company_id)->orderBy('id', 'desc')->paginate(50);
 
         return view('admin.feedbacks', [
             'feedbacks' => $feedbacks,

@@ -40,6 +40,10 @@
 			<i class="bi bi-sliders me-1"></i>
 			{{ _t('admin_nav.settings') }}
 		</a>
+		{{-- <a href="{{ route('admin.orders') }}" class="list-group-item text-truncate">
+			<i class="bi bi-credit-card"></i>
+			{{ _t('admin_nav.orders') }}
+		</a> --}}
 	</nav>
 	<br>
 

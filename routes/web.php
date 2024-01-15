@@ -34,10 +34,10 @@ Route::get('/notification', function () {
     return (new \App\Notifications\InvoicePaid)->toMail($user);
 });
 
-Route::get('/checkout', [\App\Http\Controllers\OrderController::class, 'checkout'])->name('monobank.returnUrl');
+Route::get('/checkout', [\App\Http\Controllers\PaymentsController::class, 'checkout'])->name('monobank.returnUrl');
 
-Route::any('/mono/returnUrl/{orderId}', [\App\Http\Controllers\OrderController::class, 'monobankReturnUrl'])->name('monobank.returnUrl');
-Route::any('/mono/webHook', [\App\Http\Controllers\OrderController::class, 'monobankWebHook'])->name('monobank.webHook');
+Route::any('/mono/returnUrl/{orderId}', [\App\Http\Controllers\PaymentsController::class, 'monobankReturnUrl'])->name('monobank.returnUrl');
+Route::any('/mono/webHook', [\App\Http\Controllers\PaymentsController::class, 'monobankWebHook'])->name('monobank.webHook');
 
 
 
@@ -48,6 +48,7 @@ Route::group([
     'prefix' => 'admin',
 ], function () {
 
+    Route::get('test', [\App\Http\Controllers\HomeController::class, 'test'])->name('test');
     Route::get('dashboard', [\App\Http\Controllers\HomeController::class, 'dashboard'])->name('dashboard');
     Route::get('statistics', [\App\Http\Controllers\HomeController::class, 'statistics'])->name('admin.statistics');
     Route::get('dashboard-iframe-statistic', [\App\Http\Controllers\HomeController::class, 'dashboardIframeStatistic'])->name('dashboard-iframe-statistic');
@@ -91,6 +92,8 @@ Route::group([
     Route::get('modals/{view}', [\App\Http\Controllers\ModalsController::class, 'modals'])->name('admin-modals');
 
     Route::get('feedbacks', [\App\Http\Controllers\FeedbackController::class, 'feedbacks'])->name('admin.feedbacks');
+
+    Route::get('/orders', [\App\Http\Controllers\OrderController::class, 'orders'])->name('admin.orders');
 });
 
 Route::get('/cafe/sail.bar', function () {

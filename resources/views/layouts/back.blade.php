@@ -29,7 +29,7 @@
     </script>
     <script src="/js/toastr.min.js"></script>{{-- https://github.com/CodeSeven/toastr --}}
 </head>
-<body class="ajax-loader">
+<body class="ajax-loader-enabled">
     <div id="app_root">
         {{-- @include('admin.navbar-1') --}}
         @include('admin.navbar-2')

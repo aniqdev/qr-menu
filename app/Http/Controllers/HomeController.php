@@ -9,6 +9,11 @@ use App\Services\StatisticsService;
 
 class HomeController extends Controller
 {
+    public function test()
+    {
+        return view('admin.dashboard.test-2');
+    }
+
     public function dashboardIframeStatistic()
     {
         return view('admin.dashboard.statistic');

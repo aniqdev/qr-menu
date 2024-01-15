@@ -46,13 +46,12 @@ function init_app() {
 
 $(function () {	init_app() })
 
+log(location.hash)
 window.addEventListener("popstate", (event) => {
-	log('popstate')
-	log(event)
 	// if push back
-  event.state && event.state.url && go_to_page(event.state.url, false)
-  // if no state
-  // !event.state && (location.href = location.href) // problems with hash #
+    event.state && event.state.url && go_to_page(event.state.url, false)
+    // if no state
+    !event.state && !location.hash && (location.href = location.href) // problems with hash #
 });
 
 function init_owl_carousel() {

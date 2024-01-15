@@ -23,6 +23,17 @@ use App\Notifications\InvoicePaid;
 
 Artisan::command('testt', function () {
 
+    $res = \DB::select('select * from products');
+
+    dd($res);
+
+    $product = \App\Models\Product::where([
+        'slug' => 'premium-30-days',
+    ])->first();
+
+    dd($product);
+
+    return;
     dump([
         'action' => 'test',
         'monobank_token' => config('app.monobank_token'),
